@@ -1,0 +1,32 @@
+/**
+ * @section Background
+ * Background color
+ */
+
+.bg {
+	background-color: $color-tertiary;
+	color: $color-white;
+
+	a {
+		color: $color-white;
+		text-decoration: underline;
+	}
+}
+
+.bg-hero {
+	background-image: url("../img/hero-xsmall.jpg");
+	background-position: bottom center;
+	background-size: cover;
+
+	@media (min-width: $bp-small) {
+		background-image: url("../img/hero-small.jpg");
+	}
+
+	@media (min-width: $bp-medium) {
+		background-image: url("../img/hero-medium.jpg");
+	}
+
+	@media (min-width: $bp-large) {
+		background-image: url("../img/hero-full.jpg");
+	}
+}

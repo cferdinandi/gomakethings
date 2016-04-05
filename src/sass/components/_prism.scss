@@ -1,0 +1,59 @@
+/**
+ * @section Prism syntax highlighting
+ */
+
+@media screen {
+
+	.token.comment,
+	.token.prolog,
+	.token.doctype,
+	.token.cdata {
+		color: slategray;
+	}
+
+	.token.punctuation {
+		color: #999;
+	}
+
+	.token.property,
+	.token.tag,
+	.token.boolean,
+	.token.number {
+		color: #905;
+	}
+
+	.token.selector,
+	.token.attr-name,
+	.token.string {
+		color: #690;
+	}
+
+	.token.operator,
+	.token.entity,
+	.token.url,
+	.language-css .token.string,
+	.style .token.string {
+		color: #a67f59;
+	}
+
+	.token.atrule,
+	.token.attr-value,
+	.token.keyword {
+		color: #07a;
+	}
+
+
+	.token.regex,
+	.token.important {
+		color: #e90;
+	}
+
+	.token.important {
+		font-weight: bold;
+	}
+
+	.token.entity {
+		cursor: help;
+	}
+
+}

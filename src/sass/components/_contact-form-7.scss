@@ -1,0 +1,28 @@
+/**
+ * @section Contact Form 7
+ * Styles for Contact Form 7 forms
+ */
+
+.screen-reader-response {
+	@extend .screen-reader;
+}
+
+.wpcf7-not-valid {
+	@extend .margin-bottom-small;
+}
+
+.wpcf7-not-valid-tip,
+.wpcf7-validation-errors {
+	font-style: italic;
+}
+
+.wpcf7-not-valid-tip {
+	@extend .margin-bottom;
+	display: block;
+}
+
+.wpcf7-validation-errors {
+	@media (min-width: $bp-medium) {
+		margin-left: 34.73333333333%;
+	}
+}

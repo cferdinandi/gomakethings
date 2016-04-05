@@ -1,0 +1,63 @@
+/**
+ * @section SVGs
+ * SVG icon sprite styling.
+ * @link http://css-tricks.com/svg-sprites-use-better-icon-fonts/
+ * @link http://css-tricks.com/svg-use-external-source/
+ */
+
+/**
+ * Hide icons by default to prevent blank spaces in unsupported browsers
+ */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 0;
+	width: 0;
+}
+
+/**
+ * Display icons when browser supports SVG.
+ * Inherit height, width, and color.
+ */
+.svg .icon {
+	height: 1em;
+	width: auto;
+}
+
+
+/**
+ * Icon sizes
+ */
+
+.svg .icon-large {
+	height: 2em;
+}
+
+.svg .icon-xlarge {
+	height: 3em;
+}
+
+
+/**
+ * Icon colors
+ */
+
+.icon-black { fill: $color-black; }
+.icon-gray { fill: $color-gray-dark; }
+.icon-primary { fill: $color-primary; }
+.icon-secondary { fill: darken( $color-secondary, 7% ); }
+.icon-accent { fill: $color-accent; }
+.icon-petfinder { fill: $color-petfinder; }
+.icon-paws { fill: $color-paws; }
+
+a:hover .icon-link {
+	fill: darken( $color-primary, 15% );
+}
+
+
+/**
+ * Hide fallback text if browser supports SVG
+ */
+.svg .icon-fallback-text {
+	@extend .screen-reader;
+}

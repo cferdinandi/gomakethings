@@ -1,0 +1,45 @@
+/**
+ * Center all navigation elements
+ */
+.nav-wrap {
+	padding-top: calc-em(11px);
+	padding-bottom: calc-em(11px);
+	text-align: center;
+}
+
+/**
+ * Logo
+ */
+a.logo {
+	display: inline-block;
+	font-size: 1.2em;
+	font-weight: bold;
+	line-height: 1.2;
+	color: $color-black;
+	// margin-bottom: calc-em(5px);
+	text-decoration: none;
+
+	// @media (min-width: $bp-medium) {
+	// 	float: left;
+	// 	margin-bottom: 0;
+	// }
+
+	// @media (max-width: $bp-medium) {
+	// 	.js-astro & {
+	// 		float: left;
+	// 	}
+	// }
+
+	&:hover {
+		color: $color-primary;
+		text-decoration: none;
+	}
+}
+
+/**
+ * Reduce logo icon size
+ */
+.logo .icon {
+	height: 0.8em;
+	width: 0.8em;
+}
