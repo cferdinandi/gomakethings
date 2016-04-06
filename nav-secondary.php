@@ -9,12 +9,14 @@
 ?>
 
 <?php if ( has_nav_menu( 'secondary' ) ) : ?>
-	<?php wp_nav_menu(
-		array(
-			'theme_location' => 'secondary',
-			'container'      => false,
-			'menu_class'     => 'list-inline list-inline-responsive',
-			'depth'          => -1,
-		)
-	); ?>
+	<nav class="tabindex" id="nav-secondary" tabindex="-1">
+		<?php wp_nav_menu(
+			array(
+				'theme_location' => 'secondary',
+				'container'      => false,
+				'menu_class'     => 'list-inline list-inline-responsive',
+				'depth'          => -1,
+			)
+		); ?>
+	</nav>
 <?php endif; ?>
