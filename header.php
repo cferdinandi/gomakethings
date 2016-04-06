@@ -58,14 +58,14 @@
 
 				global $post;
 
-				// Get page width
-				$container = ( get_post_meta( $post->ID, 'keel_page_width', true ) === 'wide' ? 'container-large' : '' );
-
 				// Get hero (if one exists)
 				$hero = get_post_meta( $post->ID, 'keel_page_hero', true );
 				if ( !empty( $hero ) ) {
 					echo stripslashes( $hero );
 				}
+
+				// Get page width
+				$container = ( get_post_meta( $post->ID, 'keel_page_width', true ) === 'wide' ? 'container-large' : '' );
 
 			?>
 
