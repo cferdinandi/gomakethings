@@ -26,7 +26,7 @@
 		?>
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
-				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic');
+				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic');
 			</script>
 		<?php
 	}
