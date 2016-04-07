@@ -76,6 +76,12 @@
 	else :
 ?>
 
+	<?php if ( $wp_query->current_post === 0 ) : ?>
+		<header class="screen-reader">
+			<h1><?php _e( 'Blog Archive', 'keel' ); ?></h1>
+		</header>
+	<?php endif; ?>
+
 	<article>
 
 		<header>
@@ -96,9 +102,9 @@
 				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 			</aside>
 
-			<h1 class="no-padding-top">
+			<h2 class="h1 no-padding-top">
 				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</h1>
+			</h2>
 
 		</header>
 
