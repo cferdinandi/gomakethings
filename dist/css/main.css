@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.22.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.22.1: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -443,7 +443,7 @@ h1, h2, h3, h4, h5, h6 {
 /* line 183, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 h1,
 .h1 {
-  font-size: 1.7em;
+  font-size: 1.5em;
   padding-top: .5em;
 }
 
@@ -451,26 +451,26 @@ h1,
   /* line 183, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
   h1,
   .h1 {
-    font-size: 2em;
+    font-size: 1.75em;
   }
 }
 
 /* line 193, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 h2,
 .h2 {
-  font-size: 1.5em;
+  font-size: 1.3125em;
 }
 
 /* line 198, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 h3,
 .h3 {
-  font-size: 1.3125em;
+  font-size: 1.1875em;
 }
 
 /* line 203, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 h4, h5, h6,
 .h4, .h5, .h6 {
-  font-size: 1.1875em;
+  font-size: 1em;
 }
 
 /* line 208, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
@@ -1480,6 +1480,19 @@ tbody tr:nth-child(even) {
   /* line 43, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
   .text-large {
     font-size: 1.3125em;
+  }
+}
+
+/* line 52, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+.text-xlarge {
+  font-size: 1.7em;
+  line-height: 1.4;
+}
+
+@media (min-width: 38em) {
+  /* line 52, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+  .text-xlarge {
+    font-size: 2em;
   }
 }
 
