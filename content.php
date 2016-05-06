@@ -68,7 +68,7 @@ $post_options = keel_get_post_options();
 	else :
 ?>
 
-	<?php if ( $wp_query->current_post === 0 ) : ?>
+	<?php if ( $wp_query->current_post === 0 && !is_archive() ) : ?>
 		<header <?php if ( $post_options['blog_hide_all_posts_heading'] === 'on' ) { echo 'class="screen-reader"'; } ?>>
 			<h1><?php echo $post_options['blog_all_posts_heading']; ?></h1>
 		</header>
