@@ -32,6 +32,23 @@ a {
 	word-wrap: break-word;
 }
 
+
+/**
+ * Remove default link styling
+ */
+.link-plain {
+	&,
+	&:visited {
+		color: $color-black;
+	}
+
+	&:hover {
+		color: $color-primary;
+		text-decoration: none;
+	}
+}
+
+
 /**
  * Improve readability when focused and also mouse hovered in all browsers.
  */
@@ -146,35 +163,46 @@ dt {
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.2;
-	font-weight: bold;
+	// font-weight: bold;
+	font-weight: normal;
 	margin: 0 0 1em;
 	padding: 1em 0 0;
 	word-wrap: break-word;
 }
 
+// h1,
+// .h1 {
+// 	font-size: calc-em(24px);
+// 	padding-top: .5em;
+
+// 	// @media (min-width: $bp-medium) {
+// 	// 	font-size: calc-em(28px);
+// 	// }
+// }
+
 h1,
 .h1 {
-	font-size: calc-em(24px);
+	font-size: 1.7em;
 	padding-top: .5em;
 
-	// @media (min-width: $bp-medium) {
-	// 	font-size: calc-em(28px);
-	// }
+	@media (min-width: $bp-medium) {
+		font-size: 2em;
+	}
 }
 
 h2,
 .h2 {
-	font-size: calc-em(21px);
+	font-size: calc-em(24px);
 }
 
 h3,
 .h3 {
-	font-size: calc-em(19px);
+	font-size: calc-em(21px);
 }
 
 h4, h5, h6,
 .h4, .h5, .h6 {
-	font-size: calc-em(16px);
+	font-size: calc-em(19px);
 }
 
 h4,
@@ -182,22 +210,22 @@ h4,
 	text-transform: uppercase;
 }
 
-/**
- * Heading link styling
- */
+// /**
+//  * Heading link styling
+//  */
 
-h1 a,
-h1 a:visited,
-.h1 a,
-.h1 a:visited {
-	color: $color-black;
-}
+// h1 a,
+// h1 a:visited,
+// .h1 a,
+// .h1 a:visited {
+// 	color: $color-black;
+// }
 
-h1 a:hover,
-.h1 a:hover {
-	color: $color-primary;
-	text-decoration: none;
-}
+// h1 a:hover,
+// .h1 a:hover {
+// 	color: $color-primary;
+// 	text-decoration: none;
+// }
 
 
 /**

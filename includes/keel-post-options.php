@@ -20,6 +20,24 @@
 	 * Each option field requires its own uniquely named function. Select options and radio buttons also require an additional uniquely named function with an array of option choices.
 	 */
 
+	// Renders heading on the all blog posts
+	function keel_settings_field_blog_all_posts_heading() {
+		$options = keel_get_post_options();
+		?>
+		<input type="text" class="large-text" name="keel_post_options[blog_all_posts_heading]" id="blog-all-posts-heading" value="<?php echo esc_attr( $options['blog_all_posts_heading'] ); ?>">
+		<label class="description" for="blog-all-posts-heading"><?php _e( 'Heading to diplay at the top of the all blog posts page.', 'keel' ); ?></label>
+		<?php
+	}
+
+	// Hide all posts heading
+	function keel_settings_field_blog_hide_all_posts_heading() {
+		$options = keel_get_post_options();
+		?>
+		<input type="checkbox" name="keel_post_options[blog_hide_all_posts_heading]" id="blog-hide-all-posts-heading" <?php checked( 'on', $options['blog_hide_all_posts_heading'] ); ?>>
+		<label class="description" for="blog-hide-all-posts-heading"><?php _e( 'Hide all posts heading visually', 'keel' ); ?></label>
+		<?php
+	}
+
 	// Renders the all blog posts message textarea setting field.
 	function keel_settings_field_blog_all_posts_message() {
 		$options = keel_get_post_options();
@@ -50,6 +68,8 @@
 	function keel_get_post_options() {
 		$saved = (array) get_option( 'keel_post_options' );
 		$defaults = array(
+			'blog_all_posts_heading' => '',
+			'blog_hide_all_posts_heading' => 'off',
 			'blog_all_posts_message' => '',
 			'blog_all_posts_message_markdown' => '',
 			'blog_posts_message' => '',
@@ -67,6 +87,12 @@
 	// Sanitize and validate updated theme options
 	function keel_post_options_validate( $input ) {
 		$output = array();
+
+		if ( isset( $input['blog_all_posts_heading'] ) && ! empty( $input['blog_all_posts_heading'] ) )
+			$output['blog_all_posts_heading'] = wp_filter_nohtml_kses( $input['blog_all_posts_heading'] );
+
+		if ( isset( $input['blog_hide_all_posts_heading'] ) )
+			$output['blog_hide_all_posts_heading'] = 'on';
 
 		if ( isset( $input['blog_all_posts_message'] ) && ! empty( $input['blog_all_posts_message'] ) ) {
 			$output['blog_all_posts_message'] = keel_process_jetpack_markdown( wp_filter_post_kses( $input['blog_all_posts_message'] ) );
@@ -134,8 +160,10 @@
 		// $callback - Function that creates the field (from the Theme Option Fields section).
 		// $page - The menu page on which to display this field.
 		// $section - The section of the settings page in which to show the field.
-		add_settings_field( 'blog_all_posts_message', __( 'Blog All Posts Message', 'keel' ), 'keel_settings_field_blog_all_posts_message', 'keel_post_options', 'general' );
-		add_settings_field( 'blog_posts_message', __( 'Blog Posts Message', 'keel' ), 'keel_settings_field_blog_posts_message', 'keel_post_options', 'general' );
+		add_settings_field( 'blog_all_posts_heading', __( 'All Posts Heading', 'keel' ), 'keel_settings_field_blog_all_posts_heading', 'keel_post_options', 'general' );
+		add_settings_field( 'blog_hide_all_posts_heading', __( 'Hide All Posts Heading', 'keel' ), 'keel_settings_field_blog_hide_all_posts_heading', 'keel_post_options', 'general' );
+		add_settings_field( 'blog_all_posts_message', __( 'All Posts Message', 'keel' ), 'keel_settings_field_blog_all_posts_message', 'keel_post_options', 'general' );
+		add_settings_field( 'blog_posts_message', __( 'Posts Message', 'keel' ), 'keel_settings_field_blog_posts_message', 'keel_post_options', 'general' );
 	}
 	add_action( 'admin_init', 'keel_post_options_init' );
 

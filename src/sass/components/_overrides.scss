@@ -4,22 +4,31 @@
  */
 
 
+// /**
+//  * Backgrounds
+//  */
+
+// .bg-muted {
+// 	background-color: lighten( $color-gray-light, 7% );
+// }
+
+
+// /**
+//  * Font weights
+//  */
+
+// .normal {
+// 	font-weight: normal;
+// 	line-height: 1.4;
+// }
+
+
 /**
- * Backgrounds
+ * Text transforms
  */
 
-.bg-muted {
-	background-color: lighten( $color-gray-light, 7% );
-}
-
-
-/**
- * Font weights
- */
-
-.normal {
-	font-weight: normal;
-	line-height: 1.4;
+.text-uppercase {
+	text-transform: uppercase;
 }
 
 
@@ -40,14 +49,14 @@
 	}
 }
 
-.text-xlarge {
-	font-size: calc-em(24px);
-	line-height: 1.4;
+// .text-xlarge {
+// 	font-size: 1.7em;
+// 	line-height: 1.4;
 
-	@media (min-width: $bp-medium) {
-		font-size: calc-em(28px);
-	}
-}
+// 	@media (min-width: $bp-medium) {
+// 		font-size: 2em;
+// 	}
+// }
 
 
 /**
@@ -56,6 +65,10 @@
 
 .text-muted {
 	color: $color-gray-dark;
+}
+
+.text-secondary {
+	color: $color-secondary;
 }
 
 
