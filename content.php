@@ -5,16 +5,9 @@
  * Template for post content.
  */
 
-?>
+$post_options = keel_get_post_options();
 
-<?php
-	$post_options = keel_get_post_options();
-	if ( $wp_query->current_post === 0 && array_key_exists( 'blog_all_posts_message', $post_options ) && !empty( $post_options['blog_all_posts_message'] ) ) :
 ?>
-	<aside>
-		<?php echo stripslashes( do_shortcode( wpautop( $post_options['blog_all_posts_message'], false ) ) ); ?>
-	</aside>
-<?php endif; ?>
 
 <?php
 	/**
@@ -56,9 +49,8 @@
 		?>
 
 		<?php
-			// $post_options = keel_get_post_options();
 			if ( !empty( $post_options ) && array_key_exists( 'blog_posts_message', $post_options ) && !empty( $post_options['blog_posts_message'] ) ) {
-				echo stripslashes( do_shortcode( wpautop( $post_options['blog_posts_message'], false ) ) );
+				echo do_shortcode( wpautop( stripslashes( $post_options['blog_posts_message'] ), false ) );
 			}
 		?>
 
@@ -76,10 +68,18 @@
 	else :
 ?>
 
-	<?php if ( $wp_query->current_post === 0 ) : ?>
-		<header class="screen-reader">
-			<h1><?php _e( 'Blog Archive', 'keel' ); ?></h1>
+	<?php if ( $wp_query->current_post === 0 && !is_archive() ) : ?>
+		<header <?php if ( $post_options['blog_hide_all_posts_heading'] === 'on' ) { echo 'class="screen-reader"'; } ?>>
+			<h1><?php echo $post_options['blog_all_posts_heading']; ?></h1>
 		</header>
+	<?php endif; ?>
+
+	<?php
+		if ( $wp_query->current_post === 0 && array_key_exists( 'blog_all_posts_message', $post_options ) && !empty( $post_options['blog_all_posts_message'] ) ) :
+	?>
+		<aside>
+			<?php echo stripslashes( do_shortcode( wpautop( $post_options['blog_all_posts_message'], false ) ) ); ?>
+		</aside>
 	<?php endif; ?>
 
 	<article>
@@ -102,21 +102,21 @@
 				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 			</aside>
 
-			<h2 class="h1 no-padding-top">
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+			<h2 class="no-padding-top margin-bottom-small">
+				<a class="link-plain" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 			</h2>
 
 		</header>
 
 		<?php
 			// The post content
-			// the_excerpt();
-			the_content(
-				sprintf(
-					__( 'Read more %s...', 'keel' ),
-					'<span class="screen-reader">of ' . get_the_title() . '</span>'
-				)
-			);
+			echo get_the_excerpt() . ' <a href="<?php get_the_permalink(); ?>">' . sprintf( __( 'read more %s', 'keel' ), '<span class="screen-reader">of ' . get_the_title() . '</span></a>' );
+			// the_content(
+			// 	sprintf(
+			// 		__( 'Read more %s...', 'keel' ),
+			// 		'<span class="screen-reader">of ' . get_the_title() . '</span>'
+			// 	)
+			// );
 		?>
 		<?php
 			// Comment out...
@@ -138,7 +138,7 @@
 			// If this is not the last post on the page, insert a divider
 			if ( !keel_is_last_post($wp_query) ) :
 		?>
-		    <hr class="line-secondary">
+		    <hr class="line-clear">
 		<?php endif; ?>
 
 	</article>
