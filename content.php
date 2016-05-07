@@ -110,7 +110,7 @@ $post_options = keel_get_post_options();
 
 		<?php
 			// The post content
-			echo get_the_excerpt() . ' <a href="<?php get_the_permalink(); ?>">' . sprintf( __( 'read more %s', 'keel' ), '<span class="screen-reader">of ' . get_the_title() . '</span></a>' );
+			echo get_the_excerpt() . ' <a href="' . get_the_permalink() . '">' . sprintf( __( 'read more %s', 'keel' ), '<span class="screen-reader">of ' . get_the_title() . '</span></a>' );
 			// the_content(
 			// 	sprintf(
 			// 		__( 'Read more %s...', 'keel' ),
