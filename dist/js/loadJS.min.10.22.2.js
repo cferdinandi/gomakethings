@@ -1,2 +1,0 @@
-/*! gomakethings v10.22.2 | (c) 2016 Chris Ferdinandi | MIT License | https://github.com/cferdinandi/gomakethings | Open Source Credits: https://github.com/ftlabs/fastclick, https://github.com/toddmotto/fluidvids, http://prismjs.com */
-function loadJS(e,t){"use strict";var n=window.document.getElementsByTagName("script")[0],o=window.document.createElement("script");return o.src=e,o.async=!0,n.parentNode.insertBefore(o,n),t&&"function"==typeof t&&(o.onload=t),o}
