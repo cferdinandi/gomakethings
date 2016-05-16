@@ -191,7 +191,7 @@
 
 
 	// Restrict access to the post options page to admins
-	function keel_option_page_capability( $capability ) {
+	function keel_post_option_page_capability( $capability ) {
 		return 'edit_theme_options';
 	}
-	add_filter( 'option_page_capability_keel_options', 'keel_option_page_capability' );
+	add_filter( 'option_page_capability_keel_options', 'keel_post_option_page_capability' );

@@ -7,23 +7,23 @@
 
 get_header(); ?>
 
+<?php
+	// Get the theme options
+	$options = keel_get_theme_options();
+?>
 
 <article>
 	<header>
-		<h1><?php _e( 'Oh snap!', 'keel' ) ?></h1>
+		<h1><?php echo esc_html( $options['404_heading'] ); ?></h1>
 	</header>
 
-	<p><?php _e( 'The page you\'re looking for was looted by pirates! (Or more likely, I messed up and moved something on you&mdash;sorry.) At this point, you have a few options:', 'keel' ) ?></p>
-
-	<ol>
-		<li><?php _e( 'Try searching for it.', 'keel' ) ?></li>
-		<li><?php _e( 'Become a pirate hunter and embark on a quest to reclaim the lost page.', 'keel' ) ?></li>
-		<li><?php _e( 'Give up and go make something awesome instead.', 'keel' ) ?></li>
-	</ol>
+	<?php echo stripslashes( do_shortcode( wpautop( $options['404_content'], false ) ) ); ?>
 
 	<?php
 		// Insert the search form
-		get_search_form();
+		if ( $options['404_show_search'] === 'on' ) {
+			get_search_form();
+		}
 	?>
 
 </article>
