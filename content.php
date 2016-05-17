@@ -56,7 +56,7 @@ $post_options = keel_get_post_options();
 
 		<?php
 			// Add comments template to blog posts
-			comments_template();
+			// comments_template();
 		?>
 
 	</article>
