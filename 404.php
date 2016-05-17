@@ -17,7 +17,7 @@ get_header(); ?>
 		<h1><?php echo esc_html( $options['404_heading'] ); ?></h1>
 	</header>
 
-	<?php echo stripslashes( do_shortcode( wpautop( $options['404_content'], false ) ) ); ?>
+	<?php echo do_shortcode( stripslashes( wpautop( $options['404_content'], false ) ) ); ?>
 
 	<?php
 		// Insert the search form
