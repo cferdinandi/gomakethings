@@ -39,7 +39,7 @@
 
 		<?php
 			// The project call-to-action
-			echo stripslashes( wpautop( do_shortcode( $options['call_to_action'] ) ) );
+			echo stripslashes( do_shortcode( wpautop( $options['call_to_action'], false ) ) );
 		?>
 
 		<?php
