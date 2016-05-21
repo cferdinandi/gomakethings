@@ -73,7 +73,7 @@
 
 		<?php if ( $start_date >= $today ) : ?>
 
-			<?php echo do_shortcode( wpautop( $details['register_html'] ) ); ?>
+			<?php echo do_shortcode( wpautop( $details['register_html'], false ) ); ?>
 
 			<?php if ( $details['register_link'] ) : ?>
 				<p>
