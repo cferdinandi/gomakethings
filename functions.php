@@ -12,6 +12,9 @@
 	function keel_load_theme_files() {
 		$keel_theme = wp_get_theme();
 		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.' . $keel_theme->get( 'Version' ) . '.css', null, null, 'all' );
+		if ( isset($_COOKIE['fontsLoaded']) && $_COOKIE['fontsLoaded'] === 'true' ) {
+			wp_enqueue_style( 'keel-theme-fonts', '//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic', null, null, 'all' );
+		}
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
 
@@ -26,7 +29,15 @@
 		?>
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
-				loadCSS('http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic');
+				<?php if ( !isset($_COOKIE['fontsLoaded']) || $_COOKIE['fontsLoaded'] !== 'true' ) : ?>
+					loadCSS('//fonts.googleapis.com/css?family=PT+Serif:400,400italic,700,700italic');
+					var font = new FontFaceObserver('PT Serif');
+					font.load().then(function () {
+						var expires = new Date(+new Date() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
+						document.cookie = 'fontsLoaded=true; expires=' + expires;
+						document.documentElement.className += ' fonts-loaded';
+					});
+				<?php endif; ?>
 			</script>
 		<?php
 	}
@@ -41,11 +52,6 @@
 		$keel_theme = wp_get_theme();
 
 		?>
-			<!-- Fallback for noJS -->
-			<noscript>
-				<link href='http://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
-			</noscript>
-
 			<script>
 				// Asynchronously load JavaScript if browser passes mustard test
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadJS.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
