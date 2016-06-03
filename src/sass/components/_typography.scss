@@ -11,6 +11,10 @@ body {
 	background: $color-white;
 	border-top: calc-em(8px) solid $color-gray-light;
 
+	.fonts-loaded & {
+		font-family: $font-enhanced;
+	}
+
 	@media (min-width: $bp-medium) {
 		line-height: 1.5625;
 	}
