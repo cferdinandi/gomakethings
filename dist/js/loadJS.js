@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.27.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.28.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
