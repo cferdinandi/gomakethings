@@ -21,18 +21,7 @@ $post_options = keel_get_post_options();
 		<header>
 
 			<aside class="text-muted">
-				<?php
-					// Dates
-					$date_original = get_the_time( 'F j, Y' );
-					$date_updated = get_the_modified_date( 'F j, Y' );
-				?>
-				<time datetime="<?php echo $date_original; ?>" pubdate><?php echo $date_original; ?></time>
-				<?php
-					// If modified
-					if ( strtotime( $date_updated ) > strtotime( $date_original ) ) :
-				?>
-					/ Updated on <time datetime="<?php echo $date_updated; ?>" pubdate><?php echo $date_updated; ?></time>
-				<?php endif; ?>
+				<time datetime="<?php the_time( 'F j, Y' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
 				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 			</aside>
 
@@ -78,7 +67,7 @@ $post_options = keel_get_post_options();
 		if ( $wp_query->current_post === 0 && array_key_exists( 'blog_all_posts_message', $post_options ) && !empty( $post_options['blog_all_posts_message'] ) ) :
 	?>
 		<aside>
-			<?php echo stripslashes( do_shortcode( wpautop( $post_options['blog_all_posts_message'], false ) ) ); ?>
+			<?php echo do_shortcode( stripslashes( wpautop( $post_options['blog_all_posts_message'], false ) ) ); ?>
 		</aside>
 	<?php endif; ?>
 
@@ -87,18 +76,7 @@ $post_options = keel_get_post_options();
 		<header>
 
 			<aside class="text-muted">
-				<?php
-					// Dates
-					$date_original = get_the_time( 'F j, Y' );
-					$date_updated = get_the_modified_date( 'F j, Y' );
-				?>
-				<time datetime="<?php echo $date_original; ?>" pubdate><?php echo $date_original; ?></time>
-				<?php
-					// If modified
-					if ( strtotime( $date_updated ) > strtotime( $date_original ) ) :
-				?>
-					/ Updated on <time datetime="<?php echo $date_updated; ?>" pubdate><?php echo $date_updated; ?></time>
-				<?php endif; ?>
+				<time datetime="<?php the_time( 'F j, Y' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
 				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 			</aside>
 
