@@ -21,18 +21,7 @@ $article_options = articles_get_theme_options();
 		<header>
 
 			<aside class="text-muted">
-				<?php
-					// Dates
-					$date_original = get_the_time( 'F j, Y' );
-					$date_updated = get_the_modified_date( 'F j, Y' );
-				?>
 				<time datetime="<?php the_time( 'F j, Y' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
-				<?php
-					// If modified
-					if ( strtotime( $date_updated ) > strtotime( $date_original ) ) :
-				?>
-					/ Updated on <time datetime="<?php echo $date_updated; ?>" pubdate><?php echo $date_updated; ?></time>
-				<?php endif; ?>
 				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 			</aside>
 
@@ -87,18 +76,7 @@ $article_options = articles_get_theme_options();
 		<header>
 
 			<aside class="text-muted">
-				<?php
-					// Dates
-					$date_original = get_the_time( 'F j, Y' );
-					$date_updated = get_the_modified_date( 'F j, Y' );
-				?>
 				<time datetime="<?php the_time( 'F j, Y' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
-				<?php
-					// If modified
-					if ( strtotime( $date_updated ) > strtotime( $date_original ) ) :
-				?>
-					/ Updated on <time datetime="<?php echo $date_updated; ?>" pubdate><?php echo $date_updated; ?></time>
-				<?php endif; ?>
 				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 			</aside>
 
