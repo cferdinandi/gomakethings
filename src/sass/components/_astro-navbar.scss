@@ -107,7 +107,8 @@
 	.current-menu-item > a,
 	.single-post & .current_page_parent > a,
 	& .current-menu-ancestor > a,
-	.current-page-ancestor > a {
+	.current-page-ancestor > a,
+	.single-gmt-articles & .menu-item-object-gmt-articles > a {
 		border-bottom: calc-em(2px) solid $color-secondary;
 		color: $color-black;
 		text-decoration: none;
