@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.30.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.30.1: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1370,7 +1370,9 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 .nav .current-menu-ancestor > a,
 .nav .current-menu-ancestor > .link-block-styled,
 .nav .current-page-ancestor > a,
-.nav .current-page-ancestor > .link-block-styled {
+.nav .current-page-ancestor > .link-block-styled,
+.single-gmt-articles .nav .menu-item-object-gmt-articles > a,
+.single-gmt-articles .nav .menu-item-object-gmt-articles > .link-block-styled {
   border-bottom: 0.125em solid #fa7176;
   color: #272727;
   text-decoration: none;
