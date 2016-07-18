@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.30.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.31.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1023,6 +1023,28 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 /**
+ * @section Contact Form 7
+ * Styles for Contact Form 7 forms
+ */
+/* line 14, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_contact-form-7.scss */
+.wpcf7-not-valid-tip,
+.wpcf7-validation-errors {
+  font-style: italic;
+}
+
+/* line 19, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_contact-form-7.scss */
+.wpcf7-not-valid-tip {
+  display: block;
+}
+
+@media (min-width: 38em) {
+  /* line 24, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_contact-form-7.scss */
+  .wpcf7-validation-errors {
+    margin-left: 34.73333333333%;
+  }
+}
+
+/**
  * @section SVGs
  * SVG icon sprite styling.
  * @link http://css-tricks.com/svg-sprites-use-better-icon-fonts/
@@ -1562,12 +1584,12 @@ tbody tr:nth-child(even) {
 }
 
 /* line 137, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.margin-bottom {
+.margin-bottom, .wpcf7-not-valid-tip {
   margin-bottom: 1.5625em;
 }
 
 /* line 141, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.margin-bottom-small {
+.margin-bottom-small, .wpcf7-not-valid {
   margin-bottom: 0.5em;
 }
 
@@ -1648,7 +1670,7 @@ tbody tr:nth-child(even) {
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 /* line 212, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.screen-reader, .svg .icon-fallback-text {
+.screen-reader, .screen-reader-response, .svg .icon-fallback-text {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
