@@ -10,20 +10,27 @@
 			</div><!-- /.container -->
 		</main><!-- /#main -->
 
+		<?php
+			// Get page layout options
+			global $post;
+			$page_navs = get_post_meta( $post->ID, 'keel_page_navs', true );
+		?>
 
-		<footer class="container container-large">
+		<?php if ( empty( $page_navs ) || $page_navs === 'off' ) : ?>
+			<footer class="container container-large">
 
-			<hr class="margin-bottom">
+				<hr class="margin-bottom">
 
-			<?php get_template_part( 'nav', 'secondary' ); ?>
+				<?php get_template_part( 'nav', 'secondary' ); ?>
 
-			<p>
-				<span class="text-small">
-					Made with &lt;3 in Massachusetts. Copyright <?php echo date( 'Y' ); ?> Go Make Things, LLC.
-				</span>
-			</p>
+				<p>
+					<span class="text-small">
+						Made with &lt;3 in Massachusetts. Copyright <?php echo date( 'Y' ); ?> Go Make Things, LLC.
+					</span>
+				</p>
 
-		</footer>
+			</footer>
+		<?php endif; ?>
 
 		<?php wp_footer(); ?>
 

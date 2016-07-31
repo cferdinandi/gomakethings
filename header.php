@@ -33,6 +33,12 @@
 
 	</head>
 
+	<?php
+		// Get page layout options
+		global $post;
+		$page_navs = get_post_meta( $post->ID, 'keel_page_navs', true );
+	?>
+
 	<body <?php body_class(); ?>>
 
 		<!-- Old Browser Warning -->
@@ -43,30 +49,19 @@
 		<![endif]-->
 
 		<?php
-			// a11y ehancements
-			get_template_part( 'nav', 'accessibility' );
+			// a11y enhancements
+			if ( empty( $page_navs ) || $page_navs === 'off' ) {
+				get_template_part( 'nav', 'accessibility' );
+			}
 		?>
 
 		<?php
 			// Get site navigation
-			get_template_part( 'nav', 'main' );
+			if ( empty( $page_navs ) || $page_navs === 'off' ) {
+				get_template_part( 'nav', 'main' );
+			}
 		?>
 
 		<main class="tabindex" id="main" tabindex="-1">
 
-			<?php
-
-				global $post;
-
-				// Get hero (if one exists)
-				$hero = get_post_meta( $post->ID, 'keel_page_hero', true );
-				if ( !empty( $hero ) ) {
-					echo stripslashes( $hero );
-				}
-
-				// Get page width
-				$container = ( get_post_meta( $post->ID, 'keel_page_width', true ) === 'wide' ? 'container-large' : '' );
-
-			?>
-
-			<div class="container <?php echo $container; ?>">
+			<div class="container">

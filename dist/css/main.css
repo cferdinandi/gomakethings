@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.31.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.32.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1154,7 +1154,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /* line 10, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_wordpress-images.scss */
 .avatar {
   float: left;
-  margin-right: 0.5em;
+  margin-right: 1em;
   /**
 	 * Set $size to 2x desired size in comments.php
 	 * for crisp images on retina screens.
@@ -1178,7 +1178,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   /* line 33, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_wordpress-images.scss */
   .alignleft {
     float: left;
-    margin-right: 0.5em;
+    margin-right: 1em;
   }
 }
 
@@ -1186,7 +1186,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   /* line 42, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_wordpress-images.scss */
   .alignright {
     float: right;
-    margin-left: 0.5em;
+    margin-left: 1em;
   }
 }
 
