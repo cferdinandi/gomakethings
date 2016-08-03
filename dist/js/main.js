@@ -1,11 +1,47 @@
 /*!
- * gomakethings v10.32.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.33.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
  * Open Source Credits: https://github.com/ftlabs/fastclick, https://github.com/toddmotto/fluidvids, http://prismjs.com
  */
 
+;(function (window, document, undefined) {
+
+	'use strict';
+
+	// Feature Test
+	var supports = 'querySelector' in document && 'addEventListener' in window && 'localStorage' in window && 'classList' in document.createElement('_'); // Feature test
+	if ( !supports ) return;
+
+	// Variables
+	// .edd-add-to-cart
+	var link = document.querySelector( '.edd-cancel a' );
+	var cancel = sessionStorage.getItem( 'eddCancelLocation' );
+
+	/**
+	 * Handle click events
+	 */
+	var clickHandler = function (event) {
+		var toggle = event.target;
+		if ( toggle.classList.contains( 'edd-add-to-cart' ) || toggle.classList.contains( 'edd_go_to_checkout' ) ) {
+			sessionStorage.setItem( 'eddCancelLocation', window.location.href );
+		}
+	};
+
+	// Add class to HTML element to activate conditional CSS
+	document.documentElement.className += ' js-edd';
+
+	// If location set, show cancel link
+	if ( link && cancel ) {
+		link.href = cancel;
+		document.documentElement.className += ' js-edd-cancel';
+	}
+
+	// Listen for click events
+	document.addEventListener('click', clickHandler, false);
+
+})(window, document);
 /*! fluidvids.js v2.4.1 | (c) 2014 @toddmotto | https://github.com/toddmotto/fluidvids */
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {

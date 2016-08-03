@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.32.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.33.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -772,7 +772,7 @@ input.active[type="submit"] {
 }
 
 /* line 75, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn-large {
+.btn-large, #edd-purchase-button {
   padding: 0.6875em 0.9375em;
   font-size: 1em;
   line-height: normal;
@@ -1400,9 +1400,11 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   text-decoration: none;
 }
 
-/*  Removes default browser settings
- *  and evens out inconsistencies. */
-/* line 3, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+/**
+ * @section Tables
+ * Styling for tables
+ */
+/* line 6, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -1411,28 +1413,31 @@ table {
   width: 100%;
 }
 
-/* line 11, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+/* line 14, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
 th,
 td {
   text-align: left;
   padding: 0.5em;
 }
 
-/* line 17, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+/* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
 th {
-  background-color: #f2f2f2;
+  border-bottom: 0.125em solid #e5e5e5;
   font-weight: bold;
   vertical-align: bottom;
 }
 
-/* line 23, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+/* line 27, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
 td {
-  border-top: 0.0725em solid #ededed;
+  border-top: 0.0725em solid #e5e5e5;
   vertical-align: top;
 }
 
-/* line 28, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
-tbody tr:nth-child(even) {
+/**
+ * Adds zebra striping
+ */
+/* line 35, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+.table-striped tbody tr:nth-child(odd) {
   background-color: #f7f7f7;
 }
 
@@ -1442,41 +1447,58 @@ tbody tr:nth-child(even) {
  * @link https://techblog.livingsocial.com/blog/2015/04/06/responsive-tables-in-pure-css/
  */
 @media (max-width: 38em) {
-  /* line 43, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
-  .table-responsive {
-    border: 0;
-  }
-  /* line 46, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+  /* line 57, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
   .table-responsive thead {
     display: none;
     visibility: hidden;
   }
-  /* line 51, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+  /* line 62, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
   .table-responsive tr {
     border-top: 0.0725em solid #ededed;
     display: block;
     padding: 0.5em;
   }
-  /* line 56, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
-  .table-responsive tr:nth-child(even) {
-    background-color: transparent;
-  }
-  /* line 60, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
-  .table-responsive tr:nth-child(odd) {
-    background-color: #f7f7f7;
-  }
-  /* line 65, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+  /* line 68, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
   .table-responsive td {
     border: 0;
     display: block;
     padding: 0.25em;
   }
-  /* line 71, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
+  /* line 73, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_tables.scss */
   .table-responsive td:before {
     content: attr(data-label);
     display: block;
     font-weight: bold;
   }
+}
+
+/**
+ * @section Easy Digital Downloads
+ * Custom overrides for Easy Digital Downloads
+ */
+/**
+ * Checkout table footer styling
+ */
+/* line 10, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+tfoot th {
+  border-bottom: none;
+  border-top: 0.125em solid #e5e5e5;
+  font-weight: bold;
+}
+
+/**
+ * Cancel button styling
+ */
+/* line 40, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+.edd-cancel {
+  display: none;
+  visibility: hidden;
+}
+
+/* line 45, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+.js-edd-cancel .edd-cancel {
+  display: block;
+  visibility: visible;
 }
 
 /**
@@ -1574,7 +1596,7 @@ tbody tr:nth-child(even) {
 }
 
 /* line 129, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.no-margin-bottom {
+.no-margin-bottom, #edd_checkout_wrap fieldset {
   margin-bottom: 0;
 }
 
@@ -1627,7 +1649,7 @@ tbody tr:nth-child(even) {
 }
 
 /* line 174, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.padding-top-small {
+.padding-top-small, .edd-cancel {
   padding-top: 0.5em;
 }
 
@@ -1703,7 +1725,7 @@ tbody tr:nth-child(even) {
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
 /* line 243, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-[hidden], template, .tarpit {
+[hidden], template, .tarpit, label[for="edd-discount"], .edd-payment-icons {
   display: none;
   visibility: hidden;
 }
