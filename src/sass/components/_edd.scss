@@ -1,0 +1,49 @@
+/**
+ * @section Easy Digital Downloads
+ * Custom overrides for Easy Digital Downloads
+ */
+
+/**
+ * Checkout table footer styling
+ */
+
+tfoot th {
+	border-bottom: none;
+	border-top: calc-em(2px) solid $color-gray-light;
+	font-weight: bold;
+}
+
+
+// Adjust spacing
+#edd_checkout_wrap fieldset {
+	@extend .no-margin-bottom;
+}
+
+// Hide discount label
+label[for="edd-discount"] {
+	@extend [hidden];
+}
+
+// Hide payment icons
+.edd-payment-icons {
+	@extend [hidden];
+}
+
+// Make purchase button large
+#edd-purchase-button {
+	@extend .btn-large;
+}
+
+/**
+ * Cancel button styling
+ */
+.edd-cancel {
+	@extend .padding-top-small;
+	display: none;
+	visibility: hidden;
+
+	.js-edd-cancel & {
+		display: block;
+		visibility: visible;
+	}
+}
