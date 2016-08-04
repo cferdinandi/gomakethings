@@ -35,6 +35,9 @@
 	// Variables
 	var link = document.querySelector( '.edd-cancel a' );
 
+	// JavaScript enabled
+	document.documentElement.className += ' js-edd';
+
 	// If location set, show cancel link
 	if ( link ) {
 		link.href = window.location.origin + window.location.pathname;

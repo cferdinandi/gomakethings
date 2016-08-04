@@ -60,10 +60,32 @@
 	/**
 	 * Only load PayPal JS and CSS on checkout page
 	 */
-	function keel_only_load_files_on_checkout() {
+	function keel_edd_only_load_files_on_checkout() {
 		if ( is_page( 'checkout' ) ) return;
 		wp_dequeue_style( 'pal-for-edd' );
 		wp_dequeue_script( 'pal-for-edd' );
 		wp_dequeue_script( 'pal-for-eddpaypal_for_edd_blockUI' );
 	}
-	add_action( 'wp_enqueue_scripts', 'keel_only_load_files_on_checkout' );
+	add_action( 'wp_enqueue_scripts', 'keel_edd_only_load_files_on_checkout' );
+
+
+
+	/**
+	 * Disable purchase button if no JS
+	 */
+	function keel_edd_no_js_disable_purchase() {
+		$label = edd_get_option( 'checkout_label', '' );
+
+		if ( edd_get_cart_total() ) {
+			$complete_purchase = ! empty( $label ) ? $label : __( 'Purchase', 'easy-digital-downloads' );
+		} else {
+			$complete_purchase = ! empty( $label ) ? $label : __( 'Free Download', 'easy-digital-downloads' );
+		}
+
+		echo
+			'<div id="keel-edd-no-js-purchase-message">' .
+				'<em>' . __( 'Please enabled JavaScript to complete your purchase.', 'keel' ) . '</em><br>' .
+				'<button class="btn btn-large disabled" disabled="disabled">' . $complete_purchase . '</button>' .
+			'</div>';
+	}
+	add_action( 'edd_purchase_form_after_submit', 'keel_edd_no_js_disable_purchase' );
