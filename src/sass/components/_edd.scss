@@ -19,19 +19,96 @@ tfoot th {
 	@extend .no-margin-bottom;
 }
 
+#edd-discount-code-wrap .edd-description {
+	font-weight: bold;
+}
+
+#edd_show_discount,
+.edd-payment-mode-label {
+	font-weight: bold;
+}
+
+.edd_discount_link {
+	font-weight: normal;
+}
+
+#edd-payment-mode-wrap input[type="radio"] {
+	margin-right: calc-em(8px);
+}
+
+#edd-gateway-option-stripe:after {
+	content: " via Stripe";
+}
+
 // Hide discount label
 label[for="edd-discount"] {
 	@extend [hidden];
 }
 
-// Hide payment icons
-.edd-payment-icons {
-	@extend [hidden];
+#edd_payment_mode_submit,
+#edd_checkout_user_info {
+	@extend .padding-top;
+}
+
+// // Hide payment icons
+// .edd-payment-icons {
+// 	@extend [hidden];
+// }
+
+
+
+/**
+ * Adjust payment icons
+ */
+.edd-payment-icons img {
+	height: 32px;
+	width: 43px;
 }
 
 // Make purchase button large
 #edd-purchase-button {
 	@extend .btn-large;
+}
+
+#edd_cc_fields,
+#edd_cc_address {
+
+	legend {
+		@extend [hidden];
+		// @extend .h2;
+		// font-weight: bold;
+	}
+
+	.edd-label {
+		font-weight: bold;
+		margin-bottom: 0;
+	}
+
+	.edd-required-indicator {
+		@extend [hidden];
+	}
+
+	.edd-description {
+		@extend .text-muted;
+		display: block;
+		font-style: italic;
+		margin-bottom: calc-em(5px);
+	}
+
+}
+
+#card_exp_month,
+#card_exp_year {
+	@extend .input-inline;
+	margin-bottom: 0;
+}
+
+#edd-card-address-wrap,
+#edd-card-address-2-wrap,
+#edd-card-city-wrap,
+#edd-card-country-wrap,
+#edd-card-state-wrap {
+	@extend [hidden];
 }
 
 /**

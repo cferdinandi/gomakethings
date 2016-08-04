@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.33.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.34.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -948,10 +948,11 @@ select:focus {
  * Inline inputs
  */
 /* line 132, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_forms.scss */
-.input-inline, input[type="submit"] {
+.input-inline, input[type="submit"], #card_exp_month,
+#card_exp_year {
   display: inline-block;
   width: auto;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 /**
@@ -1486,16 +1487,72 @@ tfoot th {
   font-weight: bold;
 }
 
+/* line 22, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd-discount-code-wrap .edd-description {
+  font-weight: bold;
+}
+
+/* line 26, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd_show_discount,
+.edd-payment-mode-label {
+  font-weight: bold;
+}
+
+/* line 31, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+.edd_discount_link {
+  font-weight: normal;
+}
+
+/* line 35, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd-payment-mode-wrap input[type="radio"] {
+  margin-right: 0.5em;
+}
+
+/* line 39, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd-gateway-option-stripe:after {
+  content: " via Stripe";
+}
+
+/**
+ * Adjust payment icons
+ */
+/* line 63, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+.edd-payment-icons img {
+  height: 32px;
+  width: 43px;
+}
+
+/* line 82, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd_cc_fields .edd-label,
+#edd_cc_address .edd-label {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+/* line 91, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd_cc_fields .edd-description,
+#edd_cc_address .edd-description {
+  display: block;
+  font-style: italic;
+  margin-bottom: 0.3125em;
+}
+
+/* line 100, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#card_exp_month,
+#card_exp_year {
+  margin-bottom: 0;
+}
+
 /**
  * Cancel button styling
  */
-/* line 40, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+/* line 117, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
 .edd-cancel {
   display: none;
   visibility: hidden;
 }
 
-/* line 45, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+/* line 122, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
 .js-edd-cancel .edd-cancel {
   display: block;
   visibility: visible;
@@ -1551,7 +1608,8 @@ tfoot th {
  * Text colors
  */
 /* line 66, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.text-muted {
+.text-muted, #edd_cc_fields .edd-description,
+#edd_cc_address .edd-description {
   color: #808080;
 }
 
@@ -1644,7 +1702,8 @@ tfoot th {
 }
 
 /* line 170, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.padding-top {
+.padding-top, #edd_payment_mode_submit,
+#edd_checkout_user_info {
   padding-top: 1.5625em;
 }
 
@@ -1725,7 +1784,13 @@ tfoot th {
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
 /* line 243, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-[hidden], template, .tarpit, label[for="edd-discount"], .edd-payment-icons {
+[hidden], template, .tarpit, label[for="edd-discount"], #edd_cc_fields legend,
+#edd_cc_address legend, #edd_cc_fields .edd-required-indicator,
+#edd_cc_address .edd-required-indicator, #edd-card-address-wrap,
+#edd-card-address-2-wrap,
+#edd-card-city-wrap,
+#edd-card-country-wrap,
+#edd-card-state-wrap {
   display: none;
   visibility: hidden;
 }
