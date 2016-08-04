@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.35.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.36.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -42,6 +42,9 @@
 
 	// Variables
 	var link = document.querySelector( '.edd-cancel a' );
+
+	// JavaScript enabled
+	document.documentElement.className += ' js-edd';
 
 	// If location set, show cancel link
 	if ( link ) {

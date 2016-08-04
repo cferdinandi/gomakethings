@@ -63,14 +63,14 @@ a .btn:active,
 	outline: 0;
 }
 
-// .btn.disabled,
-// .btn[disabled] {
-// 	pointer-events: none;
-// 	cursor: not-allowed;
-// 	opacity: 0.5;
-// 	filter: alpha(opacity=50);
-// 	box-shadow: none;
-// }
+.btn.disabled,
+.btn[disabled] {
+	pointer-events: none;
+	cursor: not-allowed;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	box-shadow: none;
+}
 
 .btn-large {
 	padding: calc-em(11px) calc-em(15px);
