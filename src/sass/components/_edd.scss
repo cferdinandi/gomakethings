@@ -4,32 +4,45 @@
  */
 
 /**
- * Checkout table footer styling
+ * Checkout table
  */
-
 tfoot th {
 	border-bottom: none;
 	border-top: calc-em(2px) solid $color-gray-light;
 	font-weight: bold;
 }
 
-
-// Adjust spacing
+// Remove spacing from fieldsets
 #edd_checkout_wrap fieldset {
 	@extend .no-margin-bottom;
 }
 
+
+/**
+ * Discount code link
+ */
 #edd-discount-code-wrap .edd-description {
 	font-weight: bold;
 }
 
-#edd_show_discount,
-.edd-payment-mode-label {
+#edd_show_discount {
 	font-weight: bold;
 }
 
 .edd_discount_link {
 	font-weight: normal;
+}
+
+label[for="edd-discount"] {
+	@extend [hidden];
+}
+
+
+/**
+ * Select payment type
+ */
+.edd-payment-mode-label {
+	font-weight: bold;
 }
 
 #edd-payment-mode-wrap input[type="radio"] {
@@ -40,32 +53,25 @@ tfoot th {
 	content: " via Stripe";
 }
 
-// Hide discount label
-label[for="edd-discount"] {
-	@extend [hidden];
-}
-
 #edd_payment_mode_submit,
 #edd_checkout_user_info {
 	@extend .padding-top;
 }
 
-// // Hide payment icons
-// .edd-payment-icons {
-// 	@extend [hidden];
-// }
-
 
 
 /**
- * Adjust payment icons
+ * Payment icons
  */
 .edd-payment-icons img {
 	height: 32px;
 	width: 43px;
 }
 
-// Make purchase button large
+
+/**
+ * "Complete Purchase" button
+ */
 #edd-purchase-button {
 	@extend .btn-large;
 	display: none;
@@ -77,13 +83,49 @@ label[for="edd-discount"] {
 	}
 }
 
+// Message above disabled "Complete Purchase" button when JS isn't enabled
+.js-edd #keel-edd-no-js-purchase-message {
+	@extend [hidden];
+}
+
+
+/**
+ * Cancel button
+ */
+.edd-cancel {
+	@extend .padding-top-small;
+	display: none;
+	visibility: hidden;
+
+	.js-edd-cancel & {
+		display: block;
+		visibility: visible;
+	}
+}
+
+
+/**
+ * SSL message on credit card/Stripe checkout
+ */
+#edd_secure_site_wrapper {
+	@extend .margin-bottom;
+	font-style: italic;
+
+	.padlock:before {
+		content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#272727" d="M13 7h-1V4a4 4 0 0 0-8 0v3H3c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V8c0-.55-.45-1-1-1zm-5 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-6H6V4c0-1.103.897-2 2-2s2 .897 2 2v3z"/></svg>');
+		margin-right: calc-em(5px);
+	}
+}
+
+
+/**
+ * Credit Card Fields
+ */
 #edd_cc_fields,
 #edd_cc_address {
 
 	legend {
 		@extend [hidden];
-		// @extend .h2;
-		// font-weight: bold;
 	}
 
 	.edd-label {
@@ -110,14 +152,6 @@ label[for="edd-discount"] {
 	margin-bottom: 0;
 }
 
-#edd_error_no_token {
-	@extend [hidden];
-}
-
-.js-edd #keel-edd-no-js-purchase-message {
-	@extend [hidden];
-}
-
 #edd-card-address-wrap,
 #edd-card-address-2-wrap,
 #edd-card-city-wrap,
@@ -126,26 +160,8 @@ label[for="edd-discount"] {
 	@extend [hidden];
 }
 
-#edd_secure_site_wrapper {
-	@extend .margin-bottom;
-	font-style: italic;
 
-	.padlock:before {
-		content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#272727" d="M13 7h-1V4a4 4 0 0 0-8 0v3H3c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V8c0-.55-.45-1-1-1zm-5 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-6H6V4c0-1.103.897-2 2-2s2 .897 2 2v3z"/></svg>');
-		margin-right: calc-em(5px);
-	}
-}
-
-/**
- * Cancel button styling
- */
-.edd-cancel {
-	@extend .padding-top-small;
-	display: none;
-	visibility: hidden;
-
-	.js-edd-cancel & {
-		display: block;
-		visibility: visible;
-	}
+// Stripe "no token" error
+#edd_error_no_token {
+	@extend [hidden];
 }
