@@ -1,0 +1,86 @@
+/**
+ * The navigation container
+ */
+.nav-wrap {
+	@extend .clearfix;
+	padding-top: 1em;
+	padding-bottom: 0.5em;
+	// text-align: right;
+}
+
+
+/**
+ * The logo
+ */
+.logo {
+	display: inline-block;
+	font-size: 1.2em;
+	float: left;
+	font-weight: bold;
+	line-height: 1.2;
+	color: $color-black;
+	text-decoration: none;
+
+	&:hover {
+		color: $color-primary;
+		text-decoration: none;
+	}
+
+	.icon {
+		height: 0.8em;
+		width: 0.8em;
+	}
+}
+
+.logo-name {
+	@media (max-width: $bp-small) {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+}
+
+
+/**
+ * The nav menu
+ */
+.nav {
+	list-style: none;
+	font-size: calc-em(16px);
+	margin: 0 calc-em(-8px);
+	padding: 0;
+	text-align: right;
+
+	li {
+		display: inline-block;
+		float: none;
+		margin-left: calc-em(8px);
+		margin-right: calc-em(8px);
+	}
+
+	a {
+		color: $color-gray-dark;
+	}
+
+	/**
+	 * Active link styling
+	 */
+	a:hover,
+	a:active,
+	a:focus,
+	.active a,
+	.current-menu-item > a,
+	.single-post & .current_page_parent > a,
+	& .current-menu-ancestor > a,
+	.current-page-ancestor > a,
+	.single-gmt-articles & .menu-item-object-gmt-articles > a {
+		border-bottom: calc-em(2px) solid $color-secondary;
+		color: $color-black;
+		text-decoration: none;
+	}
+}
