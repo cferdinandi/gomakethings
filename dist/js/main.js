@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.38.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.39.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1065,12 +1065,21 @@ if (Prism.languages.markup) {
 		 * @param {Number} endLocation Scroll to location
 		 * @param {Number} animationInterval How much to scroll on this loop
 		 */
-		var stopAnimateScroll = function (position, endLocation, animationInterval) {
+		var stopAnimateScroll = function ( position, endLocation, animationInterval ) {
 			var currentLocation = root.pageYOffset;
-			if ( position == endLocation || currentLocation == endLocation || ( (root.innerHeight + currentLocation) >= documentHeight ) ) {
+			if ( position == endLocation || currentLocation == endLocation || ( (root.innerHeight + currentLocation) >=
+
+				documentHeight ) ) {
 				clearInterval(animationInterval);
+
+				// If scroll target is an anchor, bring it into focus
 				if ( !isNum ) {
 					anchorElem.focus();
+					if ( document.activeElement.id !== anchorElem.id ) {
+						anchorElem.setAttribute( 'tabindex', '-1' );
+						anchorElem.focus();
+						anchorElem.style.outline = 'none';
+					}
 				}
 				animateSettings.callback( anchor, toggle ); // Run callbacks after animation complete
 			}
