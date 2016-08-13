@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.39.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.39.1: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1134,7 +1134,7 @@ if (Prism.languages.markup) {
 		if ( toggle && toggle.tagName.toLowerCase() === 'a' ) {
 
 			// Check that link is an anchor and points to current page
-			if ( toggle.origin !== location.origin || toggle.pathname !== location.pathname ) return;
+			if ( toggle.origin !== location.origin || toggle.pathname !== location.pathname || !/#/.test(toggle.href) ) return;
 
 			event.preventDefault(); // Prevent default click event
 			var hash = smoothScroll.escapeCharacters( toggle.hash ); // Escape hash characters
