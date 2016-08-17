@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.39.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.40.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1259,44 +1259,37 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /* line 15, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
 .logo {
   display: inline-block;
-  font-size: 1.2em;
   float: left;
-  font-weight: bold;
+  font-size: 1.1em;
   line-height: 1.2;
+  font-weight: bold;
   color: #272727;
   text-decoration: none;
 }
 
-/* line 24, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+@media (min-width: 28em) {
+  /* line 15, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+  .logo {
+    font-size: 1.2em;
+  }
+}
+
+/* line 28, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
 .logo:hover {
   color: #0088cc;
   text-decoration: none;
 }
 
-/* line 29, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 33, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
 .logo .icon {
   height: 0.8em;
   width: 0.8em;
 }
 
-@media (max-width: 28em) {
-  /* line 35, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
-  .logo-name {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-}
-
 /**
  * The nav menu
  */
-/* line 52, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 56, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
 .nav {
   list-style: none;
   font-size: 1em;
@@ -1308,7 +1301,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 	 */
 }
 
-/* line 59, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 63, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
 .nav li {
   display: inline-block;
   float: none;
@@ -1316,12 +1309,12 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   margin-right: 0.5em;
 }
 
-/* line 66, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 70, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
 .nav a, .nav .link-block-styled {
   color: #808080;
 }
 
-/* line 73, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 77, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
 .nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled,
 .nav a:active,
 .nav .link-block-styled:active,

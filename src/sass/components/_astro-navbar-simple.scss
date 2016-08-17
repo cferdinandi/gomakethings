@@ -14,12 +14,16 @@
  */
 .logo {
 	display: inline-block;
-	font-size: 1.2em;
 	float: left;
-	font-weight: bold;
+	font-size: 1.1em;
 	line-height: 1.2;
+	font-weight: bold;
 	color: $color-black;
 	text-decoration: none;
+
+	@media (min-width: $bp-small) {
+		font-size: 1.2em;
+	}
 
 	&:hover {
 		color: $color-primary;
@@ -32,18 +36,18 @@
 	}
 }
 
-.logo-name {
-	@media (max-width: $bp-small) {
-		border: 0;
-		clip: rect(0 0 0 0);
-		height: 1px;
-		margin: -1px;
-		overflow: hidden;
-		padding: 0;
-		position: absolute;
-		width: 1px;
-	}
-}
+// .logo-name {
+// 	@media (max-width: $bp-small) {
+// 		border: 0;
+// 		clip: rect(0 0 0 0);
+// 		height: 1px;
+// 		margin: -1px;
+// 		overflow: hidden;
+// 		padding: 0;
+// 		position: absolute;
+// 		width: 1px;
+// 	}
+// }
 
 
 /**

@@ -478,6 +478,8 @@
 	 */
 	function keel_get_jetpack_markdown( $options, $name, $suffix = '_markdown' ) {
 
+		if ( !is_array( $options ) ) return;
+
 		// If markdown class is defined, get markdown content
 		if ( class_exists( 'WPCom_Markdown' ) && array_key_exists( $name . $suffix, $options ) && !empty( $options[$name . $suffix] ) ) {
 			return $options[$name . $suffix];
@@ -752,7 +754,7 @@
 	 */
 	require_once( dirname( __FILE__) . '/includes/keel-theme-options.php' ); // Theme options
 	require_once( dirname( __FILE__) . '/includes/keel-post-options.php' ); // Post options
-	// require_once( dirname( __FILE__) . '/includes/keel-page-hero.php' ); // Page hero metabox
+	require_once( dirname( __FILE__) . '/includes/keel-page-hero.php' ); // Page hero metabox
 	// require_once( dirname( __FILE__) . '/includes/keel-set-page-width.php' ); // Page width settings
 	require_once( dirname( __FILE__) . '/includes/keel-page-layout.php' ); // Page layout settings
 	// require_once( dirname( __FILE__) . '/includes/keel-contact-form-7-overrides.php' ); // Override default Contact Form 7 behaviors
