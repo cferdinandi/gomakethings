@@ -64,4 +64,10 @@
 
 		<main class="tabindex" id="main" tabindex="-1">
 
+			<?php
+				if ( keel_has_hero() ) {
+					echo do_shortcode( wpautop( stripslashes( keel_get_hero() ), false ) );
+				}
+			?>
+
 			<div class="container">
