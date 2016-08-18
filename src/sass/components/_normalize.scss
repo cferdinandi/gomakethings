@@ -64,21 +64,32 @@ hgroup,
 main,
 menu,
 nav,
-section,
-summary {
+section {
 	display: block;
 }
 
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+	display: list-item;
+}
+
 /**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ * Correct `inline-block` display not defined in IE 8/9.
  */
 audio,
 canvas,
 progress,
 video {
 	display: inline-block; /* 1 */
-	vertical-align: baseline; /* 2 */
+}
+
+/**
+ * Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+progress {
+	vertical-align: baseline;
 }
 
 /**
