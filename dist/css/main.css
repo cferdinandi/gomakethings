@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.42.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.43.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1271,18 +1271,23 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
  * Background color
  */
 /* line 6, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-.bg {
+.bg-muted {
+  background-color: #f7f7f7;
+}
+
+/* line 10, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
+.bg-dark {
   background-color: #343d4d;
   color: #ffffff;
 }
 
-/* line 10, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-.bg a, .bg .link-block-styled {
+/* line 14, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
+.bg-dark a, .bg-dark .link-block-styled {
   color: #ffffff;
   text-decoration: underline;
 }
 
-/* line 16, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
+/* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
 .bg-hero {
   background-image: url("../img/hero-xsmall.jpg");
   background-position: bottom center;
@@ -1290,21 +1295,21 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 
 @media (min-width: 28em) {
-  /* line 16, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
+  /* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
   .bg-hero {
     background-image: url("../img/hero-small.jpg");
   }
 }
 
 @media (min-width: 38em) {
-  /* line 16, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
+  /* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
   .bg-hero {
     background-image: url("../img/hero-medium.jpg");
   }
 }
 
 @media (min-width: 60em) {
-  /* line 16, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
+  /* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
   .bg-hero {
     background-image: url("../img/hero-full.jpg");
   }
