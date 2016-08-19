@@ -3,7 +3,11 @@
  * Background color
  */
 
-.bg {
+.bg-muted {
+	background-color: lighten( $color-gray-light, 7% );
+}
+
+.bg-dark {
 	background-color: $color-tertiary;
 	color: $color-white;
 
