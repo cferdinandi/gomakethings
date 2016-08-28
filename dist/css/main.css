@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.43.2: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.44.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -53,12 +53,28 @@
 }
 
 /**
+ * Remove the tap delay in webkit and IE
+ * @link https://medium.com/@adactio/delay-a9df9edceef3#.7dmbl3xow
+ */
+/* line 34, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+a, .link-block-styled,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+}
+
+/**
  * 1. Set default font family to default.
  * 2. Force scrollbar display to prevent jumping on pages.
  * 3. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
-/* line 36, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 51, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 html {
   font-family: Georgia, serif;
   /* 1 */
@@ -73,7 +89,7 @@ html {
 /**
  * Remove default margin.
  */
-/* line 45, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 60, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 body {
   margin: 0;
 }
@@ -84,7 +100,7 @@ body {
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11.
  */
-/* line 55, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 70, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 article,
 aside,
 cite,
@@ -104,7 +120,7 @@ section {
 /*
  * Add the correct display in all browsers.
  */
-/* line 74, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 89, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 summary {
   display: list-item;
 }
@@ -112,7 +128,7 @@ summary {
 /**
  * Correct `inline-block` display not defined in IE 8/9.
  */
-/* line 81, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 96, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 audio,
 canvas,
 progress,
@@ -124,7 +140,7 @@ video {
 /**
  * Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
  */
-/* line 91, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 106, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 progress {
   vertical-align: baseline;
 }
@@ -133,7 +149,7 @@ progress {
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
  */
-/* line 99, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 114, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 audio:not([controls]) {
   display: none;
   height: 0;
@@ -142,7 +158,7 @@ audio:not([controls]) {
 /**
  * Prevent img and video elements from spilling outside of the page on smaller screens.
  */
-/* line 107, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 122, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 img,
 video {
   max-width: 100%;
@@ -153,7 +169,7 @@ video {
  * Prevent iframe, object, and embed elements from spilling outside of the page on smaller screens.
  * height: auto causes iframes to smush, so it's omitted here.
  */
-/* line 117, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 132, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 iframe,
 object,
 embed {
@@ -167,7 +183,7 @@ embed {
  * 1. Remove border when inside `a` element in IE 8/9/10.
  * 2. Prevents IE from making scaled images look like crap
  */
-/* line 134, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 149, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 img {
   border: 0;
   /* 1 */
@@ -178,7 +194,7 @@ img {
 /**
  * Correct overflow not hidden in IE 9/10/11.
  */
-/* line 142, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 157, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 svg:not(:root) {
   overflow: hidden;
 }
@@ -186,7 +202,7 @@ svg:not(:root) {
 /**
  * Address inconsistent margin.
  */
-/* line 149, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 164, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 figure {
   margin: 0;
 }
@@ -195,7 +211,7 @@ figure {
  * @workaround Remove focus from <main> element when using tabindex="-1" hack for skipnav link
  * @link https://code.google.com/p/chromium/issues/detail?id=37721
  */
-/* line 157, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
+/* line 172, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_normalize.scss */
 .tabindex:focus {
   outline: none;
 }

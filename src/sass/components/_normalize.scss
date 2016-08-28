@@ -28,6 +28,21 @@
 
 
 /**
+ * Remove the tap delay in webkit and IE
+ * @link https://medium.com/@adactio/delay-a9df9edceef3#.7dmbl3xow
+ */
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
+	touch-action: manipulation;
+}
+
+
+/**
  * 1. Set default font family to default.
  * 2. Force scrollbar display to prevent jumping on pages.
  * 3. Prevent iOS text size adjust after orientation change, without disabling
