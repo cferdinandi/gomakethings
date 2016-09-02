@@ -61,6 +61,13 @@ get_header(); ?>
 		<ol>
 	<?php endif; ?>
 
+	<?php
+		// If events archive, reorder future events chronologically
+		if ( is_post_type_archive( 'gmt-events' ) ) {
+			$wp_query = keel_reorder_events( $wp_query );
+		}
+	?>
+
 
 	<?php
 		// Start the loop
