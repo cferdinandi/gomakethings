@@ -578,6 +578,8 @@
 	 */
 	function keel_reorder_events( $wp_query ) {
 
+		if ( empty( $wp_query ) ) return;
+
 		// Variables
 		$today = strtotime( 'today', current_time( 'timestamp' ) );
 		$events = array();
