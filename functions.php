@@ -529,6 +529,27 @@
 
 
 	/**
+	 * Modify query for Projects CPT
+	 * @param  array $query The WordPress post query
+	 */
+	function keel_modify_projects_query( $query ) {
+
+		if ( is_admin() || !is_post_type_archive( 'gmt-projects' ) || $query->get( 'post_type' ) !== 'gmt-projects' ) return;
+
+		// Order by start date
+		$query->set( 'post_type', 'gmt-projects' );
+		$query->set( 'orderby', 'menu_order' );
+		$query->set( 'order', 'ASC' );
+
+		// Show all posts on one page
+		$query->set( 'posts_per_page', '-1' );
+
+	}
+	add_action( 'pre_get_posts', 'keel_modify_projects_query' );
+
+
+
+	/**
 	 * Modify query for Events CPT
 	 * @param  array $query The WordPress post query
 	 */
@@ -551,23 +572,54 @@
 
 
 	/**
-	 * Modify query for Projects CPT
-	 * @param  array $query The WordPress post query
+	 * Reorder upcoming Events on the Events archive page
+	 * @param  object $wp_query The WordPress query
+	 * @return object           The WordPress query
 	 */
-	function keel_modify_projects_query( $query ) {
+	function keel_reorder_events( $wp_query ) {
 
-		if ( is_admin() || !is_post_type_archive( 'gmt-projects' ) || $query->get( 'post_type' ) !== 'gmt-projects' ) return;
+		// Variables
+		$today = strtotime( 'today', current_time( 'timestamp' ) );
+		$events = array();
+		$past_key = 0;
 
-		// Order by start date
-		$query->set( 'post_type', 'gmt-projects' );
-		$query->set( 'orderby', 'menu_order' );
-		$query->set( 'order', 'ASC' );
+		// Loop through each event
+		foreach ( $wp_query->posts as $key => $post ) {
 
-		// Show all posts on one page
-		$query->set( 'posts_per_page', '-1' );
+			// Get the event start date
+			$start_date = get_post_meta( $post->ID, 'event_start_date', true );
+
+			// If its an uncoming event, push to $events
+			if ( $start_date >= $today ) {
+				$events[] = $post;
+				continue;
+			}
+
+			// Otherwise, break the loop
+			$past_key = $key;
+			break;
+
+		}
+
+		// Reverse the array
+		$events = array_reverse( $events );
+
+		// Create a new array the past events
+		$past_events = array_slice( $wp_query->posts, $past_key );
+
+		// Reindex the past events array to avoid merge conflicts
+		$events_count = count( $events );
+		$past_events = array_combine( range( $events_count, count( $past_events ) + $events_count - 1 ), array_values( $past_events ) );
+
+		// Merge upcoming and past events into a single array
+		$events = array_merge( $events, $past_events );
+
+		// Replace the posts array with the $events array
+		$wp_query->posts = $events;
+
+		return $wp_query;
 
 	}
-	add_action( 'pre_get_posts', 'keel_modify_projects_query' );
 
 
 

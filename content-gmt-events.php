@@ -29,7 +29,23 @@
 		}
 	} elseif ( !empty( $start_date ) ) {
 		// If there's a start date
-		$date = date( 'l, F j, Y', $start_date );
+		$date = date( 'F j, Y', $start_date );
+
+		// If there's a start time
+		if ( !empty( $details['time_start_hour'] ) && $start_date >= $today ) {
+			$date .= ' at ' . esc_html( $details['time_start_hour'] ) . ( $details['time_start_minutes'] === '00' ? '' : ':' . esc_html( $details['time_start_minutes'] ) ) . esc_html( $details['time_start_ampm'] );
+		}
+
+		// If there's an end time
+		if ( !empty( $details['time_end_hour'] ) && $start_date >= $today ) {
+			$date .= '&ndash;' . esc_html( $details['time_end_hour'] ) . ( $details['time_end_minutes'] === '00' ? '' : ':' . esc_html( $details['time_end_minutes'] ) ) . esc_html( $details['time_end_ampm'] );
+		}
+
+		// If there's a timezone
+		if ( !empty( $details['timezone'] ) && $start_date >= $today ) {
+			$date .= ' ' . esc_html( $details['timezone'] );
+		}
+
 	}
 
 	// Create materials links
