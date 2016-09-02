@@ -17,11 +17,28 @@
 	// Dates
 	$today = strtotime( 'today', current_time( 'timestamp' ) );
 	$date = '';
+
+	// Configure date
 	if ( !empty( $start_date ) && !empty( $end_date ) && $start_date !== $end_date ) {
-		$date = date( 'F j', $start_date ) . ' &ndash; ' . date( 'j', $end_date ) . ', ' . date( 'Y', $start_date );
+		if ( date( 'F', $start_date ) === date( 'F', $end_date ) ) {
+			// If there's a start and end date, and they're in the same month
+			$date = date( 'F j', $start_date ) . '&ndash;' . date( 'j', $end_date ) . ', ' . date( 'Y', $start_date );
+		} else {
+			// If there's a start and end date, in different months
+			$date = date( 'F j', $start_date ) . '&ndash;' . date( 'F j', $end_date ) . ', ' . date( 'Y', $start_date );
+		}
 	} elseif ( !empty( $start_date ) ) {
+		// If there's a start date
 		$date = date( 'l, F j, Y', $start_date );
 	}
+
+	// Create materials links
+	$materials = array();
+	if ( !empty( $details['video'] ) ) $materials['Video'] = $details['video'];
+	if ( !empty( $details['slides'] ) ) $materials['Slides'] = $details['slides'];
+	if ( !empty( $details['audio'] ) ) $materials['Audio'] = $details['audio'];
+	if ( !empty( $details['downloads'] ) ) $materials['Downloads'] = $details['downloads'];
+	if ( !empty( $details['post'] ) ) $materials['Post'] = $details['post'];
 
 ?>
 
@@ -117,24 +134,62 @@
 	<?php endif; ?>
 
 	<article class="margin-bottom">
+		<header>
+			<h3 class="h5 no-padding-top no-margin-bottom">
+				<?php
+					// If there's a location provided, link to it
+					if ( !empty( $details['register_link'] ) ) :
+				?>
+					<a href="<?php echo esc_url( $details['register_link'] ); ?>">
+						<?php the_title(); ?>
+					</a>
+				<?php
+					// Otherwise, just use the title
+					else :
+				?>
+					<?php the_title(); ?>
+				<?php endif; ?>
+				<?php
+					// Add link to edit pages
+					edit_post_link( __( 'Edit', 'keel' ), '&ndash; ', '' );
+				?>
+			</h3>
+		</header>
 
-		<a class="link-block" href="<?php the_permalink(); ?>">
-			<header>
-				<h3 class="h5 link-block-styled no-padding-top no-margin-bottom"><?php the_title(); ?></h3>
-			</header>
+		<p <?php if ( !empty( $materials ) && $start_date < $today ) { echo 'class="no-margin-bottom"'; } ?>>
+			<?php
+				// If there's a location, add it
+				if ( !empty( $details['location'] ) ) :
+			?>
+				<em><?php echo stripslashes( esc_html( $details['location'] ) ); ?></em>
+			<?php endif; ?>
 
-			<aside>
-				<?php echo esc_html( $date ); ?>
+			<?php if ( !empty( $details['location'] ) && !empty( $date ) ) : ?>
+				<br>
+			<?php endif; ?>
 
-				<?php if ( !empty( $date ) && !empty( $details['location'] ) ) : ?>, <?php endif; ?>
+			<?php
+				// If there's a date, add it
+				if ( !empty( $date ) ) :
+			?>
+				<?php echo $date; ?>
+			<?php endif; ?>
+		</p>
 
-				<?php echo esc_html( $details['location'] ); ?>
-			</aside>
-		</a>
 		<?php
-			// Add link to edit pages
-			edit_post_link( __( 'Edit', 'keel' ), '<p>', '</p>' );
+			// If there are linked materials, add them
+			if ( !empty( $materials ) && $start_date < $today ) :
 		?>
+			<ul class="list-inline">
+				<?php foreach ( $materials as $key => $material ) : ?>
+					<li>
+						<a href="<?php echo esc_url( $material ); ?>">
+							<?php echo $key; ?>
+						</a>
+					</li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
 
 	</article>
 

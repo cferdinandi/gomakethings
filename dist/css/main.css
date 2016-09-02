@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.45.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.46.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -502,9 +502,10 @@ h3,
 h4, h5, h6,
 .h4, .h5, .h6 {
   font-size: 1em;
+  font-weight: bold;
 }
 
-/* line 215, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 216, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 h4,
 .h4 {
   text-transform: uppercase;
@@ -515,7 +516,7 @@ h4,
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 244, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 245, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 hr {
   border: 0;
   border-top: 0.0725em solid #e5e5e5;
@@ -529,12 +530,12 @@ hr {
   /* 2 */
 }
 
-/* line 254, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 255, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 .line-secondary {
   width: 50%;
 }
 
-/* line 258, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 259, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 .line-clear {
   border-top-color: transparent;
 }
@@ -542,7 +543,7 @@ hr {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 266, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 267, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: inherit;
@@ -551,7 +552,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 274, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 275, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: bolder;
@@ -561,7 +562,7 @@ strong {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 283, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 284, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -574,7 +575,7 @@ abbr[title] {
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 292, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 293, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 dfn {
   font-style: italic;
 }
@@ -582,7 +583,7 @@ dfn {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 299, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 300, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 mark {
   background-color: #ff0;
   color: #000;
@@ -591,7 +592,7 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 307, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 308, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 small {
   font-size: 80%;
 }
@@ -599,7 +600,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 314, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 315, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -608,12 +609,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 322, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 323, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 326, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 327, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 sub {
   bottom: -0.25em;
 }
@@ -621,7 +622,7 @@ sub {
 /**
  * Blockquotes
  */
-/* line 335, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 336, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote {
   font-size: 1.1875em;
   font-style: italic;
@@ -630,20 +631,20 @@ blockquote {
   padding-right: 0.84211em;
 }
 
-/* line 342, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 343, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote cite {
   color: #808080;
   font-size: 0.84211em;
   padding-top: 1em;
 }
 
-/* line 349, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 350, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 354, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 355, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,

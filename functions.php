@@ -572,82 +572,16 @@
 
 
 	/**
-	 * Exclude past or upcoming events from events query
-	 * @param Array $query The database query
+	 * Redirect individual events to events archive
 	 */
-	function keel_events_filter_query( $query ) {
-
-		if ( is_admin() || !isset( $query->query['post_type'] ) || $query->query['post_type'] !== 'keel-events' || !isset( $query->query['date'] )  || !$query->is_main_query() ) return $query;
-
-		//Get original meta query
-		$meta_query = $query->get('meta_query');
-
-		// if filtering by past events
-		if ( $query->query['date'] === 'past' ) {
-			//Add our meta query to the original meta queries
-			$meta_query[] = array(
-				'relation' => 'AND',
-				array(
-					'relation' => 'OR',
-					array(
-						'key' => 'keel_events_start_date',
-						'value' => strtotime( 'today', current_time( 'timestamp' ) ),
-						'compare' => '<',
-						'type' => 'NUMERIC',
-					),
-					array(
-						'key' => 'keel_events_end_date',
-						'value' => strtotime( 'today', current_time( 'timestamp' ) ),
-						'compare' => '<',
-						'type' => 'NUMERIC',
-					),
-				),
-				array(
-					'key' => 'keel_events_start_date',
-					'value' => array(''),
-					'compare' => 'NOT IN',
-				),
-			);
-			$query->set( 'meta_query', $meta_query );
-			$query->set('meta_key', 'keel_events_start_date');
-			$query->set('orderby', 'meta_value_num');
-			$query->set('order', 'DESC');
+	function keel_redirect_single_events() {
+		if ( is_singular( 'gmt-events' ) ) {
+			$options = events_get_theme_options();
+			wp_safe_redirect( site_url() . '/' . $options['page_slug'], '301' );
+			exit;
 		}
-
-		// If filtering by upcoming events
-		if ( $query->query['date'] === 'upcoming' ) {
-			//Add our meta query to the original meta queries
-			$meta_query[] = array(
-				'relation' => 'AND',
-				array(
-					'relation' => 'OR',
-					array(
-						'key' => 'keel_events_start_date',
-						'value' => strtotime( 'today', current_time( 'timestamp' ) ),
-						'compare' => '>=',
-						'type' => 'NUMERIC',
-					),
-					array(
-						'key' => 'keel_events_end_date',
-						'value' => strtotime( 'today', current_time( 'timestamp' ) ),
-						'compare' => '>=',
-						'type' => 'NUMERIC',
-					),
-				),
-				array(
-					'key' => 'keel_events_start_date',
-					'value' => array(''),
-					'compare' => 'NOT IN',
-				),
-			);
-			$query->set( 'meta_query', $meta_query );
-			$query->set('meta_key', 'keel_events_start_date');
-			$query->set('orderby', 'meta_value_num');
-			$query->set('order', 'ASC');
-		}
-
 	}
-	add_action( 'pre_get_posts', 'keel_events_filter_query' );
+	add_action( 'template_redirect', 'keel_redirect_single_events' );
 
 
 
