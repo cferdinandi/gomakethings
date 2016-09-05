@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.49.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.49.1: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1056,7 +1056,7 @@ if (Prism.languages.markup) {
 	 * @return {Number}        The height of the header
 	 */
 	var getHeaderHeight = function ( header ) {
-		return header === null ? 0 : ( getHeight( header ) + header.offsetTop );
+		return !header ? 0 : ( getHeight( header ) + header.offsetTop );
 	};
 
 	/**
