@@ -25,7 +25,7 @@
 
 				<p>
 					<span class="text-small">
-						Made with &lt;3 in Massachusetts. Copyright <?php echo date( 'Y' ); ?> Go Make Things, LLC.
+						Made with &lt;3 in Massachusetts. Copyright <?php echo date( 'Y' ); ?> Go Make Things, LLC. Unless otherwise noted, all code is free to use under the <a href="<?php echo site_url(); ?>/mit">MIT License</a>.
 					</span>
 				</p>
 
