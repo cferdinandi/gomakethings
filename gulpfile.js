@@ -22,7 +22,6 @@ var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var optimizejs = require('gulp-optimize-js');
 var karma = require('gulp-karma');
 
 // Styles
@@ -126,11 +125,9 @@ var banner = {
 gulp.task('build:scripts', ['clean:dist'], function() {
 	var jsTasks = lazypipe()
 		.pipe(header, banner.full, { package : package })
-		.pipe(optimizejs)
 		.pipe(gulp.dest, paths.scripts.output)
-		.pipe(rename, { suffix: '.min' })
+		.pipe(rename, { suffix: '.min.' + package.version })
 		.pipe(uglify)
-		.pipe(optimizejs)
 		.pipe(header, banner.min, { package : package })
 		.pipe(gulp.dest, paths.scripts.output);
 
