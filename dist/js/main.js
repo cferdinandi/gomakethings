@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.54.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.55.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -62,7 +62,7 @@
   } else {
     root.fluidvids = factory();
   }
-})(this, function () {
+})(this, (function () {
 
   'use strict';
 
@@ -125,7 +125,7 @@
 
   return fluidvids;
 
-});
+}));
 /**
  * Autopopulate MailChimp email field with email address from querystring
  * @version  1.0.0
@@ -453,9 +453,9 @@ Token.stringify = function(o, language, parent) {
 	}
 
 	if (Object.prototype.toString.call(o) == '[object Array]') {
-		return o.map(function(element) {
+		return o.map((function(element) {
 			return Token.stringify(element, language, o);
-		}).join('');
+		})).join('');
 	}
 
 	var env = {
@@ -486,14 +486,14 @@ Token.stringify = function(o, language, parent) {
 
 if (!self.document) {
 	// In worker
-	self.addEventListener('message', function(evt) {
+	self.addEventListener('message', (function(evt) {
 		var message = JSON.parse(evt.data),
 				lang = message.language,
 				code = message.code;
 
 		self.postMessage(JSON.stringify(_.tokenize(code, _.languages[lang])));
 		self.close();
-	}, false);
+	}), false);
 
 	return;
 }
@@ -553,12 +553,12 @@ Prism.languages.markup = {
 };
 
 // Plugin to make entity title show the real entity, idea by Roman Komarov
-Prism.hooks.add('wrap', function(env) {
+Prism.hooks.add('wrap', (function(env) {
 
 	if (env.type === 'entity') {
 		env.attributes['title'] = env.content.replace(/&amp;/, '&');
 	}
-});;
+}));;
 Prism.languages.css = {
 	'comment': /\/\*[\w\W]*?\*\//g,
 	'atrule': {
@@ -687,22 +687,22 @@ if (Prism.languages.markup) {
 
 	// Tokenize all inline PHP blocks that are wrapped in <?php ?>
 	// This allows for easy PHP + markup highlighting
-	Prism.hooks.add('before-highlight', function(env) {
+	Prism.hooks.add('before-highlight', (function(env) {
 		if (env.language !== 'php') {
 			return;
 		}
 
 		env.tokenStack = [];
 
-		env.code = env.code.replace(/(?:&lt;\?php|&lt;\?|<\?php|<\?)[\w\W]*?(?:\?&gt;|\?>)/ig, function(match) {
+		env.code = env.code.replace(/(?:&lt;\?php|&lt;\?|<\?php|<\?)[\w\W]*?(?:\?&gt;|\?>)/ig, (function(match) {
 			env.tokenStack.push(match);
 
 			return '{{{PHP' + env.tokenStack.length + '}}}';
-		});
-	});
+		}));
+	}));
 
 	// Re-insert the tokens after highlighting
-	Prism.hooks.add('after-highlight', function(env) {
+	Prism.hooks.add('after-highlight', (function(env) {
 		if (env.language !== 'php') {
 			return;
 		}
@@ -712,14 +712,14 @@ if (Prism.languages.markup) {
 		}
 
 		env.element.innerHTML = env.highlightedCode;
-	});
+	}));
 
 	// Wrap tokens in classes that are missing them
-	Prism.hooks.add('wrap', function(env) {
+	Prism.hooks.add('wrap', (function(env) {
 		if (env.language === 'php' && env.type === 'markup') {
 			env.content = env.content.replace(/(\{\{\{PHP[0-9]+\}\}\})/g, "<span class=\"token php\">$1</span>");
 		}
-	});
+	}));
 
 	// Add the rules before all others
 	Prism.languages.insertBefore('php', 'comment', {
@@ -738,7 +738,7 @@ if (Prism.languages.markup) {
 	} else {
 		root.smoothScroll = factory(root);
 	}
-})(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
+})(typeof global !== 'undefined' ? global : this.window || this.global, (function (root) {
 
 	'use strict';
 
@@ -1262,10 +1262,10 @@ if (Prism.languages.markup) {
 	 */
 	var resizeThrottler = function (event) {
 		if ( !eventTimeout ) {
-			eventTimeout = setTimeout(function() {
+			eventTimeout = setTimeout((function() {
 				eventTimeout = null; // Reset timeout
 				headerHeight = getHeaderHeight( fixedHeader ); // Get the height of a fixed header if one exists
-			}, 66);
+			}), 66);
 		}
 	};
 
@@ -1330,7 +1330,7 @@ if (Prism.languages.markup) {
 
 	return smoothScroll;
 
-});
+}));
 /**
  * Script initializations
  */
