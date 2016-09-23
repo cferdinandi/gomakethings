@@ -172,7 +172,7 @@
 			</h3>
 		</header>
 
-		<p <?php if ( !empty( $materials ) && $start_date < $today ) { echo 'class="no-margin-bottom"'; } ?>>
+		<p <?php if ( !empty( $materials ) && $start_date <= $today ) { echo 'class="no-margin-bottom"'; } ?>>
 			<?php
 				// If there's a location, add it
 				if ( !empty( $details['location'] ) ) :
@@ -194,7 +194,7 @@
 
 		<?php
 			// If there are linked materials, add them
-			if ( !empty( $materials ) && $start_date < $today ) :
+			if ( !empty( $materials ) && $start_date <= $today ) :
 		?>
 			<ul class="list-inline">
 				<?php foreach ( $materials as $key => $material ) : ?>
