@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.52.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.54.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1070,7 +1070,7 @@ select:focus {
   padding-right: 2.5em;
   border-radius: 1.3125em;
   -webkit-transition: width 300ms ease-in;
-          transition: width 300ms ease-in;
+  transition: width 300ms ease-in;
 }
 
 @media (min-width: 38em) {
