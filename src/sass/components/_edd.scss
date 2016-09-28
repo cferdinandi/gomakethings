@@ -152,13 +152,13 @@ label[for="edd-discount"] {
 	margin-bottom: 0;
 }
 
-#edd-card-address-wrap,
-#edd-card-address-2-wrap,
-#edd-card-city-wrap,
-#edd-card-country-wrap,
-#edd-card-state-wrap {
-	@extend [hidden];
-}
+// #edd-card-address-wrap,
+// #edd-card-address-2-wrap,
+// #edd-card-city-wrap,
+// #edd-card-country-wrap,
+// #edd-card-state-wrap {
+// 	@extend [hidden];
+// }
 
 
 // Stripe "no token" error
