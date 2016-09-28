@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.55.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.55.1: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1839,11 +1839,7 @@ tfoot th {
 /* line 243, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 [hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_cc_fields legend,
 #edd_cc_address legend, #edd_cc_fields .edd-required-indicator,
-#edd_cc_address .edd-required-indicator, #edd-card-address-wrap,
-#edd-card-address-2-wrap,
-#edd-card-city-wrap,
-#edd-card-country-wrap,
-#edd-card-state-wrap, #edd_error_no_token {
+#edd_cc_address .edd-required-indicator, #edd_error_no_token {
   display: none;
   visibility: hidden;
 }
