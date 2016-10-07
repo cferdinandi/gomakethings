@@ -94,7 +94,6 @@
 
 	/**
 	 * Removes the credit card billing address fields
-	 * @return [type] [description]
 	 */
 	function keel_edd_remove_default_fields() {
 		remove_action( 'edd_after_cc_fields', 'edd_default_cc_address_fields' );
