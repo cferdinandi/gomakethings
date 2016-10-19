@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.56.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.57.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1335,40 +1335,49 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /**
  * The navigation container
  */
-/* line 4, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 4, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .nav-wrap {
   padding-top: 1em;
   padding-bottom: 0.5em;
+  text-align: center;
+}
+
+@media (min-width: 60em) {
+  /* line 4, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
+  .nav-wrap {
+    text-align: left;
+  }
 }
 
 /**
  * The logo
  */
-/* line 15, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 25, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .logo {
   display: inline-block;
-  float: left;
-  font-size: 1.1em;
-  line-height: 1.2;
+  font-size: 1.2em;
   font-weight: bold;
+  line-height: 1.2;
   color: #272727;
+  margin-bottom: 0.3125em;
   text-decoration: none;
 }
 
-@media (min-width: 28em) {
-  /* line 15, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+@media (min-width: 60em) {
+  /* line 25, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
   .logo {
-    font-size: 1.2em;
+    float: left;
+    margin-bottom: 0;
   }
 }
 
-/* line 28, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 45, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .logo:hover {
   color: #0088cc;
   text-decoration: none;
 }
 
-/* line 33, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 50, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .logo .icon {
   height: 0.8em;
   width: 0.8em;
@@ -1377,19 +1386,24 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /**
  * The nav menu
  */
-/* line 56, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 60, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .nav {
   list-style: none;
-  font-size: 1em;
   margin: 0 -0.5em;
   padding: 0;
-  text-align: right;
   /**
 	 * Active link styling
 	 */
 }
 
-/* line 63, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+@media (min-width: 60em) {
+  /* line 60, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
+  .nav {
+    text-align: right;
+  }
+}
+
+/* line 80, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .nav li {
   display: inline-block;
   float: none;
@@ -1397,12 +1411,12 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   margin-right: 0.5em;
 }
 
-/* line 70, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 96, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .nav a, .nav .link-block-styled {
   color: #808080;
 }
 
-/* line 77, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar-simple.scss */
+/* line 103, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_astro-navbar.scss */
 .nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled,
 .nav a:active,
 .nav .link-block-styled:active,
@@ -1603,14 +1617,16 @@ tfoot th {
 /**
  * Credit Card Fields
  */
-/* line 131, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+/* line 132, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd_checkout_user_info .edd-label,
 #edd_cc_fields .edd-label,
 #edd_cc_address .edd-label {
   font-weight: bold;
   margin-bottom: 0;
 }
 
-/* line 140, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+/* line 141, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+#edd_checkout_user_info .edd-description,
 #edd_cc_fields .edd-description,
 #edd_cc_address .edd-description {
   display: block;
@@ -1618,7 +1634,7 @@ tfoot th {
   margin-bottom: 0.3125em;
 }
 
-/* line 149, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+/* line 150, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
 #card_exp_month,
 #card_exp_year {
   margin-bottom: 0;
@@ -1666,7 +1682,8 @@ tfoot th {
  * Text colors
  */
 /* line 66, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.text-muted, #edd_cc_fields .edd-description,
+.text-muted, #edd_checkout_user_info .edd-description,
+#edd_cc_fields .edd-description,
 #edd_cc_address .edd-description {
   color: #808080;
 }
@@ -1837,8 +1854,10 @@ tfoot th {
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
 /* line 243, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-[hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_cc_fields legend,
-#edd_cc_address legend, #edd_cc_fields .edd-required-indicator,
+[hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_checkout_user_info legend,
+#edd_cc_fields legend,
+#edd_cc_address legend, #edd_checkout_user_info .edd-required-indicator,
+#edd_cc_fields .edd-required-indicator,
 #edd_cc_address .edd-required-indicator, #edd_error_no_token {
   display: none;
   visibility: hidden;
