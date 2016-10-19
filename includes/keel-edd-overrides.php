@@ -98,7 +98,7 @@
 	function keel_edd_remove_default_fields() {
 		remove_action( 'edd_after_cc_fields', 'edd_default_cc_address_fields' );
 	}
-	add_action( 'init', 'keel_edd_remove_default_fields' );
+	// add_action( 'init', 'keel_edd_remove_default_fields' );
 
 
 
@@ -149,4 +149,4 @@
 		<?php
 		echo ob_get_clean();
 	}
-	add_action( 'edd_after_cc_fields', 'keel_edd_default_cc_address_fields' );
+	// add_action( 'edd_after_cc_fields', 'keel_edd_default_cc_address_fields' );
