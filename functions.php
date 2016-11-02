@@ -440,7 +440,7 @@
 	  wp_deregister_style( 'widget-grid-and-list' ); // Top Posts widget
 	  wp_deregister_style( 'jetpack-widgets' ); // Widgets
 	}
-	add_action('wp_print_styles', 'keel_remove_all_jetpack_cs' );
+	add_action('wp_print_styles', 'keel_remove_all_jetpack_css' );
 
 
 
