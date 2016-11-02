@@ -38,10 +38,33 @@ $post_options = keel_get_post_options();
 		?>
 
 		<?php
+			// Category list
+			$tags = get_the_category();
+			if ( !empty( $tags ) ) :
+		?>
+			<ul class="padding-top text-small list-inline">
+				<li><strong>More like this...</strong></li>
+				<?php foreach( $tags as $key => $tag ) : ?>
+					<li><a href="<?php echo get_category_link( $tag->cat_ID ); ?>"><?php echo $tag->cat_name; ?></a></li>
+				<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+
+		<?php
+			// Blog post message
 			if ( !empty( $post_options ) && array_key_exists( 'blog_posts_message', $post_options ) && !empty( $post_options['blog_posts_message'] ) ) {
 				echo do_shortcode( wpautop( stripslashes( $post_options['blog_posts_message'] ), false ) );
 			}
 		?>
+
+		<!-- $posttags = get_the_tags();
+		if ($posttags) {
+		  foreach($posttags as $tag) {
+		    echo $tag->name . ' ';
+		  }
+		} -->
+
+
 
 		<?php
 			// Add comments template to blog posts
