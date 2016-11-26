@@ -5,7 +5,7 @@
  * Template for post content.
  */
 
-$post_options = keel_get_post_options();
+$options = keel_get_theme_options();
 
 ?>
 
@@ -43,7 +43,7 @@ $post_options = keel_get_post_options();
 			if ( !empty( $tags ) ) :
 		?>
 			<ul class="padding-top text-small list-inline">
-				<li><strong>More like this...</strong></li>
+				<li><strong><?php echo stripslashes( esc_html( $options['blog_category_label'] ) ); ?></strong></li>
 				<?php foreach( $tags as $key => $tag ) : ?>
 					<li><a href="<?php echo get_category_link( $tag->cat_ID ); ?>"><?php echo $tag->cat_name; ?></a></li>
 				<?php endforeach; ?>
@@ -52,8 +52,8 @@ $post_options = keel_get_post_options();
 
 		<?php
 			// Blog post message
-			if ( !empty( $post_options ) && array_key_exists( 'blog_posts_message', $post_options ) && !empty( $post_options['blog_posts_message'] ) ) {
-				echo do_shortcode( wpautop( stripslashes( $post_options['blog_posts_message'] ), false ) );
+			if ( !empty( $options ) && array_key_exists( 'blog_posts_message', $options ) && !empty( $options['blog_posts_message'] ) ) {
+				echo do_shortcode( wpautop( stripslashes( $options['blog_posts_message'] ), false ) );
 			}
 		?>
 
@@ -81,16 +81,16 @@ $post_options = keel_get_post_options();
 ?>
 
 	<?php if ( $wp_query->current_post === 0 && !is_archive() ) : ?>
-		<header <?php if ( $post_options['blog_hide_all_posts_heading'] === 'on' ) { echo 'class="screen-reader"'; } ?>>
-			<h1><?php echo $post_options['blog_all_posts_heading']; ?></h1>
+		<header <?php if ( $options['blog_hide_all_posts_heading'] === 'on' ) { echo 'class="screen-reader"'; } ?>>
+			<h1><?php echo $options['blog_all_posts_heading']; ?></h1>
 		</header>
 	<?php endif; ?>
 
 	<?php
-		if ( $wp_query->current_post === 0 && array_key_exists( 'blog_all_posts_message', $post_options ) && !empty( $post_options['blog_all_posts_message'] ) ) :
+		if ( $wp_query->current_post === 0 && array_key_exists( 'blog_all_posts_message', $options ) && !empty( $options['blog_all_posts_message'] ) ) :
 	?>
 		<aside>
-			<?php echo do_shortcode( stripslashes( wpautop( $post_options['blog_all_posts_message'], false ) ) ); ?>
+			<?php echo do_shortcode( stripslashes( wpautop( $options['blog_all_posts_message'], false ) ) ); ?>
 		</aside>
 	<?php endif; ?>
 
