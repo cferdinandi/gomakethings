@@ -13,6 +13,7 @@
 		<?php
 			// Get page layout options
 			global $post;
+			$options = keel_get_theme_options();
 			$page_navs = get_post_meta( $post->ID, 'keel_page_navs', true );
 		?>
 
@@ -23,11 +24,13 @@
 
 				<?php get_template_part( 'nav', 'secondary' ); ?>
 
-				<p>
-					<span class="text-small">
-						Made with &lt;3 in Massachusetts. Copyright <?php echo date( 'Y' ); ?> Go Make Things, LLC. Unless otherwise noted, all code is free to use under the <a href="<?php echo site_url(); ?>/mit">MIT License</a>.
-					</span>
-				</p>
+				<?php if ( !empty( $options['footer_content'] ) ) : ?>
+					<p>
+						<span class="text-small">
+							<?php echo stripslashes( str_replace( '[date]', date( 'Y' ), $options['footer_content'] ) ); ?>
+						</span>
+					</p>
+				<?php endif; ?>
 
 			</footer>
 		<?php endif; ?>
