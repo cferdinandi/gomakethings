@@ -6,6 +6,7 @@
 /**
  * Checkout table
  */
+
 tfoot th {
 	border-bottom: none;
 	border-top: calc-em(2px) solid $color-gray-light;
@@ -46,7 +47,7 @@ label[for="edd-discount"] {
 }
 
 #edd-payment-mode-wrap input[type="radio"] {
-	margin-right: calc-em(8px);
+	@extend .margin-bottom-small;
 }
 
 #edd-gateway-option-stripe:after {
@@ -63,9 +64,23 @@ label[for="edd-discount"] {
 /**
  * Payment icons
  */
-.edd-payment-icons img {
-	height: 32px;
-	width: 43px;
+.edd-payment-icons {
+	.icon {
+		@extend .icon-gray;
+
+		&.active {
+			@extend .icon-primary;
+		}
+	}
+
+	.svg & .icon {
+		height: 1.75em;
+	}
+
+	// img {
+	// 	height: 32px;
+	// 	width: 43px;
+	// }
 }
 
 
@@ -115,12 +130,37 @@ label[for="edd-discount"] {
 		content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#272727" d="M13 7h-1V4a4 4 0 0 0-8 0v3H3c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V8c0-.55-.45-1-1-1zm-5 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-6H6V4c0-1.103.897-2 2-2s2 .897 2 2v3z"/></svg>');
 		margin-right: calc-em(5px);
 	}
+
+	&:after {
+		content: " via Stripe";
+	}
 }
 
 
 /**
  * Credit Card Fields
  */
+
+// Add grid structure
+#edd_cc_fields,
+#edd_cc_address {
+	@extend .row;
+}
+
+#edd-card-number-wrap,
+#edd-card-name-wrap,
+#edd-card-country-wrap {
+	@extend .grid-two-thirds;
+}
+
+#edd-card-cvc-wrap,
+.card-expiration,
+#edd-card-zip-wrap {
+	@extend .grid-third;
+}
+
+
+// Hide all the extraneous stuff
 #edd_checkout_user_info,
 #edd_cc_fields,
 #edd_cc_address {
@@ -131,7 +171,7 @@ label[for="edd-discount"] {
 
 	.edd-label {
 		font-weight: bold;
-		margin-bottom: 0;
+		margin-bottom: calc-em(4px);
 	}
 
 	.edd-required-indicator {
@@ -139,14 +179,17 @@ label[for="edd-discount"] {
 	}
 
 	.edd-description {
-		@extend .text-muted;
-		display: block;
-		font-style: italic;
-		margin-bottom: calc-em(5px);
+		@extend [hidden];
+	}
+
+	p {
+		@extend .no-margin-bottom;
 	}
 
 }
 
+
+// Adjust the expiration fields
 #card_exp_month,
 #card_exp_year {
 	@extend .input-inline;
