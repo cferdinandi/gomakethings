@@ -153,16 +153,15 @@ label[for="edd-discount"] {
 	margin-bottom: 0;
 }
 
-// #edd-card-address-wrap,
-// #edd-card-address-2-wrap,
-// #edd-card-city-wrap,
-// #edd-card-country-wrap,
-// #edd-card-state-wrap {
-// 	@extend [hidden];
-// }
-
 
 // Stripe "no token" error
 #edd_error_no_token {
 	@extend [hidden];
+}
+
+
+// Link to product description page
+.gmt-edd-link-to-product-in-cart {
+	@extend .text-small;
+	@extend .text-muted;
 }

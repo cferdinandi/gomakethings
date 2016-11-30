@@ -17,14 +17,14 @@
 	 * Remove default name fields from checkout
 	 */
 	function keel_edd_remove_names() {
-	  remove_action( 'edd_purchase_form_after_user_info', 'edd_user_info_fields' );
+		remove_action( 'edd_purchase_form_after_user_info', 'edd_user_info_fields' );
 	}
 	add_action( 'init', 'keel_edd_remove_names' );
 
 
 
 	/**
-	 * Add custom personal info checkout fields
+	 * Remove name fields from checkout form
 	 */
 	function keel_edd_user_info_fields() {
 		if( is_user_logged_in() ) :
@@ -53,7 +53,7 @@
 		edd_empty_cart();
 		return edd_get_cart_contents();
 	}
-	add_filter( 'edd_add_to_cart', 'keel_edd_force_single_item_cart', 1, 1 );
+	// add_filter( 'edd_add_to_cart', 'keel_edd_force_single_item_cart', 1, 1 );
 
 
 
@@ -99,54 +99,3 @@
 		remove_action( 'edd_after_cc_fields', 'edd_default_cc_address_fields' );
 	}
 	// add_action( 'init', 'keel_edd_remove_default_fields' );
-
-
-
-	/**
-	 * Adds in only the required credit card address fields
-	 * @link https://easydigitaldownloads.com/forums/topic/can-i-remove-billing-details-from-checkout-page/#post-445013
-	 */
-	function keel_edd_default_cc_address_fields() {
-		ob_start(); ?>
-		<fieldset id="edd_cc_address" class="cc-address">
-			<span><legend><?php _e( 'Billing Details', 'edd' ); ?></legend></span>
-			<?php do_action( 'edd_cc_billing_top' ); ?>
-			<p id="edd-card-zip-wrap">
-				<label for="card_zip" class="edd-label">
-					<?php _e( 'Billing Zip / Postal Code', 'edd' ); ?>
-					<?php if( edd_field_is_required( 'card_zip' ) ) { ?>
-						<span class="edd-required-indicator">*</span>
-					<?php } ?>
-				</label>
-				<span class="edd-description"><?php _e( 'The zip or postal code for your billing address.', 'edd' ); ?></span>
-				<input type="text" size="4" name="card_zip" class="card-zip edd-input required" placeholder="<?php _e( 'Zip / Postal code', 'edd' ); ?>" value="<?php echo $zip; ?>"/>
-			</p>
-
-			<p id="edd-card-country-wrap">
-				<label for="billing_country" class="edd-label">
-					<?php _e( 'Billing Country', 'edd' ); ?>
-					<?php if( edd_field_is_required( 'billing_country' ) ) { ?>
-						<span class="edd-required-indicator">*</span>
-					<?php } ?>
-				</label>
-				<span class="edd-description"><?php _e( 'The country for your billing address.', 'edd' ); ?></span>
-				<select name="billing_country" id="billing_country" class="billing_country edd-select<?php if( edd_field_is_required( 'billing_country' ) ) { echo ' required'; } ?>">
-					<?php
-					$selected_country = edd_get_shop_country();
-					if( $logged_in && ! empty( $user_address['country'] ) && '*' !== $user_address['country'] ) {
-						$selected_country = $user_address['country'];
-					}
-					$countries = edd_get_country_list();
-					foreach( $countries as $country_code => $country ) {
-					  echo '<option value="' . esc_attr( $country_code ) . '"' . selected( $country_code, $selected_country, false ) . '>' . $country . '</option>';
-					}
-					?>
-				</select>
-			</p>
-
-			<?php do_action( 'edd_cc_billing_bottom' ); ?>
-		</fieldset>
-		<?php
-		echo ob_get_clean();
-	}
-	// add_action( 'edd_after_cc_fields', 'keel_edd_default_cc_address_fields' );
