@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.59.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.60.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1648,7 +1648,7 @@ tfoot th {
  * Text sizes
  */
 /* line 39, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.text-small {
+.text-small, .gmt-edd-link-to-product-in-cart {
   font-size: 0.9375em;
 }
 
@@ -1684,7 +1684,7 @@ tfoot th {
 /* line 66, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .text-muted, #edd_checkout_user_info .edd-description,
 #edd_cc_fields .edd-description,
-#edd_cc_address .edd-description {
+#edd_cc_address .edd-description, .gmt-edd-link-to-product-in-cart {
   color: #808080;
 }
 
