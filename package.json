@@ -1,6 +1,6 @@
 {
 	"name": "gomakethings",
-	"version": "10.60.0",
+	"version": "10.61.0",
 	"description": "The WordPress theme for GoMakeThings.com",
 	"author": {
 		"name": "Chris Ferdinandi",
@@ -8,7 +8,7 @@
 	},
 	"license": "MIT",
 	"openSource": {
-		"credits": "https://github.com/ftlabs/fastclick, https://github.com/toddmotto/fluidvids, http://prismjs.com"
+		"credits": "https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/"
 	},
 	"repository": {
 		"type": "git",
