@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.61.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.61.1: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1596,26 +1596,10 @@ tfoot th {
 /**
  * SSL message on credit card/Stripe checkout
  */
-/* line 125, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
-#edd_secure_site_wrapper {
-  font-style: italic;
-}
-
-/* line 129, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
-#edd_secure_site_wrapper .padlock:before {
-  content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#272727" d="M13 7h-1V4a4 4 0 0 0-8 0v3H3c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V8c0-.55-.45-1-1-1zm-5 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-6H6V4c0-1.103.897-2 2-2s2 .897 2 2v3z"/></svg>');
-  margin-right: 0.3125em;
-}
-
-/* line 134, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
-#edd_secure_site_wrapper:after {
-  content: " via Stripe";
-}
-
 /**
  * Credit Card Fields
  */
-/* line 172, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+/* line 169, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
 #edd_checkout_user_info .edd-label,
 #edd_cc_fields .edd-label,
 #edd_cc_address .edd-label {
@@ -1623,7 +1607,7 @@ tfoot th {
   margin-bottom: 0.25em;
 }
 
-/* line 193, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
+/* line 190, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
 #card_exp_month,
 #card_exp_year {
   margin-bottom: 0;
@@ -1723,7 +1707,7 @@ tfoot th {
 }
 
 /* line 137, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.margin-bottom, #edd_secure_site_wrapper {
+.margin-bottom {
   margin-bottom: 1.5625em;
 }
 
@@ -1843,7 +1827,7 @@ tfoot th {
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
 /* line 243, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-[hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_checkout_user_info legend,
+[hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_secure_site_wrapper, #edd_checkout_user_info legend,
 #edd_cc_fields legend,
 #edd_cc_address legend, #edd_checkout_user_info .edd-required-indicator,
 #edd_cc_fields .edd-required-indicator,
