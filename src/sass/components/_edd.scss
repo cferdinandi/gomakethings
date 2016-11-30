@@ -123,17 +123,14 @@ label[for="edd-discount"] {
  * SSL message on credit card/Stripe checkout
  */
 #edd_secure_site_wrapper {
-	@extend .margin-bottom;
-	font-style: italic;
+	@extend [hidden];
+	// @extend .margin-bottom;
+	// font-style: italic;
 
-	.padlock:before {
-		content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#272727" d="M13 7h-1V4a4 4 0 0 0-8 0v3H3c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V8c0-.55-.45-1-1-1zm-5 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-6H6V4c0-1.103.897-2 2-2s2 .897 2 2v3z"/></svg>');
-		margin-right: calc-em(5px);
-	}
-
-	&:after {
-		content: " via Stripe";
-	}
+	// .padlock:before {
+	// 	content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#272727" d="M13 7h-1V4a4 4 0 0 0-8 0v3H3c-.55 0-1 .45-1 1v7c0 .55.45 1 1 1h10c.55 0 1-.45 1-1V8c0-.55-.45-1-1-1zm-5 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm2-6H6V4c0-1.103.897-2 2-2s2 .897 2 2v3z"/></svg>');
+	// 	margin-right: calc-em(5px);
+	// }
 }
 
 
