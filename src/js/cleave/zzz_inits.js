@@ -8,8 +8,10 @@
 
 	// Variables
 	var cards = document.querySelectorAll( '.edd-payment-icons .icon' );
+	var active = 'unknown';
 
 	var updateCard = function (type) {
+		if ( active === type ) return;
 		for (var i = 0; i < cards.length; i++) {
 			if ( cards[i].id === 'icon-' + type ) {
 				cards[i].classList.add( 'active' );
@@ -17,6 +19,7 @@
 			}
 			cards[i].classList.remove( 'active' );
 		}
+		active = type;
 	};
 
 	new Cleave('#card_number', {

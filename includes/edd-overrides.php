@@ -132,8 +132,9 @@
 		if ( !function_exists( 'edd_get_cart_quantity' ) ) return $items;
 		$cart_quantity = edd_get_cart_quantity();
 		if ( $cart_quantity === 0 ) return $items;
+		$active = is_page( edd_get_option( 'purchase_page', false ) ) ? 'class="active"' : '';
 		$items .=
-			'<li>' .
+			'<li ' . $active . '>' .
 				'<a href="' . edd_get_checkout_uri() . '">' .
 					'<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 17 17"><path d="M6.375 15.406a1.594 1.594 0 1 1-3.189 0 1.594 1.594 0 0 1 3.189 0zM17 15.406a1.594 1.594 0 1 1-3.189 0 1.594 1.594 0 0 1 3.189 0zM17 8.5V2.125H4.25c0-.587-.476-1.063-1.063-1.063H-.001v1.063h2.125l.798 6.841a2.124 2.124 0 0 0 1.327 3.784h12.75v-1.063H4.249a1.063 1.063 0 0 1-1.063-1.063v-.011l13.812-2.114z"/></svg> ' . __( 'Cart', 'keel' ) . ' (' . $cart_quantity . ')' .
 				'</a>' .
@@ -166,6 +167,9 @@
 
 
 
+	/**
+	 * Remove default payment icons
+	 */
 	function keel_edd_remove_show_payment_icons() {
 		remove_action( 'edd_payment_mode_top', 'edd_show_payment_icons' );
 		remove_action( 'edd_checkout_form_top', 'edd_show_payment_icons' );

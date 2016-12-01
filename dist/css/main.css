@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.61.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.62.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1605,12 +1605,6 @@ tfoot th {
 #edd_cc_address .edd-label {
   font-weight: bold;
   margin-bottom: 0.25em;
-}
-
-/* line 190, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_edd.scss */
-#card_exp_month,
-#card_exp_year {
-  margin-bottom: 0;
 }
 
 /**
