@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.61.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.62.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -972,8 +972,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// Variables
 	var cards = document.querySelectorAll( '.edd-payment-icons .icon' );
+	var active = 'unknown';
 
 	var updateCard = function (type) {
+		if ( active === type ) return;
 		for (var i = 0; i < cards.length; i++) {
 			if ( cards[i].id === 'icon-' + type ) {
 				cards[i].classList.add( 'active' );
@@ -981,6 +983,7 @@ return /******/ (function(modules) { // webpackBootstrap
 			}
 			cards[i].classList.remove( 'active' );
 		}
+		active = type;
 	};
 
 	new Cleave('#card_number', {
