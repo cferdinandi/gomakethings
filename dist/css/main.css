@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.62.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.63.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -631,7 +631,7 @@ sub {
 /**
  * Blockquotes
  */
-/* line 336, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 342, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote {
   font-size: 1.1875em;
   font-style: italic;
@@ -640,20 +640,20 @@ blockquote {
   padding-right: 0.84211em;
 }
 
-/* line 343, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 349, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote cite {
   color: #808080;
   font-size: 0.84211em;
   padding-top: 1em;
 }
 
-/* line 350, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 356, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 355, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
+/* line 361, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -769,9 +769,10 @@ pre code {
  */
 /* line 6, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
 .btn, input[type="submit"] {
-  background-color: transparent;
-  border: 0.125em solid #fa7176;
+  background-color: #f7272f;
+  border: 0.125em solid #f7272f;
   border-radius: 0.0725em;
+  color: #ffffff;
   display: inline-block;
   font-size: 0.9375em;
   font-weight: normal;
@@ -781,26 +782,7 @@ pre code {
   padding: 0.5em 0.6875em;
 }
 
-/* line 19, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn, input[type="submit"],
-.btn:hover,
-input[type="submit"]:hover,
-a .btn:hover, .link-block-styled .btn:hover,
-a input[type="submit"]:hover, .link-block-styled input[type="submit"]:hover,
-.btn:focus,
-input[type="submit"]:focus,
-a .btn:focus, .link-block-styled .btn:focus,
-a input[type="submit"]:focus, .link-block-styled input[type="submit"]:focus,
-.btn:active,
-input[type="submit"]:active,
-a .btn:active, .link-block-styled .btn:active,
-a input[type="submit"]:active, .link-block-styled input[type="submit"]:active,
-.btn.active,
-input.active[type="submit"] {
-  color: #f7272f;
-}
-
-/* line 30, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
+/* line 24, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
 .btn:hover, input[type="submit"]:hover,
 a .btn:hover, .link-block-styled .btn:hover,
 a input[type="submit"]:hover, .link-block-styled input[type="submit"]:hover,
@@ -814,13 +796,13 @@ a .btn:active, .link-block-styled .btn:active,
 a input[type="submit"]:active, .link-block-styled input[type="submit"]:active,
 .btn.active,
 input.active[type="submit"] {
-  background-color: #f7272f;
-  border-color: #f7272f;
+  background-color: #cb070e;
+  border-color: #cb070e;
   color: #ffffff;
   text-decoration: none;
 }
 
-/* line 60, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
+/* line 58, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
 .btn:active, input[type="submit"]:active,
 .btn.active,
 input.active[type="submit"] {
@@ -828,7 +810,7 @@ input.active[type="submit"] {
   outline: 0;
 }
 
-/* line 66, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
+/* line 64, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
 .btn.disabled, input.disabled[type="submit"],
 .btn[disabled],
 input[disabled][type="submit"] {
@@ -839,14 +821,14 @@ input[disabled][type="submit"] {
   box-shadow: none;
 }
 
-/* line 75, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
+/* line 73, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
 .btn-large, #edd-purchase-button {
   padding: 0.6875em 0.9375em;
   font-size: 1em;
   line-height: normal;
 }
 
-/* line 92, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
+/* line 90, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
 .btn, input[type="submit"],
 button,
 html input[type="button"],
@@ -863,7 +845,7 @@ input[type="submit"] {
   -webkit-appearance: none;
 }
 
-/* line 109, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
+/* line 107, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
 .btn:last-child, input[type="submit"]:last-child,
 input.btn,
 input[type="submit"] {
@@ -1649,26 +1631,31 @@ tfoot th {
  * Text colors
  */
 /* line 66, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.text-muted, .gmt-edd-link-to-product-in-cart {
+.text-muted, del, .gmt-edd-link-to-product-in-cart {
   color: #808080;
+}
+
+/* line 70, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+.text-muted-light, .btn del, input[type="submit"] del {
+  color: #b2b2b2;
 }
 
 /**
  * Text alignment
  */
-/* line 79, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 83, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .text-center {
   text-align: center;
 }
 
 @media (min-width: 38em) {
-  /* line 84, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+  /* line 88, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
   .text-right-large {
     text-align: right;
   }
 }
 
-/* line 106, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 110, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .float-center {
   float: none;
   margin-left: auto;
@@ -1678,44 +1665,44 @@ tfoot th {
 /**
  * Margins
  */
-/* line 121, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 125, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .no-margin {
   margin: 0;
 }
 
-/* line 125, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 129, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .no-margin-top {
   margin-top: 0;
 }
 
-/* line 129, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 133, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .no-margin-bottom, #edd_checkout_wrap fieldset, #edd_checkout_user_info p,
 #edd_cc_fields p,
 #edd_cc_address p {
   margin-bottom: 0;
 }
 
-/* line 133, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 137, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .margin-top {
   margin-top: 1.5625em;
 }
 
-/* line 137, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 141, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .margin-bottom {
   margin-bottom: 1.5625em;
 }
 
-/* line 141, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 145, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .margin-bottom-small, #edd-payment-mode-wrap input[type="radio"] {
   margin-bottom: 0.5em;
 }
 
-/* line 145, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 149, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .margin-bottom-large {
   margin-bottom: 2em;
 }
 
-/* line 149, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 153, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .margin-right {
   margin-right: 0.25em;
 }
@@ -1723,58 +1710,58 @@ tfoot th {
 /**
  * Padding
  */
-/* line 158, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 162, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .no-padding {
   padding: 0;
 }
 
-/* line 162, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 166, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .no-padding-top {
   padding-top: 0;
 }
 
-/* line 166, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 170, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .no-padding-bottom {
   padding-bottom: 0;
 }
 
-/* line 170, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 174, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-top, #edd_payment_mode_submit,
 #edd_checkout_user_info {
   padding-top: 1.5625em;
 }
 
-/* line 174, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 178, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-top-small, .edd-cancel {
   padding-top: 0.5em;
 }
 
-/* line 178, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 182, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-top-large {
   padding-top: 2em;
 }
 
-/* line 182, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 186, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-top-xlarge {
   padding-top: 3em;
 }
 
-/* line 186, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 190, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-bottom {
   padding-bottom: 1.5625em;
 }
 
-/* line 190, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 194, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-bottom-small {
   padding-bottom: 0.5em;
 }
 
-/* line 194, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 198, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-bottom-large {
   padding-bottom: 2em;
 }
 
-/* line 198, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 202, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .padding-bottom-xlarge {
   padding-bottom: 3em;
 }
@@ -1787,7 +1774,7 @@ tfoot th {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 212, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 216, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .screen-reader, .svg .icon-fallback-text {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1804,7 +1791,7 @@ tfoot th {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link https://www.drupal.org/node/897638
  */
-/* line 228, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 232, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .screen-reader-focusable:active,
 .screen-reader-focusable:focus {
   clip: auto;
@@ -1820,7 +1807,7 @@ tfoot th {
  * @affected IE 8/9/10
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
-/* line 243, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 247, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 [hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_secure_site_wrapper, #edd_checkout_user_info legend,
 #edd_cc_fields legend,
 #edd_cc_address legend, #edd_checkout_user_info .edd-required-indicator,
@@ -1837,7 +1824,7 @@ tfoot th {
  * The space content is one way to avoid an Opera bug when the `contenteditable` attribute is included anywhere else in the document.
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  */
-/* line 255, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 259, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .clearfix:before, .container:before,
 .row:before, #edd_cc_fields:before,
 #edd_cc_address:before, .nav-wrap:before,
@@ -1851,7 +1838,7 @@ tfoot th {
   content: " ";
 }
 
-/* line 261, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+/* line 265, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
 .clearfix:after, .container:after,
 .row:after, #edd_cc_fields:after,
 #edd_cc_address:after, .nav-wrap:after {
