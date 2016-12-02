@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.63.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.64.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -684,7 +684,7 @@ code {
 
 /* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_code.scss */
 pre {
-  background-color: #f4f4f4;
+  background-color: #f7f7f7;
   display: block;
   line-height: 1.5;
   margin-bottom: 1.5625em;
@@ -1198,6 +1198,18 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 
 /**
+ * @section Callouts
+ * Styling for callout boxes
+ */
+/* line 6, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_callouts.scss */
+.callout {
+  background-color: #f7f7f7;
+  border: 0.0725em solid #e5e5e5;
+  margin-bottom: 1.5625em;
+  padding: 1em 1.5em;
+}
+
+/**
  * @section WordPress Image Classes
  * Styling for the classes WordPress automatically applies to images.
  */
@@ -1262,55 +1274,6 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   color: #808080;
   padding-top: 0.5em;
   text-align: center;
-}
-
-/**
- * @section Background
- * Background color
- */
-/* line 6, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-.bg-muted {
-  background-color: #f7f7f7;
-}
-
-/* line 10, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-.bg-dark {
-  background-color: #343d4d;
-  color: #ffffff;
-}
-
-/* line 14, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-.bg-dark a, .bg-dark .link-block-styled {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
-/* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-.bg-hero {
-  background-image: url("../img/hero-xsmall.jpg");
-  background-position: bottom center;
-  background-size: cover;
-}
-
-@media (min-width: 28em) {
-  /* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-  .bg-hero {
-    background-image: url("../img/hero-small.jpg");
-  }
-}
-
-@media (min-width: 38em) {
-  /* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-  .bg-hero {
-    background-image: url("../img/hero-medium.jpg");
-  }
-}
-
-@media (min-width: 60em) {
-  /* line 20, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_bg.scss */
-  .bg-hero {
-    background-image: url("../img/hero-full.jpg");
-  }
 }
 
 /**
