@@ -1,0 +1,12 @@
+.label {
+	background-color: darken( $color-secondary, 15% );
+	border-radius: calc-em(1px);
+	color: $color-white;
+	font-size: calc-em(13px);
+	font-weight: bold;
+	padding: calc-em(4px) calc-em(8px);
+}
+
+.label-small {
+	font-size: calc-em(11px)
+}
