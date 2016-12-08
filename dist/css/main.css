@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.64.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.65.0: The WordPress theme for GoMakeThings.com
  * (c) 2016 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1207,6 +1207,21 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   border: 0.0725em solid #e5e5e5;
   margin-bottom: 1.5625em;
   padding: 1em 1.5em;
+}
+
+/* line 1, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_labels.scss */
+.label {
+  background-color: #f7272f;
+  border-radius: 0.0725em;
+  color: #ffffff;
+  font-size: 0.8125em;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+}
+
+/* line 10, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_labels.scss */
+.label-small {
+  font-size: 0.6875em;
 }
 
 /**
