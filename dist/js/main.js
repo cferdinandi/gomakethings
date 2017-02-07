@@ -1,6 +1,6 @@
 /*!
- * gomakethings v10.65.1: The WordPress theme for GoMakeThings.com
- * (c) 2016 Chris Ferdinandi
+ * gomakethings v10.66.0: The WordPress theme for GoMakeThings.com
+ * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
  * Open Source Credits: https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/
@@ -126,45 +126,6 @@
   return fluidvids;
 
 }));
-/**
- * Autopopulate MailChimp email field with email address from querystring
- * @version  1.0.0
- * @author   Chris Ferdinandi - https://gomakethings.com
- * @license  MIT
- */
-
-;(function (window, document, undefined) {
-
-	'use strict';
-
-	// Feature test
-	var supports = 'querySelector' in document;
-	if ( !supports ) return;
-
-	/**
-	 * Get the value of a query string from a URL
-	 * @param  {String} field The field to get the value of
-	 * @param  {String} url   The URL to get the value from [optional]
-	 * @return {String}       The value
-	 */
-	var getQueryString = function ( field, url ) {
-		var href = url ? url : window.location.href;
-		var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
-		var string = reg.exec(href);
-		return string ? string[1] : null;
-	};
-
-	// Variables
-	var email = getQueryString( 'mcemail' );
-	var field = document.querySelector( '#mailchimp_email' );
-
-	// Sanity check
-	if ( !email || !field ) return;
-
-	// Add email to field
-	field.value = email;
-
-})(window, document);
 /* PrismJS | by Lea Verou http://lea.verou.me | MIT License */
 (function(){
 
@@ -1331,6 +1292,140 @@ if (Prism.languages.markup) {
 	return smoothScroll;
 
 }));
+(function (root, factory) {
+	if ( typeof define === 'function' && define.amd ) {
+		define([], factory(root));
+	} else if ( typeof exports === 'object' ) {
+		module.exports = factory(root);
+	} else {
+		root.tableOfContents = factory(root);
+	}
+})(typeof global !== 'undefined' ? global : this.window || this.global, (function (root) {
+
+	'use strict';
+
+	//
+	// Variables
+	//
+
+	var tableOfContents = {}; // Object for public APIs
+	var supports = 'querySelector' in document; // Feature test
+	var settings, toc, headings;
+
+	// Default settings
+	var defaults = {
+		selector: '[data-toc]',
+		headings: 'h2',
+		before: '',
+		after: '',
+		initClass: 'js-toc',
+		tocClass: 'table-of-contents',
+		link: true,
+		linkIcon: '#',
+		linkClass: 'table-of-contents-link',
+		callback: function () {}
+	};
+
+
+	//
+	// Methods
+	//
+
+	/**
+	 * Merge defaults with user options
+	 * @private
+	 * @param {Object} defaults Default settings
+	 * @param {Object} options User options
+	 * @returns {Object} Merged values of defaults and options
+	 */
+	var extend = function () {
+
+		// Variables
+		var extended = {};
+		var deep = false;
+		var i = 0;
+		var length = arguments.length;
+
+		// Check if a deep merge
+		if ( Object.prototype.toString.call( arguments[0] ) === '[object Boolean]' ) {
+			deep = arguments[0];
+			i++;
+		}
+
+		// Merge the object into the extended object
+		var merge = function (obj) {
+			for ( var prop in obj ) {
+				if ( Object.prototype.hasOwnProperty.call( obj, prop ) ) {
+					// If deep merge and property is an object, merge properties
+					if ( deep && Object.prototype.toString.call(obj[prop]) === '[object Object]' ) {
+						extended[prop] = extend( true, extended[prop], obj[prop] );
+					} else {
+						extended[prop] = obj[prop];
+					}
+				}
+			}
+		};
+
+		// Loop through each object and conduct a merge
+		for ( ; i < length; i++ ) {
+			var obj = arguments[i];
+			merge(obj);
+		}
+
+		return extended;
+
+	};
+
+	/**
+	 * Create table of contents
+	 */
+	var createTOC = function () {
+		var nav = '';
+		for ( var i = 0; i < headings.length; i++ ) {
+			nav += '<li><a href="#' + headings[i].id + '">' + headings[i].innerHTML + '</a></li>';
+			if ( settings.link ) {
+				headings[i].innerHTML += ' <a class="' + settings.linkClass + '" href="#' + headings[i].id + '">' + settings.linkIcon + '</a>';
+			}
+		}
+		toc.innerHTML = settings.before + '<ul class="' + settings.tocClass + '">' + nav + '</ul>' + settings.after;
+	};
+
+	/**
+	 * Initialize Houdini
+	 * @public
+	 * @param {Object} options User settings
+	 */
+	tableOfContents.init = function ( options ) {
+
+		// feature test
+		if ( !supports ) return;
+
+		// Merge user options with defaults
+		settings = extend( defaults, options || {} );
+
+		// Get table of contents and headings
+		toc = document.querySelector( settings.selector );
+		headings = document.querySelectorAll( settings.headings );
+
+		console.log(toc);
+		console.log(headings);
+
+		// Make sure TOC and headings exist
+		if ( !toc || headings.length < 1 ) return;
+
+		// Create Table of Contents
+		createTOC();
+
+	};
+
+
+	//
+	// Public APIs
+	//
+
+	return tableOfContents;
+
+}));
 /**
  * Script initializations
  */
@@ -1343,5 +1438,11 @@ fluidvids.init({
 if ( document.querySelector( 'a[href*="#"]' ) && !document.querySelector( '.edd_discount_link' ) ) {
 	smoothScroll.init({
 		selector: 'a'
+	});
+}
+
+if ( document.querySelector( '[data-toc]' ) ) {
+	tableOfContents.init({
+		before: '<h2 id="table-of-contents">Table of Contents <a href="#table-of-contents">#</a></h2>',
 	});
 }

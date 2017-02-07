@@ -1,6 +1,6 @@
 /*!
- * gomakethings v10.65.1: The WordPress theme for GoMakeThings.com
- * (c) 2016 Chris Ferdinandi
+ * gomakethings v10.66.0: The WordPress theme for GoMakeThings.com
+ * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
  * Open Source Credits: https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/
