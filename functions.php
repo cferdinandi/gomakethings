@@ -12,8 +12,8 @@
 	function keel_load_theme_files() {
 		$keel_theme = wp_get_theme();
 		wp_enqueue_style( 'keel-theme-styles', get_template_directory_uri() . '/dist/css/main.min.' . $keel_theme->get( 'Version' ) . '.css', null, null, 'all' );
-		if ( isset($_COOKIE['fontsLoadedSSP']) && $_COOKIE['fontsLoadedSSP'] === 'true' ) {
-			wp_enqueue_style( 'keel-theme-fonts', 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700', null, null, 'all' );
+		if ( isset($_COOKIE['fontsLoaded']) && $_COOKIE['fontsLoaded'] === 'true' ) {
+			wp_enqueue_style( 'keel-theme-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700', null, null, 'all' );
 		}
 	}
 	add_action('wp_enqueue_scripts', 'keel_load_theme_files');
@@ -29,12 +29,12 @@
 		?>
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
-				<?php if ( !isset($_COOKIE['fontsLoadedSSP']) || $_COOKIE['fontsLoadedSSP'] !== 'true' ) : ?>
-					loadCSS('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700');
-					var font = new FontFaceObserver('Source Sans Pro');
+				<?php if ( !isset($_COOKIE['fontsLoaded']) || $_COOKIE['fontsLoaded'] !== 'true' ) : ?>
+					loadCSS('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700');
+					var font = new FontFaceObserver('PT Serif');
 					font.load().then(function () {
 						var expires = new Date(+new Date() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
-						document.cookie = 'fontsLoadedSSP=true; expires=' + expires;
+						document.cookie = 'fontsLoaded=true; expires=' + expires;
 						document.documentElement.className += ' fonts-loaded';
 					});
 				<?php endif; ?>

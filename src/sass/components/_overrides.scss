@@ -42,7 +42,7 @@
 
 .text-large {
 	font-size: calc-em(19px);
-	font-weight: 600;
+	font-weight: normal;
 	line-height: 1.4;
 
 	@media (min-width: $bp-medium) {
@@ -75,6 +75,15 @@
 // .text-secondary {
 // 	color: $color-secondary;
 // }
+
+
+/**
+ * Font weight
+ */
+
+.text-normal {
+	font-weight: normal;
+}
 
 
 /**
