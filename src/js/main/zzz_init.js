@@ -12,3 +12,9 @@ if ( document.querySelector( 'a[href*="#"]' ) && !document.querySelector( '.edd_
 		selector: 'a'
 	});
 }
+
+if ( document.querySelector( '[data-toc]' ) ) {
+	tableOfContents.init({
+		before: '<h2 id="table-of-contents">Table of Contents <a href="#table-of-contents">#</a></h2>',
+	});
+}
