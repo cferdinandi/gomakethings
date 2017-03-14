@@ -76,16 +76,16 @@ a .btn:active,
 	line-height: normal;
 }
 
-// .btn-block,
-// input[type="submit"].btn-block,
-// input[type="reset"].btn-block,
-// input[type="button"].btn-block {
-// 	display: block;
-// 	width: 100%;
-// 	margin-right: 0;
-// 	padding-right: 0;
-// 	padding-left: 0;
-// }
+.btn-block,
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+	display: block;
+	width: 100%;
+	margin-right: 0;
+	padding-right: 0;
+	padding-left: 0;
+}
 
 .btn,
 button,

@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.68.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.69.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -826,6 +826,18 @@ input[disabled][type="submit"] {
   padding: 0.6875em 0.9375em;
   font-size: 1em;
   line-height: normal;
+}
+
+/* line 79, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
+.btn-block,
+input[type="submit"].btn-block,
+input[type="reset"].btn-block,
+input[type="button"].btn-block {
+  display: block;
+  width: 100%;
+  margin-right: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 /* line 90, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
