@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.69.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.70.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1583,6 +1583,14 @@ tfoot th {
  * @section Overrides
  * Nudge and tweak alignment, spacing, and visibility.
  */
+/**
+ * Backgrounds
+ */
+/* line 11, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
+.bg-muted {
+  background-color: #f7f7f7;
+}
+
 /**
  * Text sizes
  */
