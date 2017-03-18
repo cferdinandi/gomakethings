@@ -1,0 +1,18 @@
+/**
+ * @section Slack
+ * Custom overrides for Slack Invites
+ */
+
+// Form elements
+.gmt-edd-slack-form-label {
+	font-weight: bold;
+}
+
+.gmt-edd-slack-form-button {
+	@extend .btn;
+}
+
+// Alerts
+.gmt-edd-slack-alert {
+	font-style: italic;
+}

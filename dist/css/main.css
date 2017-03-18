@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.71.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.72.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -768,7 +768,7 @@ pre code {
  * Styling for CSS buttons.
  */
 /* line 6, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn, input[type="submit"] {
+.btn, input[type="submit"], .gmt-edd-slack-form-button {
   background-color: #f7272f;
   border: 0.125em solid #f7272f;
   border-radius: 0.0725em;
@@ -783,19 +783,25 @@ pre code {
 }
 
 /* line 24, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn:hover, input[type="submit"]:hover,
+.btn:hover, input[type="submit"]:hover, .gmt-edd-slack-form-button:hover,
 a .btn:hover, .link-block-styled .btn:hover,
 a input[type="submit"]:hover, .link-block-styled input[type="submit"]:hover,
+a .gmt-edd-slack-form-button:hover, .link-block-styled .gmt-edd-slack-form-button:hover,
 .btn:focus,
 input[type="submit"]:focus,
+.gmt-edd-slack-form-button:focus,
 a .btn:focus, .link-block-styled .btn:focus,
 a input[type="submit"]:focus, .link-block-styled input[type="submit"]:focus,
+a .gmt-edd-slack-form-button:focus, .link-block-styled .gmt-edd-slack-form-button:focus,
 .btn:active,
 input[type="submit"]:active,
+.gmt-edd-slack-form-button:active,
 a .btn:active, .link-block-styled .btn:active,
 a input[type="submit"]:active, .link-block-styled input[type="submit"]:active,
+a .gmt-edd-slack-form-button:active, .link-block-styled .gmt-edd-slack-form-button:active,
 .btn.active,
-input.active[type="submit"] {
+input.active[type="submit"],
+.active.gmt-edd-slack-form-button {
   background-color: #cb070e;
   border-color: #cb070e;
   color: #ffffff;
@@ -803,17 +809,19 @@ input.active[type="submit"] {
 }
 
 /* line 58, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn:active, input[type="submit"]:active,
+.btn:active, input[type="submit"]:active, .gmt-edd-slack-form-button:active,
 .btn.active,
-input.active[type="submit"] {
+input.active[type="submit"],
+.active.gmt-edd-slack-form-button {
   box-shadow: inset 0 0.15625em 0.25em rgba(0, 0, 0, 0.15), 0 0.0725em 0.15625em rgba(0, 0, 0, 0.05);
   outline: 0;
 }
 
 /* line 64, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn.disabled, input.disabled[type="submit"],
+.btn.disabled, input.disabled[type="submit"], .disabled.gmt-edd-slack-form-button,
 .btn[disabled],
-input[disabled][type="submit"] {
+input[disabled][type="submit"],
+[disabled].gmt-edd-slack-form-button {
   pointer-events: none;
   cursor: not-allowed;
   opacity: 0.5;
@@ -841,7 +849,7 @@ input[type="button"].btn-block {
 }
 
 /* line 90, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn, input[type="submit"],
+.btn, input[type="submit"], .gmt-edd-slack-form-button,
 button,
 html input[type="button"],
 input[type="reset"],
@@ -858,9 +866,10 @@ input[type="submit"] {
 }
 
 /* line 107, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_buttons.scss */
-.btn:last-child, input[type="submit"]:last-child,
+.btn:last-child, input[type="submit"]:last-child, .gmt-edd-slack-form-button:last-child,
 input.btn,
-input[type="submit"] {
+input[type="submit"],
+input.gmt-edd-slack-form-button {
   margin-right: 0;
 }
 
@@ -1580,6 +1589,20 @@ tfoot th {
 }
 
 /**
+ * @section Slack
+ * Custom overrides for Slack Invites
+ */
+/* line 7, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_slack.scss */
+.gmt-edd-slack-form-label {
+  font-weight: bold;
+}
+
+/* line 16, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_slack.scss */
+.gmt-edd-slack-alert {
+  font-style: italic;
+}
+
+/**
  * @section Overrides
  * Nudge and tweak alignment, spacing, and visibility.
  */
@@ -1633,7 +1656,7 @@ tfoot th {
 }
 
 /* line 70, /Users/cferdinandi/Sites/go-make-things/wordpress/wp-content/themes/gomakethings/src/sass/components/_overrides.scss */
-.text-muted-light, .btn del, input[type="submit"] del {
+.text-muted-light, .btn del, input[type="submit"] del, .gmt-edd-slack-form-button del {
   color: #b2b2b2;
 }
 
