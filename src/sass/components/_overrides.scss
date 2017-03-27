@@ -82,6 +82,7 @@
 
 .text-normal {
 	font-weight: normal;
+	font-style: normal;
 }
 
 
@@ -186,6 +187,10 @@
 
 .padding-top-small {
 	padding-top: calc-em(8px);
+}
+
+.padding-top-medium {
+	padding-top: calc-em(16px);
 }
 
 .padding-top-large {
