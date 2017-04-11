@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.73.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.74.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -51,6 +51,39 @@
 		link.href = window.location.origin + window.location.pathname;
 		document.documentElement.className += ' js-edd-cancel';
 	}
+
+})(window, document);
+/**
+ * Prepopulate email fields based on a query string
+ */
+;(function (window, document, undefined) {
+
+	'use strict';
+
+	// Feature Test
+	var supports = 'querySelector' in document;
+	if ( !supports ) return;
+
+	/**
+	 * Get the value of a query string from a URL
+	 * @param  {String} field The field to get the value of
+	 * @param  {String} url   The URL to get the value from [optional]
+	 * @return {String}       The value
+	 */
+	var getQueryString = function ( field, url ) {
+		var href = url ? url : window.location.href;
+		var reg = new RegExp( '[?&]' + field + '=([^&#]*)', 'i' );
+		var string = reg.exec(href);
+		return string ? string[1] : null;
+	};
+
+	// Variables
+	var email = getQueryString('email');
+	var input = document.querySelector('input[type="email"]');
+	if (!email || !input) return;
+
+	// Autoload email
+	input.value = email;
 
 })(window, document);
 /*! fluidvids.js v2.4.1 | (c) 2014 @toddmotto | https://github.com/toddmotto/fluidvids */
