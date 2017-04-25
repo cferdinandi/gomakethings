@@ -204,3 +204,28 @@ label[for="edd-discount"] {
 	@extend .text-small;
 	@extend .text-muted;
 }
+
+
+// Hide form label
+.edd-self-service-label {
+	@extend .screen-reader;
+}
+
+// Grid layout
+.edd-self-service-row {
+	@extend .row;
+}
+
+.edd-self-service-grid-input {
+	@extend .grid-two-thirds;
+}
+
+.edd-self-service-grid-button {
+	@extend .grid-third;
+}
+
+// Button styles
+.edd-self-service-button {
+	@extend .btn;
+	@extend .btn-block;
+}

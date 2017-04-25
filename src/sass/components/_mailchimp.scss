@@ -1,0 +1,28 @@
+/**
+ * @section MailChimp
+ * Custom overrides for MailChimp forms
+ */
+
+// Hide form label
+.mailchimp-form-label {
+	@extend .screen-reader;
+}
+
+// Grid layout
+.mailchimp-form-row {
+	@extend .row;
+}
+
+.mailchimp-form-grid-input {
+	@extend .grid-two-thirds;
+}
+
+.mailchimp-form-grid-button {
+	@extend .grid-third;
+}
+
+// Button styles
+.mailchimp-form-button {
+	@extend .btn;
+	@extend .btn-block;
+}
