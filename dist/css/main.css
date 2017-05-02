@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.75.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.76.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1604,10 +1604,11 @@ tfoot th {
 /**
  * Credit Card Fields
  */
-/* line 169, src/sass/components/_edd.scss */
+/* line 170, src/sass/components/_edd.scss */
 #edd_checkout_user_info .edd-label,
 #edd_cc_fields .edd-label,
-#edd_cc_address .edd-label {
+#edd_cc_address .edd-label,
+#edd-support-wrap .edd-label {
   font-weight: bold;
   margin-bottom: 0.25em;
 }
@@ -1735,7 +1736,8 @@ tfoot th {
 /* line 143, src/sass/components/_overrides.scss */
 .no-margin-bottom, #edd_checkout_wrap fieldset, #edd_checkout_user_info p,
 #edd_cc_fields p,
-#edd_cc_address p {
+#edd_cc_address p,
+#edd-support-wrap p {
   margin-bottom: 0;
 }
 
@@ -1874,11 +1876,14 @@ tfoot th {
 /* line 263, src/sass/components/_overrides.scss */
 [hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_secure_site_wrapper, #edd_checkout_user_info legend,
 #edd_cc_fields legend,
-#edd_cc_address legend, #edd_checkout_user_info .edd-required-indicator,
+#edd_cc_address legend,
+#edd-support-wrap legend, #edd_checkout_user_info .edd-required-indicator,
 #edd_cc_fields .edd-required-indicator,
-#edd_cc_address .edd-required-indicator, #edd_checkout_user_info .edd-description,
+#edd_cc_address .edd-required-indicator,
+#edd-support-wrap .edd-required-indicator, #edd_checkout_user_info .edd-description,
 #edd_cc_fields .edd-description,
-#edd_cc_address .edd-description, #edd_error_no_token {
+#edd_cc_address .edd-description,
+#edd-support-wrap .edd-description, #edd_error_no_token {
   display: none;
   visibility: hidden;
 }
