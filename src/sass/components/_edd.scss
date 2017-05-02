@@ -160,7 +160,8 @@ label[for="edd-discount"] {
 // Hide all the extraneous stuff
 #edd_checkout_user_info,
 #edd_cc_fields,
-#edd_cc_address {
+#edd_cc_address,
+#edd-support-wrap {
 
 	legend {
 		@extend [hidden];
