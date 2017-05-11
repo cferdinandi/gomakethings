@@ -498,6 +498,18 @@
 
 
 	/**
+	 * Add new HTML tags to the allowed KSES list
+	 * @return [type] [description]
+	 */
+	function keel_allow_new_html_tags() {
+		global $allowedposttags;
+		$allowedposttags['markdown'] = true;
+	}
+	add_action( 'init', 'keel_allow_new_html_tags' );
+
+
+
+	/**
 	 * Disable WordPress auto-formatting
 	 * Disabled by default. Uncomment add_action to enable
 	 */
