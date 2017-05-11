@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.76.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.77.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -244,11 +244,11 @@ figure {
 }
 
 /* line 25, src/sass/components/_grid.scss */
-.grid-third, #edd-card-cvc-wrap,
+.grid-fourth, .grid-third, #edd-card-cvc-wrap,
 .card-expiration,
 #edd-card-zip-wrap, .edd-self-service-grid-button, .mailchimp-form-grid-button, .grid-half, .grid-two-thirds, #edd-card-number-wrap,
 #edd-card-name-wrap,
-#edd-card-country-wrap, .edd-self-service-grid-input, .mailchimp-form-grid-input {
+#edd-card-country-wrap, .edd-self-service-grid-input, .mailchimp-form-grid-input, .grid-three-fourths {
   float: left;
   width: 100%;
   padding-left: 1.4%;
@@ -268,6 +268,10 @@ figure {
  */
 @media (min-width: 38em) {
   /* line 53, src/sass/components/_grid.scss */
+  .grid-fourth {
+    width: 25%;
+  }
+  /* line 53, src/sass/components/_grid.scss */
   .grid-third, #edd-card-cvc-wrap,
   .card-expiration,
   #edd-card-zip-wrap, .edd-self-service-grid-button, .mailchimp-form-grid-button {
@@ -283,6 +287,14 @@ figure {
   #edd-card-country-wrap, .edd-self-service-grid-input, .mailchimp-form-grid-input {
     width: 66.66667%;
   }
+  /* line 53, src/sass/components/_grid.scss */
+  .grid-three-fourths {
+    width: 75%;
+  }
+  /* line 59, src/sass/components/_grid.scss */
+  .offset-fourth {
+    margin-left: 25%;
+  }
   /* line 59, src/sass/components/_grid.scss */
   .offset-third {
     margin-left: 33.33333%;
@@ -294,6 +306,10 @@ figure {
   /* line 59, src/sass/components/_grid.scss */
   .offset-two-thirds {
     margin-left: 66.66667%;
+  }
+  /* line 59, src/sass/components/_grid.scss */
+  .offset-three-fourths {
+    margin-left: 75%;
   }
 }
 
@@ -1641,6 +1657,14 @@ tfoot th {
 /* line 11, src/sass/components/_overrides.scss */
 .bg-muted {
   background-color: #f7f7f7;
+}
+
+/**
+ * Font weights
+ */
+/* line 20, src/sass/components/_overrides.scss */
+.text-normal {
+  font-weight: normal;
 }
 
 /**
