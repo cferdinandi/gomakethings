@@ -58,13 +58,6 @@ $options = keel_get_theme_options();
 			}
 		?>
 
-		<!-- $posttags = get_the_tags();
-		if ($posttags) {
-		  foreach($posttags as $tag) {
-		    echo $tag->name . ' ';
-		  }
-		} -->
-
 
 
 		<?php
