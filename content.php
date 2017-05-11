@@ -39,8 +39,9 @@ $options = keel_get_theme_options();
 
 		<?php
 			// Category list
-			$tags = get_the_category();
-			if ( !empty( $tags ) ) :
+			// $tags = get_the_category();
+			// if ( !empty( $tags ) ) :
+			if (false) :
 		?>
 			<ul class="padding-top text-small list-inline">
 				<li><strong><?php echo stripslashes( esc_html( $options['blog_category_label'] ) ); ?></strong></li>
@@ -56,13 +57,6 @@ $options = keel_get_theme_options();
 				echo do_shortcode( wpautop( stripslashes( $options['blog_posts_message'] ), false ) );
 			}
 		?>
-
-		<!-- $posttags = get_the_tags();
-		if ($posttags) {
-		  foreach($posttags as $tag) {
-		    echo $tag->name . ' ';
-		  }
-		} -->
 
 
 
