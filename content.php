@@ -94,24 +94,39 @@ $options = keel_get_theme_options();
 		</aside>
 	<?php endif; ?>
 
+	<?php
+		global $year;
+		$post_year = get_the_time( 'Y', $post );
+		if ( empty($year) || intval( $year ) !== intval( $post_year ) ) :
+	?>
+		<h2 <?php echo ( $wp_query->current_post === 0 ? 'class="no-padding-top"' : '' ); ?>><?php echo $post_year; ?></h2>
+	<?php
+		$year = $post_year;
+		endif;
+	?>
+
 	<article>
 
-		<header>
+		<header class="row">
 
-			<aside class="text-muted">
-				<time datetime="<?php the_time( 'F j, Y' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
-				<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
-			</aside>
+			<div class="grid-fourth grid-flip ">
+				<aside class="text-muted text-small">
+					<time datetime="<?php the_time( 'F j, Y' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
+					<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
+				</aside>
+			</div>
 
-			<h2 class="no-padding-top margin-bottom-small">
-				<a class="link-plain" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-			</h2>
+			<div class="grid-three-fourths">
+				<h3 class="h5 text-normal no-padding-top">
+					<a class="link-plain" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				</h3>
+			</div>
 
 		</header>
 
 		<?php
 			// The post content
-			echo get_the_excerpt() . ' <a href="' . get_the_permalink() . '">' . sprintf( __( 'read more %s', 'keel' ), '<span class="screen-reader">of ' . get_the_title() . '</span></a>' );
+			// echo get_the_excerpt() . ' <a href="' . get_the_permalink() . '">' . sprintf( __( 'read more %s', 'keel' ), '<span class="screen-reader">of ' . get_the_title() . '</span></a>' );
 			// the_content(
 			// 	sprintf(
 			// 		__( 'Read more %s...', 'keel' ),
@@ -137,7 +152,8 @@ $options = keel_get_theme_options();
 
 		<?php
 			// If this is not the last post on the page, insert a divider
-			if ( !keel_is_last_post($wp_query) ) :
+			// if ( !keel_is_last_post($wp_query) ) :
+			if (false) :
 		?>
 		    <hr class="line-clear">
 		<?php endif; ?>
