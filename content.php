@@ -90,8 +90,8 @@ $options = keel_get_theme_options();
 
 	<?php
 		global $year;
-		$post_year = get_the_time( 'Y', $post );
-		if ( empty($year) || intval( $year ) !== intval( $post_year ) ) :
+		$post_year = get_the_time( 'F Y', $post );
+		if ( empty($year) || strcmp( $year, $post_year ) !== 0 ) :
 	?>
 		<h2 <?php echo ( $wp_query->current_post === 0 ? 'class="no-padding-top"' : '' ); ?>><?php echo $post_year; ?></h2>
 	<?php
@@ -106,13 +106,13 @@ $options = keel_get_theme_options();
 			<div class="grid-fourth grid-flip ">
 				<aside class="text-muted text-small">
 					<time datetime="<?php the_time( 'F j, Y' ); ?>" pubdate><?php the_time( 'F j, Y' ); ?></time>
-					<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 				</aside>
 			</div>
 
 			<div class="grid-three-fourths">
 				<h3 class="h5 text-normal no-padding-top">
 					<a class="link-plain" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 				</h3>
 			</div>
 
