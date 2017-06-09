@@ -224,7 +224,7 @@
 	 * @link http://codex.wordpress.org/Post_Thumbnails
 	 */
 	function keel_post_thumbnails_support() {
-		add_theme_support( 'post-thumbnails', array( 'gmt-projects', 'page' ) );
+		add_theme_support( 'post-thumbnails', array( 'gmt-projects', 'page', 'download' ) );
 	}
 	add_action( 'after_setup_theme', 'keel_post_thumbnails_support' );
 
