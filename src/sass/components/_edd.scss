@@ -232,6 +232,6 @@ label[for="edd-discount"] {
 }
 
 // Hide cart image
-#edd_cart_item_image {
+.edd_cart_item_image {
 	@extend [hidden];
 }

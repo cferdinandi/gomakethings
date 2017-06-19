@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.83.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.83.1: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -15,14 +15,14 @@
 		// If a buy now button...
 		if (event.target.classList.contains('edd-buy-now-button')) {
 			event.target.innerHTML = 'Adding to cart...';
-			event.target.setAttribute('disabled', 'disabled');
+			event.target.classList.add('disabled');
 			return;
 		}
 
 		// If a MailChimp form...
 		if (event.target.classList.contains('mailchimp-form-button')) {
 			event.target.innerHTML = 'Joining...';
-			event.target.setAttribute('disabled', 'disabled');
+			event.target.classList.add('disabled');
 		}
 
 	}), false);
