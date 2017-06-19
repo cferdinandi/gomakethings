@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.83.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.83.2: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -21,6 +21,7 @@
 
 		// If a MailChimp form...
 		if (event.target.classList.contains('mailchimp-form-button')) {
+			if (event.target.form.querySelector('#mailchimp_email').value.length < 1) return;
 			event.target.innerHTML = 'Joining...';
 			event.target.classList.add('disabled');
 		}

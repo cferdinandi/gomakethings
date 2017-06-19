@@ -13,6 +13,7 @@
 
 		// If a MailChimp form...
 		if (event.target.classList.contains('mailchimp-form-button')) {
+			if (event.target.form.querySelector('#mailchimp_email').value.length < 1) return;
 			event.target.innerHTML = 'Joining...';
 			event.target.classList.add('disabled');
 		}
