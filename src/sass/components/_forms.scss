@@ -221,3 +221,17 @@ select:focus {
 .btn-search:hover .icon {
 	fill: darken( $color-gray-dark, 15% );
 }
+
+
+/**
+ * Form errors
+ */
+.error {
+	border-color: red;
+}
+
+.error-message {
+	color: red;
+	font-style: italic;
+	margin-bottom: 1em;
+}
