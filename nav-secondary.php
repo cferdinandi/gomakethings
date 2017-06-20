@@ -9,7 +9,7 @@
 ?>
 
 <?php if ( has_nav_menu( 'secondary' ) ) : ?>
-	<nav class="tabindex" id="nav-secondary" tabindex="-1">
+	<nav class="tabindex nav-secondary" id="nav-secondary" tabindex="-1">
 		<?php wp_nav_menu(
 			array(
 				'theme_location' => 'secondary',

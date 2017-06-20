@@ -33,7 +33,7 @@ p {
 a {
 	background-color: transparent; /* 1 */
 	color: $color-primary;
-	text-decoration: none;
+	text-decoration: underline;
 	word-wrap: break-word;
 	-webkit-text-decoration-skip: objects; /* 2 */
 
@@ -49,6 +49,21 @@ a {
 	&:focus,
 	&:hover {
 		color: darken( $color-primary, 15% );
+		// text-decoration: underline;
+	}
+
+	// &:visited {
+	// 	color: $color-accent;
+	// }
+}
+
+
+.link-no-underline {
+	text-decoration: none;
+
+	&:active,
+	&:focus,
+	&:hover {
 		text-decoration: underline;
 	}
 }
@@ -61,13 +76,14 @@ a {
 	&,
 	&:visited {
 		color: $color-black;
+		text-decoration: none;
 	}
 
 	&:active,
 	&:focus,
 	&:hover {
 		color: $color-primary;
-		text-decoration: none;
+		// text-decoration: none;
 	}
 }
 
