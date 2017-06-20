@@ -150,6 +150,10 @@
 	<?php endif; ?>
 
 	<article class="margin-bottom">
+		<aside class="text-small text-muted">
+			<?php echo esc_html( ucfirst( $details['type'] ) ); ?>
+		</aside>
+
 		<header>
 			<h3 class="h5 no-padding-top no-margin-bottom">
 				<?php
@@ -174,10 +178,10 @@
 
 		<p <?php if ( !empty( $materials ) && $start_date <= $today ) { echo 'class="no-margin-bottom"'; } ?>>
 			<?php
-				// If there's a location, add it
-				if ( !empty( $details['location'] ) ) :
+				// If there's a date, add it
+				if ( !empty( $date ) ) :
 			?>
-				<em><?php echo stripslashes( esc_html( $details['location'] ) ); ?></em>
+				<?php echo $date; ?>
 			<?php endif; ?>
 
 			<?php if ( !empty( $details['location'] ) && !empty( $date ) ) : ?>
@@ -185,10 +189,10 @@
 			<?php endif; ?>
 
 			<?php
-				// If there's a date, add it
-				if ( !empty( $date ) ) :
+				// If there's a location, add it
+				if ( !empty( $details['location'] ) ) :
 			?>
-				<?php echo $date; ?>
+				<?php echo stripslashes( esc_html( $details['location'] ) ); ?>
 			<?php endif; ?>
 		</p>
 
@@ -199,7 +203,7 @@
 			<ul class="list-inline">
 				<?php foreach ( $materials as $key => $material ) : ?>
 					<li>
-						<a href="<?php echo esc_url( $material ); ?>">
+						<a class="link-no-underline" href="<?php echo esc_url( $material ); ?>">
 							<?php echo $key; ?>
 						</a>
 					</li>
