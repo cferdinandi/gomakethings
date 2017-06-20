@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.83.2: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.84.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1155,6 +1155,21 @@ select:focus {
 /* line 221, src/sass/components/_forms.scss */
 .btn-search:hover .icon {
   fill: #5a5a5a;
+}
+
+/**
+ * Form errors
+ */
+/* line 229, src/sass/components/_forms.scss */
+.error {
+  border-color: red;
+}
+
+/* line 233, src/sass/components/_forms.scss */
+.error-message {
+  color: red;
+  font-style: italic;
+  margin-bottom: 1em;
 }
 
 /**
