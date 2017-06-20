@@ -50,13 +50,17 @@ label[for="edd-discount"] {
 	@extend .margin-bottom-small;
 }
 
-#edd-gateway-option-stripe:after {
-	content: " via Stripe";
-}
+// #edd-gateway-option-stripe:after {
+// 	content: " via Stripe";
+// }
 
 #edd_payment_mode_submit,
 #edd_checkout_user_info {
 	@extend .padding-top;
+
+	.edd-stripe-checkout & {
+		padding-top: 0;
+	}
 }
 
 

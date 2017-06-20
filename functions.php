@@ -59,7 +59,7 @@
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/loadJS.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
 				if ( 'querySelector' in document && 'addEventListener' in window ) {
 					loadJS('<?php echo get_template_directory_uri() . "/dist/js/main.min." . $keel_theme->get( "Version" ) . ".js"; ?>');
-					<?php if ( !empty( $get_checkout ) && is_page( $get_checkout ) ) : ?>
+					<?php if ( !empty( $get_checkout ) && is_page( $get_checkout ) && empty( edd_get_option('stripe_checkout') ) ) : ?>
 						loadJS('<?php echo get_template_directory_uri() . "/dist/js/cleave.min." . $keel_theme->get( "Version" ) . ".js"; ?>');
 					<?php endif; ?>
 				}
