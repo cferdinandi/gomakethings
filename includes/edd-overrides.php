@@ -1,6 +1,19 @@
 <?php
 
 	/**
+	 * Add body class when using Stripe checkout
+	 */
+	function keel_is_stripe_checkout_class( $classes ) {
+		if ( function_exists( 'edd_get_option' ) && !empty( edd_get_option( 'stripe_checkout' ) ) ) {
+			$classes[] = 'edd-stripe-checkout';
+		}
+		return $classes;
+	}
+	add_filter( 'body_class', 'keel_is_stripe_checkout_class');
+
+
+
+	/**
 	 * Unset first and last name as required fields in checkout
 	 * @param  Array $required_fields Required fields
 	 */

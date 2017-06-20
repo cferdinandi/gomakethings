@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.84.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.85.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1586,15 +1586,16 @@ tfoot th {
   font-weight: bold;
 }
 
-/* line 53, src/sass/components/_edd.scss */
-#edd-gateway-option-stripe:after {
-  content: " via Stripe";
+/* line 61, src/sass/components/_edd.scss */
+.edd-stripe-checkout #edd_payment_mode_submit, .edd-stripe-checkout
+#edd_checkout_user_info {
+  padding-top: 0;
 }
 
 /**
  * Payment icons
  */
-/* line 76, src/sass/components/_edd.scss */
+/* line 80, src/sass/components/_edd.scss */
 .svg .edd-payment-icons .icon {
   height: 1.75em;
 }
@@ -1602,13 +1603,13 @@ tfoot th {
 /**
  * "Complete Purchase" button
  */
-/* line 90, src/sass/components/_edd.scss */
+/* line 94, src/sass/components/_edd.scss */
 #edd-purchase-button {
   display: none;
   visibility: hidden;
 }
 
-/* line 95, src/sass/components/_edd.scss */
+/* line 99, src/sass/components/_edd.scss */
 .js-edd #edd-purchase-button {
   display: inline-block;
   visibility: visible;
@@ -1617,13 +1618,13 @@ tfoot th {
 /**
  * Cancel button
  */
-/* line 110, src/sass/components/_edd.scss */
+/* line 114, src/sass/components/_edd.scss */
 .edd-cancel {
   display: none;
   visibility: hidden;
 }
 
-/* line 115, src/sass/components/_edd.scss */
+/* line 119, src/sass/components/_edd.scss */
 .js-edd-cancel .edd-cancel {
   display: block;
   visibility: visible;
@@ -1635,7 +1636,7 @@ tfoot th {
 /**
  * Credit Card Fields
  */
-/* line 170, src/sass/components/_edd.scss */
+/* line 174, src/sass/components/_edd.scss */
 #edd_checkout_user_info .edd-label,
 #edd_cc_fields .edd-label,
 #edd_cc_address .edd-label,
