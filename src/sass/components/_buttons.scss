@@ -21,6 +21,10 @@
 	}
 }
 
+a.btn {
+	text-decoration: none;
+}
+
 .btn:hover,
 a .btn:hover,
 .btn:focus,
@@ -31,7 +35,7 @@ a .btn:active,
 	background-color: darken( $color-secondary, 30% );
 	border-color: darken( $color-secondary, 30% );
 	color: $color-white;
-	text-decoration: none;
+	// text-decoration: none;
 }
 
 // .btn-secondary {

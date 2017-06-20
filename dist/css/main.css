@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.85.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.86.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -357,7 +357,7 @@ a, .link-block-styled {
   background-color: transparent;
   /* 1 */
   color: #0088cc;
-  text-decoration: none;
+  text-decoration: underline;
   word-wrap: break-word;
   -webkit-text-decoration-skip: objects;
   /* 2 */
@@ -374,27 +374,36 @@ a:active, .link-block-styled:active, a:hover, .link-block-styled:hover, .link-bl
 /* line 48, src/sass/components/_typography.scss */
 a:active, .link-block-styled:active, a:focus, .link-block-styled:focus, a:hover, .link-block-styled:hover, .link-block:hover .link-block-styled {
   color: #005580;
+}
+
+/* line 61, src/sass/components/_typography.scss */
+.link-no-underline, .nav-secondary a, .nav-secondary .link-block-styled {
+  text-decoration: none;
+}
+
+/* line 64, src/sass/components/_typography.scss */
+.link-no-underline:active, .nav-secondary a:active, .nav-secondary .link-block-styled:active, .link-no-underline:focus, .nav-secondary a:focus, .nav-secondary .link-block-styled:focus, .link-no-underline:hover, .nav-secondary a:hover, .nav-secondary .link-block-styled:hover, .nav-secondary .link-block:hover .link-block-styled, .link-block:hover .nav-secondary .link-block-styled {
   text-decoration: underline;
 }
 
 /**
  * Remove default link styling
  */
-/* line 61, src/sass/components/_typography.scss */
+/* line 76, src/sass/components/_typography.scss */
 .link-plain, .link-plain:visited {
   color: #272727;
+  text-decoration: none;
 }
 
-/* line 66, src/sass/components/_typography.scss */
+/* line 82, src/sass/components/_typography.scss */
 .link-plain:active, .link-plain:focus, .link-plain:hover {
   color: #0088cc;
-  text-decoration: none;
 }
 
 /**
  * Creates block-level links
  */
-/* line 79, src/sass/components/_typography.scss */
+/* line 95, src/sass/components/_typography.scss */
 a.link-block, .link-block.link-block-styled {
   color: #272727;
   display: block;
@@ -404,14 +413,14 @@ a.link-block, .link-block.link-block-styled {
 /**
  * List styling
  */
-/* line 98, src/sass/components/_typography.scss */
+/* line 114, src/sass/components/_typography.scss */
 ul,
 ol {
   margin: 0 0 1.5625em 2em;
   padding: 0;
 }
 
-/* line 104, src/sass/components/_typography.scss */
+/* line 120, src/sass/components/_typography.scss */
 ul ul,
 ul ol,
 ol ol,
@@ -419,31 +428,31 @@ ol ul {
   margin-bottom: 0;
 }
 
-/* line 111, src/sass/components/_typography.scss */
+/* line 127, src/sass/components/_typography.scss */
 li {
   margin-bottom: 0.5em;
 }
 
 @media (min-width: 38em) {
-  /* line 111, src/sass/components/_typography.scss */
+  /* line 127, src/sass/components/_typography.scss */
   li {
     margin-bottom: 0.25em;
   }
 }
 
-/* line 119, src/sass/components/_typography.scss */
+/* line 135, src/sass/components/_typography.scss */
 dl,
 dd {
   margin: 0;
   padding: 0;
 }
 
-/* line 125, src/sass/components/_typography.scss */
+/* line 141, src/sass/components/_typography.scss */
 dd {
   margin: 0 0 1.5625em;
 }
 
-/* line 129, src/sass/components/_typography.scss */
+/* line 145, src/sass/components/_typography.scss */
 dt {
   font-weight: bold;
 }
@@ -452,7 +461,7 @@ dt {
  * Removes list styling.
  * For semantic reasons, should only be used on unordered lists.
  */
-/* line 138, src/sass/components/_typography.scss */
+/* line 154, src/sass/components/_typography.scss */
 .list-unstyled {
   margin-left: 0;
   list-style: none;
@@ -461,7 +470,7 @@ dt {
 /**
  * Display lists inline
  */
-/* line 146, src/sass/components/_typography.scss */
+/* line 162, src/sass/components/_typography.scss */
 .list-inline {
   list-style: none;
   margin-left: -0.5em;
@@ -469,7 +478,7 @@ dt {
   padding: 0;
 }
 
-/* line 152, src/sass/components/_typography.scss */
+/* line 168, src/sass/components/_typography.scss */
 .list-inline li {
   display: inline-block;
   margin-left: 0.5em;
@@ -477,7 +486,7 @@ dt {
 }
 
 @media (max-width: 38em) {
-  /* line 159, src/sass/components/_typography.scss */
+  /* line 175, src/sass/components/_typography.scss */
   .list-inline.list-inline-responsive li {
     display: block;
   }
@@ -487,7 +496,7 @@ dt {
  * Heading styling for h1 through h6 elements.
  * Heading class lets you use one heading type for semantics, but style it as another heading type.
  */
-/* line 171, src/sass/components/_typography.scss */
+/* line 187, src/sass/components/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
   font-weight: bold;
@@ -496,7 +505,7 @@ h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
 }
 
-/* line 190, src/sass/components/_typography.scss */
+/* line 206, src/sass/components/_typography.scss */
 h1,
 .h1 {
   font-size: 1.5em;
@@ -504,33 +513,33 @@ h1,
 }
 
 @media (min-width: 38em) {
-  /* line 190, src/sass/components/_typography.scss */
+  /* line 206, src/sass/components/_typography.scss */
   h1,
   .h1 {
     font-size: 1.75em;
   }
 }
 
-/* line 200, src/sass/components/_typography.scss */
+/* line 216, src/sass/components/_typography.scss */
 h2,
 .h2 {
   font-size: 1.3125em;
 }
 
-/* line 205, src/sass/components/_typography.scss */
+/* line 221, src/sass/components/_typography.scss */
 h3,
 .h3 {
   font-size: 1.1875em;
 }
 
-/* line 210, src/sass/components/_typography.scss */
+/* line 226, src/sass/components/_typography.scss */
 h4, h5, h6,
 .h4, .h5, .h6 {
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 216, src/sass/components/_typography.scss */
+/* line 232, src/sass/components/_typography.scss */
 h4,
 .h4 {
   text-transform: uppercase;
@@ -541,7 +550,7 @@ h4,
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 245, src/sass/components/_typography.scss */
+/* line 261, src/sass/components/_typography.scss */
 hr {
   border: 0;
   border-top: 0.0725em solid #e5e5e5;
@@ -555,12 +564,12 @@ hr {
   /* 2 */
 }
 
-/* line 255, src/sass/components/_typography.scss */
+/* line 271, src/sass/components/_typography.scss */
 .line-secondary {
   width: 50%;
 }
 
-/* line 259, src/sass/components/_typography.scss */
+/* line 275, src/sass/components/_typography.scss */
 .line-clear {
   border-top-color: transparent;
 }
@@ -568,7 +577,7 @@ hr {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 267, src/sass/components/_typography.scss */
+/* line 283, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: inherit;
@@ -577,7 +586,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 275, src/sass/components/_typography.scss */
+/* line 291, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: bolder;
@@ -587,7 +596,7 @@ strong {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 284, src/sass/components/_typography.scss */
+/* line 300, src/sass/components/_typography.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -600,7 +609,7 @@ abbr[title] {
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 293, src/sass/components/_typography.scss */
+/* line 309, src/sass/components/_typography.scss */
 dfn {
   font-style: italic;
 }
@@ -608,7 +617,7 @@ dfn {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 300, src/sass/components/_typography.scss */
+/* line 316, src/sass/components/_typography.scss */
 mark {
   background-color: #ff0;
   color: #000;
@@ -617,7 +626,7 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 308, src/sass/components/_typography.scss */
+/* line 324, src/sass/components/_typography.scss */
 small {
   font-size: 80%;
 }
@@ -625,7 +634,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 315, src/sass/components/_typography.scss */
+/* line 331, src/sass/components/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -634,12 +643,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 323, src/sass/components/_typography.scss */
+/* line 339, src/sass/components/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 327, src/sass/components/_typography.scss */
+/* line 343, src/sass/components/_typography.scss */
 sub {
   bottom: -0.25em;
 }
@@ -647,7 +656,7 @@ sub {
 /**
  * Blockquotes
  */
-/* line 342, src/sass/components/_typography.scss */
+/* line 358, src/sass/components/_typography.scss */
 blockquote {
   font-size: 1.1875em;
   font-style: italic;
@@ -656,26 +665,35 @@ blockquote {
   padding-right: 0.84211em;
 }
 
-/* line 349, src/sass/components/_typography.scss */
+/* line 365, src/sass/components/_typography.scss */
 blockquote cite {
   color: #808080;
   font-size: 0.84211em;
   padding-top: 1em;
 }
 
-/* line 356, src/sass/components/_typography.scss */
+/* line 372, src/sass/components/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 361, src/sass/components/_typography.scss */
+/* line 377, src/sass/components/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
   content: '';
   content: none;
+}
+
+/**
+ * @section ID Anchors
+ * Custom overrides for ID anchors on page headings
+ */
+/* line 6, src/sass/components/_id-anchors.scss */
+.gmt-anchor-link {
+  text-decoration: none;
 }
 
 /**
@@ -799,6 +817,11 @@ pre code {
 }
 
 /* line 24, src/sass/components/_buttons.scss */
+a.btn, .btn.link-block-styled, input.link-block-styled[type="submit"], .link-block-styled.edd-self-service-button, .link-block-styled.mailchimp-form-button, .link-block-styled.gmt-edd-slack-form-button, a.edd-self-service-button, a.mailchimp-form-button, a.gmt-edd-slack-form-button {
+  text-decoration: none;
+}
+
+/* line 28, src/sass/components/_buttons.scss */
 .btn:hover, input[type="submit"]:hover, .edd-self-service-button:hover, .mailchimp-form-button:hover, .gmt-edd-slack-form-button:hover,
 a .btn:hover, .link-block-styled .btn:hover,
 a input[type="submit"]:hover, .link-block-styled input[type="submit"]:hover,
@@ -833,10 +856,9 @@ input.active[type="submit"],
   background-color: #cb070e;
   border-color: #cb070e;
   color: #ffffff;
-  text-decoration: none;
 }
 
-/* line 58, src/sass/components/_buttons.scss */
+/* line 62, src/sass/components/_buttons.scss */
 .btn:active, input[type="submit"]:active, .edd-self-service-button:active, .mailchimp-form-button:active, .gmt-edd-slack-form-button:active,
 .btn.active,
 input.active[type="submit"],
@@ -847,7 +869,7 @@ input.active[type="submit"],
   outline: 0;
 }
 
-/* line 64, src/sass/components/_buttons.scss */
+/* line 68, src/sass/components/_buttons.scss */
 .btn.disabled, input.disabled[type="submit"], .disabled.edd-self-service-button, .disabled.mailchimp-form-button, .disabled.gmt-edd-slack-form-button,
 .btn[disabled],
 input[disabled][type="submit"],
@@ -861,14 +883,14 @@ input[disabled][type="submit"],
   box-shadow: none;
 }
 
-/* line 73, src/sass/components/_buttons.scss */
+/* line 77, src/sass/components/_buttons.scss */
 .btn-large, #edd-purchase-button {
   padding: 0.6875em 0.9375em;
   font-size: 1em;
   line-height: normal;
 }
 
-/* line 79, src/sass/components/_buttons.scss */
+/* line 83, src/sass/components/_buttons.scss */
 .btn-block, .edd-self-service-button, .mailchimp-form-button,
 input[type="submit"].btn-block,
 input[type="submit"].edd-self-service-button,
@@ -886,7 +908,7 @@ input[type="button"].mailchimp-form-button {
   padding-left: 0;
 }
 
-/* line 90, src/sass/components/_buttons.scss */
+/* line 94, src/sass/components/_buttons.scss */
 .btn, input[type="submit"], .edd-self-service-button, .mailchimp-form-button, .gmt-edd-slack-form-button,
 button,
 html input[type="button"],
@@ -903,7 +925,7 @@ input[type="submit"] {
   -webkit-appearance: none;
 }
 
-/* line 107, src/sass/components/_buttons.scss */
+/* line 111, src/sass/components/_buttons.scss */
 .btn:last-child, input[type="submit"]:last-child, .edd-self-service-button:last-child, .mailchimp-form-button:last-child, .gmt-edd-slack-form-button:last-child,
 input.btn,
 input[type="submit"],
@@ -1249,7 +1271,7 @@ select:focus {
 
 /* line 49, src/sass/components/_svgs.scss */
 .icon-accent {
-  fill: #feca41;
+  fill: #800080;
 }
 
 /* line 53, src/sass/components/_svgs.scss */
@@ -1389,11 +1411,11 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
  */
 /* line 25, src/sass/components/_astro-navbar.scss */
 .logo {
+  color: #272727;
   display: inline-block;
   font-size: 1.2em;
   font-weight: bold;
   line-height: 1.2;
-  color: #272727;
   margin-bottom: 0.3125em;
   text-decoration: none;
 }
@@ -1407,12 +1429,12 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 
 /* line 45, src/sass/components/_astro-navbar.scss */
-.logo:hover {
+.logo:active, .logo:focus, .logo:hover {
   color: #0088cc;
   text-decoration: none;
 }
 
-/* line 50, src/sass/components/_astro-navbar.scss */
+/* line 52, src/sass/components/_astro-navbar.scss */
 .logo .icon {
   height: 0.8em;
   width: 0.8em;
@@ -1421,7 +1443,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /**
  * The nav menu
  */
-/* line 60, src/sass/components/_astro-navbar.scss */
+/* line 62, src/sass/components/_astro-navbar.scss */
 .nav {
   list-style: none;
   margin: 0 -0.5em;
@@ -1432,13 +1454,13 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 
 @media (min-width: 60em) {
-  /* line 60, src/sass/components/_astro-navbar.scss */
+  /* line 62, src/sass/components/_astro-navbar.scss */
   .nav {
     text-align: right;
   }
 }
 
-/* line 80, src/sass/components/_astro-navbar.scss */
+/* line 82, src/sass/components/_astro-navbar.scss */
 .nav li {
   display: inline-block;
   float: none;
@@ -1446,12 +1468,13 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   margin-right: 0.5em;
 }
 
-/* line 96, src/sass/components/_astro-navbar.scss */
+/* line 98, src/sass/components/_astro-navbar.scss */
 .nav a, .nav .link-block-styled {
   color: #808080;
+  text-decoration: none;
 }
 
-/* line 103, src/sass/components/_astro-navbar.scss */
+/* line 106, src/sass/components/_astro-navbar.scss */
 .nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled,
 .nav a:active,
 .nav .link-block-styled:active,
@@ -1471,9 +1494,12 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 .single-gmt-articles .nav .menu-item-object-gmt-articles > .link-block-styled {
   border-bottom: 0.125em solid #fa7176;
   color: #272727;
-  text-decoration: none;
 }
 
+/**
+ * @section Secondary Nav
+ * Styling for the secondary navigation area
+ */
 /**
  * @section Tables
  * Styling for tables

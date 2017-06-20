@@ -23,11 +23,11 @@
  * The logo
  */
 .logo {
+	color: $color-black;
 	display: inline-block;
 	font-size: 1.2em;
 	font-weight: bold;
 	line-height: 1.2;
-	color: $color-black;
 	margin-bottom: calc-em(5px);
 	text-decoration: none;
 
@@ -42,6 +42,8 @@
 	// 	}
 	// }
 
+	&:active,
+	&:focus,
 	&:hover {
 		color: $color-primary;
 		text-decoration: none;
@@ -95,6 +97,7 @@
 
 	a {
 		color: $color-gray-dark;
+		text-decoration: none;
 	}
 
 	/**
@@ -111,7 +114,7 @@
 	.single-gmt-articles & .menu-item-object-gmt-articles > a {
 		border-bottom: calc-em(2px) solid $color-secondary;
 		color: $color-black;
-		text-decoration: none;
+		// text-decoration: none;
 	}
 }
 
