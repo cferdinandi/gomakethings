@@ -1,7 +1,8 @@
 ;(function (window, document, undefined) {
 	'use strict';
-	var nightMode = getCookie('nightMode');
-	if (nightMode && nightMode === 'true') {
+	if (!('localStorage' in window)) return;
+	var nightMode = localStorage.getItem('gmtNightMode');
+	if (nightMode) {
 		document.documentElement.className += ' night-mode';
 	}
 })(window, document);
