@@ -1,3 +1,10 @@
+/*!
+ * smooth-scroll v11.1.0: Animate scrolling to anchor links
+ * (c) 2017 Chris Ferdinandi
+ * GPL-3.0 License
+ * http://github.com/cferdinandi/smooth-scroll
+ */
+
 (function (root, factory) {
 	if ( typeof define === 'function' && define.amd ) {
 		define([], factory(root));
@@ -6,7 +13,7 @@
 	} else {
 		root.smoothScroll = factory(root);
 	}
-})(typeof global !== 'undefined' ? global : this.window || this.global, function (root) {
+})(typeof global !== 'undefined' ? global : this.window || this.global, (function (root) {
 
 	'use strict';
 
@@ -20,12 +27,20 @@
 
 	// Default settings
 	var defaults = {
+		// Selectors
 		selector: '[data-scroll]',
+		ignore: '[data-scroll-ignore]',
 		selectorHeader: null,
+
+		// Speed & Easing
 		speed: 500,
-		easing: 'easeInOutCubic',
 		offset: 0,
-		callback: function () {}
+		easing: 'easeInOutCubic',
+		easingPatterns: {},
+
+		// Callback API
+		before: function () {},
+		after: function () {}
 	};
 
 
@@ -92,68 +107,30 @@
 	 * Get the closest matching element up the DOM tree.
 	 * @private
 	 * @param  {Element} elem     Starting element
-	 * @param  {String}  selector Selector to match against (class, ID, data attribute, or tag)
+	 * @param  {String}  selector Selector to match against
 	 * @return {Boolean|Element}  Returns null if not match found
 	 */
 	var getClosest = function ( elem, selector ) {
 
-		// Variables
-		var firstChar = selector.charAt(0);
-		var supports = 'classList' in document.documentElement;
-		var attribute, value;
-
-		// If selector is a data attribute, split attribute from value
-		if ( firstChar === '[' ) {
-			selector = selector.substr(1, selector.length - 2);
-			attribute = selector.split( '=' );
-
-			if ( attribute.length > 1 ) {
-				value = true;
-				attribute[1] = attribute[1].replace( /"/g, '' ).replace( /'/g, '' );
-			}
+		// Element.matches() polyfill
+		if (!Element.prototype.matches) {
+			Element.prototype.matches =
+				Element.prototype.matchesSelector ||
+				Element.prototype.mozMatchesSelector ||
+				Element.prototype.msMatchesSelector ||
+				Element.prototype.oMatchesSelector ||
+				Element.prototype.webkitMatchesSelector ||
+				function(s) {
+					var matches = (this.document || this.ownerDocument).querySelectorAll(s),
+						i = matches.length;
+					while (--i >= 0 && matches.item(i) !== this) {}
+					return i > -1;
+				};
 		}
 
 		// Get closest match
-		for ( ; elem && elem !== document && elem.nodeType === 1; elem = elem.parentNode ) {
-
-			// If selector is a class
-			if ( firstChar === '.' ) {
-				if ( supports ) {
-					if ( elem.classList.contains( selector.substr(1) ) ) {
-						return elem;
-					}
-				} else {
-					if ( new RegExp('(^|\\s)' + selector.substr(1) + '(\\s|$)').test( elem.className ) ) {
-						return elem;
-					}
-				}
-			}
-
-			// If selector is an ID
-			if ( firstChar === '#' ) {
-				if ( elem.id === selector.substr(1) ) {
-					return elem;
-				}
-			}
-
-			// If selector is a data attribute
-			if ( firstChar === '[' ) {
-				if ( elem.hasAttribute( attribute[0] ) ) {
-					if ( value ) {
-						if ( elem.getAttribute( attribute[0] ) === attribute[1] ) {
-							return elem;
-						}
-					} else {
-						return elem;
-					}
-				}
-			}
-
-			// If selector is a tag
-			if ( elem.tagName.toLowerCase() === selector ) {
-				return elem;
-			}
-
+		for ( ; elem && elem !== document; elem = elem.parentNode ) {
+			if ( elem.matches( selector ) ) return elem;
 		}
 
 		return null;
@@ -248,20 +225,28 @@
 	 * @param {Number} time Time animation should take to complete
 	 * @returns {Number}
 	 */
-	var easingPattern = function ( type, time ) {
+	var easingPattern = function ( settings, time ) {
 		var pattern;
-		if ( type === 'easeInQuad' ) pattern = time * time; // accelerating from zero velocity
-		if ( type === 'easeOutQuad' ) pattern = time * (2 - time); // decelerating to zero velocity
-		if ( type === 'easeInOutQuad' ) pattern = time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time; // acceleration until halfway, then deceleration
-		if ( type === 'easeInCubic' ) pattern = time * time * time; // accelerating from zero velocity
-		if ( type === 'easeOutCubic' ) pattern = (--time) * time * time + 1; // decelerating to zero velocity
-		if ( type === 'easeInOutCubic' ) pattern = time < 0.5 ? 4 * time * time * time : (time - 1) * (2 * time - 2) * (2 * time - 2) + 1; // acceleration until halfway, then deceleration
-		if ( type === 'easeInQuart' ) pattern = time * time * time * time; // accelerating from zero velocity
-		if ( type === 'easeOutQuart' ) pattern = 1 - (--time) * time * time * time; // decelerating to zero velocity
-		if ( type === 'easeInOutQuart' ) pattern = time < 0.5 ? 8 * time * time * time * time : 1 - 8 * (--time) * time * time * time; // acceleration until halfway, then deceleration
-		if ( type === 'easeInQuint' ) pattern = time * time * time * time * time; // accelerating from zero velocity
-		if ( type === 'easeOutQuint' ) pattern = 1 + (--time) * time * time * time * time; // decelerating to zero velocity
-		if ( type === 'easeInOutQuint' ) pattern = time < 0.5 ? 16 * time * time * time * time * time : 1 + 16 * (--time) * time * time * time * time; // acceleration until halfway, then deceleration
+
+		// Default Easing Patterns
+		if ( settings.easing === 'easeInQuad' ) pattern = time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutQuad' ) pattern = time * (2 - time); // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutQuad' ) pattern = time < 0.5 ? 2 * time * time : -1 + (4 - 2 * time) * time; // acceleration until halfway, then deceleration
+		if ( settings.easing === 'easeInCubic' ) pattern = time * time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutCubic' ) pattern = (--time) * time * time + 1; // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutCubic' ) pattern = time < 0.5 ? 4 * time * time * time : (time - 1) * (2 * time - 2) * (2 * time - 2) + 1; // acceleration until halfway, then deceleration
+		if ( settings.easing === 'easeInQuart' ) pattern = time * time * time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutQuart' ) pattern = 1 - (--time) * time * time * time; // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutQuart' ) pattern = time < 0.5 ? 8 * time * time * time * time : 1 - 8 * (--time) * time * time * time; // acceleration until halfway, then deceleration
+		if ( settings.easing === 'easeInQuint' ) pattern = time * time * time * time * time; // accelerating from zero velocity
+		if ( settings.easing === 'easeOutQuint' ) pattern = 1 + (--time) * time * time * time * time; // decelerating to zero velocity
+		if ( settings.easing === 'easeInOutQuint' ) pattern = time < 0.5 ? 16 * time * time * time * time * time : 1 + 16 * (--time) * time * time * time * time; // acceleration until halfway, then deceleration
+
+		// Custom Easing Patterns
+		if ( settings.easingPatterns[settings.easing] ) {
+			pattern = settings.easingPatterns[settings.easing]( time );
+		}
+
 		return pattern || time; // no easing, no acceleration
 	};
 
@@ -373,7 +358,7 @@
 			// Get the height of a fixed header if one exists and not already set
 			headerHeight = getHeaderHeight( fixedHeader );
 		}
-		var endLocation = isNum ? anchor : getEndLocation( anchorElem, headerHeight, parseInt(animateSettings.offset, 10) ); // Location to scroll to
+		var endLocation = isNum ? anchor : getEndLocation( anchorElem, headerHeight, parseInt((typeof animateSettings.offset === 'function' ? animateSettings.offset() : animateSettings.offset), 10) ); // Location to scroll to
 		var distance = endLocation - startLocation; // distance to travel
 		var documentHeight = getDocumentHeight();
 		var timeLapsed = 0;
@@ -397,7 +382,7 @@
 				adjustFocus( anchor, endLocation, isNum );
 
 				// Run callback after animation complete
-				animateSettings.callback( anchor, toggle );
+				animateSettings.after( anchor, toggle );
 
 			}
 		};
@@ -410,7 +395,7 @@
 			timeLapsed += 16;
 			percentage = ( timeLapsed / parseInt(animateSettings.speed, 10) );
 			percentage = ( percentage > 1 ) ? 1 : percentage;
-			position = startLocation + ( distance * easingPattern(animateSettings.easing, percentage) );
+			position = startLocation + ( distance * easingPattern(animateSettings, percentage) );
 			root.scrollTo( 0, Math.floor(position) );
 			stopAnimateScroll(position, endLocation, animationInterval);
 		};
@@ -432,6 +417,9 @@
 			root.scrollTo( 0, 0 );
 		}
 
+		// Run callback before animation starts
+		animateSettings.before( anchor, toggle );
+
 		// Start scrolling animation
 		startAnimateScroll();
 
@@ -444,7 +432,12 @@
 	var hashChangeHandler = function (event) {
 
 		// Get hash from URL
-		var hash = root.location.hash;
+		var hash;
+		try {
+			hash = escapeCharacters( decodeURIComponent( root.location.hash ) );
+		} catch(e) {
+			hash = escapeCharacters( root.location.hash );
+		}
 
 		// Only run if there's an anchor element to scroll to
 		if ( !anchor ) return;
@@ -472,13 +465,18 @@
 
 		// Check if a smooth scroll link was clicked
 		toggle = getClosest( event.target, settings.selector );
-		if ( !toggle || toggle.tagName.toLowerCase() !== 'a' ) return;
+		if ( !toggle || toggle.tagName.toLowerCase() !== 'a' || getClosest( event.target, settings.ignore ) ) return;
 
 		// Only run if link is an anchor and points to the current page
 		if ( toggle.hostname !== root.location.hostname || toggle.pathname !== root.location.pathname || !/#/.test(toggle.href) ) return;
 
 		// Get the sanitized hash
-		var hash = escapeCharacters( toggle.hash );
+		var hash;
+		try {
+			hash = escapeCharacters( decodeURIComponent( toggle.hash ) );
+		} catch(e) {
+			hash = escapeCharacters( toggle.hash );
+		}
 
 		// If the hash is empty, scroll to the top of the page
 		if ( hash === '#' ) {
@@ -530,10 +528,10 @@
 	 */
 	var resizeThrottler = function (event) {
 		if ( !eventTimeout ) {
-			eventTimeout = setTimeout(function() {
+			eventTimeout = setTimeout((function() {
 				eventTimeout = null; // Reset timeout
 				headerHeight = getHeaderHeight( fixedHeader ); // Get the height of a fixed header if one exists
-			}, 66);
+			}), 66);
 		}
 	};
 
@@ -598,4 +596,4 @@
 
 	return smoothScroll;
 
-});
+}));
