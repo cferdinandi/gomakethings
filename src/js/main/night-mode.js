@@ -11,7 +11,7 @@
 
 	// Get our newly insert toggle
 	var nightMode = document.querySelector('#night-mode');
-	if (!nightmode) return;
+	if (!nightMode) return;
 
 	// When clicked, toggle night mode on or off
 	nightMode.addEventListener('click', function () {

@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.88.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.88.1: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -253,7 +253,7 @@
 
 	// Get our newly insert toggle
 	var nightMode = document.querySelector('#night-mode');
-	if (!nightmode) return;
+	if (!nightMode) return;
 
 	// When clicked, toggle night mode on or off
 	nightMode.addEventListener('click', (function () {
