@@ -5,9 +5,8 @@
 
 .btn {
 	background-color: darken( $color-secondary, 15% );
-	border: calc-em(2px) solid darken( $color-secondary, 15% );;
+	border: calc-em(2px) solid darken( $color-secondary, 15% );
 	border-radius: calc-em(1px);
-	color: $color-white;
 	display: inline-block;
 	font-size: calc-em(15px);
 	font-weight: normal;
@@ -15,6 +14,20 @@
 	margin-right: calc-em(5px);
 	margin-bottom: calc-em(5px);
 	padding: calc-em(8px) calc-em(11px);
+
+	.night-mode & {
+		background-color: darken( $color-secondary, 5% );
+		border-color: darken( $color-secondary, 5% )
+	}
+
+	&,
+	&:visited {
+		color: $color-white;
+
+		.night-mode & {
+			color: $color-white;
+		}
+	}
 
 	del {
 		@extend .text-muted-light;
@@ -26,16 +39,19 @@ a.btn {
 }
 
 .btn:hover,
-a .btn:hover,
 .btn:focus,
-a .btn:focus,
 .btn:active,
-a .btn:active,
 .btn.active {
 	background-color: darken( $color-secondary, 30% );
 	border-color: darken( $color-secondary, 30% );
 	color: $color-white;
 	// text-decoration: none;
+
+	.night-mode & {
+		background-color: darken( $color-secondary, 12% );
+		border-color: darken( $color-secondary, 12% );
+		color: $color-white;
+	}
 }
 
 // .btn-secondary {

@@ -8,4 +8,9 @@
 	border: calc-em(1px) solid $color-gray-light;
 	margin-bottom: $spacing;
 	padding: calc-em(16px) calc-em(24px);
+
+	.night-mode & {
+		background-color: darken( $color-gray-dark, 21% );
+		border-color: $color-gray-dark;
+	}
 }

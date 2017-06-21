@@ -111,7 +111,7 @@ $options = keel_get_theme_options();
 
 			<div class="grid-three-fourths">
 				<h3 class="h5 text-normal no-padding-top">
-					<a class="link-plain" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					<a class="link-no-underline" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 					<?php edit_post_link( __( 'Edit', 'keel' ), ' / ', '' ); ?>
 				</h3>
 			</div>

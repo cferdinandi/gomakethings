@@ -11,6 +11,11 @@ body {
 	background: $color-white;
 	border-top: calc-em(8px) solid $color-gray-light;
 
+	.night-mode & {
+		background: $color-black;
+		color: $color-white;
+	}
+
 	.fonts-loaded & {
 		font-family: $font-enhanced;
 	}
@@ -37,6 +42,10 @@ a {
 	word-wrap: break-word;
 	-webkit-text-decoration-skip: objects; /* 2 */
 
+	.night-mode & {
+		color: mix( $color-primary, $color-white, 55% );
+	}
+
 	/**
 	 * Improve readability when focused and also mouse hovered in all browsers.
 	 */
@@ -50,11 +59,19 @@ a {
 	&:hover {
 		color: darken( $color-primary, 15% );
 		// text-decoration: underline;
+
+		.night-mode & {
+			color: darken( mix( $color-primary, $color-white, 55% ), 15% );
+		}
 	}
 
-	// &:visited {
-	// 	color: $color-accent;
-	// }
+	&:visited {
+		color: $color-accent;
+
+		.night-mode & {
+			color: mix( $color-accent, $color-white, 55% );
+		}
+	}
 }
 
 
@@ -266,6 +283,10 @@ hr {
 	height: 0; /* 1 */
 	margin: calc-em(32px) auto;
 	overflow: visible; /* 2 */
+
+	.night-mode & {
+		border-top-color: $color-gray-dark;
+	}
 }
 
 .line-secondary {
