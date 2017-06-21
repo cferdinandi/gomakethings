@@ -2,6 +2,9 @@
 
 	'use strict';
 
+	// Feature test
+	if (!('localStorage' in window)) return;
+
 	// Get the navigation menu
 	var nav = document.querySelector('#menu-primary');
 	if (!nav) return;
@@ -17,8 +20,11 @@
 	nightMode.addEventListener('click', function (event) {
 		event.preventDefault();
 		document.documentElement.classList.toggle('night-mode');
-		var expires = document.documentElement.classList.contains('night-mode') ? new Date(+new Date() + (7 * 24 * 60 * 60 * 1000)).toUTCString() : 'Thu, 01 Jan 1970 00:00:00 GMT';
-		document.cookie = 'nightMode=true; expires=' + expires + '; domain=gomakethings.com';
+		if ( document.documentElement.classList.contains('night-mode') ) {
+			localStorage.setItem('gmtNightMode', true);
+			return;
+		}
+		localStorage.removeItem('gmtNightMode');
 	}, false);
 
 })(window, document);

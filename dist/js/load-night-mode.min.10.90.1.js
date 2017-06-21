@@ -1,2 +1,0 @@
-/*! gomakethings v10.90.1 | (c) 2017 Chris Ferdinandi | MIT License | https://github.com/cferdinandi/gomakethings | Open Source Credits: https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/ */
-function getCookie(t){var e="; "+document.cookie,o=e.split("; "+t+"=");if(2==o.length)return o.pop().split(";").shift()}!(function(t,e,o){"use strict";var i=getCookie("nightMode");i&&"true"===i&&(e.documentElement.className+=" night-mode")})(window,document);
