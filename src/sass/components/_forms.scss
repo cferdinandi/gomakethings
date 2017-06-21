@@ -227,11 +227,19 @@ select:focus {
  * Form errors
  */
 .error {
-	border-color: red;
+	border-color: darken( $color-secondary, 30% );
+
+	.night-mode & {
+		border-color: mix( $color-secondary, $color-white, 55% );
+	}
 }
 
 .error-message {
-	color: red;
+	color: darken( $color-secondary, 30% );
 	font-style: italic;
 	margin-bottom: 1em;
+
+	.night-mode & {
+		color: mix( $color-secondary, $color-white, 55% );
+	}
 }
