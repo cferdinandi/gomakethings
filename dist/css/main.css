@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.89.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.90.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -602,14 +602,15 @@ hr {
 }
 
 /* line 297, src/sass/components/_typography.scss */
-.line-clear {
+.line-clear,
+.night-mode .line-clear {
   border-top-color: transparent;
 }
 
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 305, src/sass/components/_typography.scss */
+/* line 306, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: inherit;
@@ -618,7 +619,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 313, src/sass/components/_typography.scss */
+/* line 314, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: bolder;
@@ -628,7 +629,7 @@ strong {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 322, src/sass/components/_typography.scss */
+/* line 323, src/sass/components/_typography.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -641,7 +642,7 @@ abbr[title] {
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 331, src/sass/components/_typography.scss */
+/* line 332, src/sass/components/_typography.scss */
 dfn {
   font-style: italic;
 }
@@ -649,7 +650,7 @@ dfn {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 338, src/sass/components/_typography.scss */
+/* line 339, src/sass/components/_typography.scss */
 mark {
   background-color: #ff0;
   color: #000;
@@ -658,7 +659,7 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 346, src/sass/components/_typography.scss */
+/* line 347, src/sass/components/_typography.scss */
 small {
   font-size: 80%;
 }
@@ -666,7 +667,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 353, src/sass/components/_typography.scss */
+/* line 354, src/sass/components/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -675,12 +676,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 361, src/sass/components/_typography.scss */
+/* line 362, src/sass/components/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 365, src/sass/components/_typography.scss */
+/* line 366, src/sass/components/_typography.scss */
 sub {
   bottom: -0.25em;
 }
@@ -688,7 +689,7 @@ sub {
 /**
  * Blockquotes
  */
-/* line 380, src/sass/components/_typography.scss */
+/* line 381, src/sass/components/_typography.scss */
 blockquote {
   font-size: 1.1875em;
   font-style: italic;
@@ -697,20 +698,20 @@ blockquote {
   padding-right: 0.84211em;
 }
 
-/* line 387, src/sass/components/_typography.scss */
+/* line 388, src/sass/components/_typography.scss */
 blockquote cite {
   color: #808080;
   font-size: 0.84211em;
   padding-top: 1em;
 }
 
-/* line 394, src/sass/components/_typography.scss */
+/* line 395, src/sass/components/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 399, src/sass/components/_typography.scss */
+/* line 400, src/sass/components/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,
