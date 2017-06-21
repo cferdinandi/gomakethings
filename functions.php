@@ -38,6 +38,7 @@
 						document.documentElement.className += ' fonts-loaded';
 					});
 				<?php endif; ?>
+				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/load-night-mode.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
 			</script>
 		<?php
 	}
@@ -77,9 +78,9 @@
 			$classes .= ' fonts-loaded';
 		}
 
-		if ( isset($_COOKIE['nightMode']) && $_COOKIE['nightMode'] === 'true' ) {
-			$classes .= ' night-mode';
-		}
+		// if ( isset($_COOKIE['nightMode']) && $_COOKIE['nightMode'] === 'true' ) {
+		// 	$classes .= ' night-mode';
+		// }
 
 		if ( !empty($classes) ) {
 			$classes = 'class="' . $classes . '"';
