@@ -6,7 +6,7 @@
  */
 
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> <?php if ( isset($_COOKIE['fontsLoaded']) && $_COOKIE['fontsLoaded'] === 'true' ) { echo 'class="fonts-loaded"'; } ?>>
+<html <?php language_attributes(); ?> <?php echo keel_header_classes(); ?>>
 
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">

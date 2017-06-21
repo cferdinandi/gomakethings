@@ -70,6 +70,27 @@
 
 
 
+
+	function keel_header_classes() {
+		$classes = '';
+		if ( isset($_COOKIE['fontsLoaded']) && $_COOKIE['fontsLoaded'] === 'true' ) {
+			$classes .= ' fonts-loaded';
+		}
+
+		if ( isset($_COOKIE['nightMode']) && $_COOKIE['nightMode'] === 'true' ) {
+			$classes .= ' night-mode';
+		}
+
+		if ( !empty($classes) ) {
+			$classes = 'class="' . $classes . '"';
+		}
+
+		return $classes;
+	}
+	add_filter( 'body_class', 'keel_body_classes' );
+
+
+
 	/**
 	 * Add a shortcode for the search form
 	 * @return string Markup for search form

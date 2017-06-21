@@ -15,6 +15,10 @@ code {
 	color: $color-code;
 	padding: calc-em(4px);
 	word-wrap: break-word;
+
+	.night-mode & {
+		color: mix( $color-code, $color-white, 55% );
+	}
 }
 
 pre {
@@ -35,4 +39,8 @@ pre code {
 	color: inherit;
 	font-size: 1em;
 	padding: 0;
+
+	.night-mode & {
+		color: $color-black;
+	}
 }

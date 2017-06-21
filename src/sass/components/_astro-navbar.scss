@@ -23,7 +23,6 @@
  * The logo
  */
 .logo {
-	color: $color-black;
 	display: inline-block;
 	font-size: 1.2em;
 	font-weight: bold;
@@ -42,11 +41,24 @@
 	// 	}
 	// }
 
+	&,
+	&:visited {
+		color: $color-black;
+
+		.night-mode & {
+			color: $color-white;
+		}
+	}
+
 	&:active,
 	&:focus,
 	&:hover {
 		color: $color-primary;
-		text-decoration: none;
+		// text-decoration: none;
+
+		.night-mode & {
+			color: mix( $color-primary, $color-white, 55% );
+		}
 	}
 
 	.icon {
@@ -98,6 +110,10 @@
 	a {
 		color: $color-gray-dark;
 		text-decoration: none;
+
+		.night-mode & {
+			color: lighten( $color-gray-dark, 21% );
+		}
 	}
 
 	/**
@@ -115,6 +131,10 @@
 		border-bottom: calc-em(2px) solid $color-secondary;
 		color: $color-black;
 		// text-decoration: none;
+
+		.night-mode & {
+			color: $color-white;
+		}
 	}
 }
 
