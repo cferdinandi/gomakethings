@@ -13,6 +13,7 @@ body {
 
 	.night-mode & {
 		background: $color-black;
+		border-top-color: $color-gray-dark;
 		color: $color-white;
 	}
 

@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.88.2: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.89.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -256,7 +256,8 @@
 	if (!nightMode) return;
 
 	// When clicked, toggle night mode on or off
-	nightMode.addEventListener('click', (function () {
+	nightMode.addEventListener('click', (function (event) {
+		event.preventDefault();
 		document.documentElement.classList.toggle('night-mode');
 		var expires = document.documentElement.classList.contains('night-mode') ? new Date(+new Date() + (7 * 24 * 60 * 60 * 1000)).toUTCString() : 'Thu, 01 Jan 1970 00:00:00 GMT';
 		document.cookie = 'nightMode=true; expires=' + expires;
