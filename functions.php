@@ -88,7 +88,6 @@
 
 		return $classes;
 	}
-	add_filter( 'body_class', 'keel_body_classes' );
 
 
 

@@ -9,7 +9,7 @@
 		}
 		return $classes;
 	}
-	add_filter( 'body_class', 'keel_is_stripe_checkout_class');
+	add_filter( 'body_class', 'keel_is_stripe_checkout_class' );
 
 
 
