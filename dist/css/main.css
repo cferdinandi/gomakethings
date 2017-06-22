@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.90.2: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.91.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1251,18 +1251,18 @@ select:focus {
  * Form errors
  */
 /* line 229, src/sass/components/_forms.scss */
-.error {
-  border-color: #cb070e;
+.error-field {
+  border-color: #e30810;
 }
 
 /* line 232, src/sass/components/_forms.scss */
-.night-mode .error {
+.night-mode .error-field {
   border-color: #fcb1b4;
 }
 
 /* line 237, src/sass/components/_forms.scss */
 .error-message {
-  color: #cb070e;
+  color: #e30810;
   font-style: italic;
   margin-bottom: 1em;
 }
@@ -1735,16 +1735,10 @@ tfoot th {
   font-weight: bold;
 }
 
-/* line 61, src/sass/components/_edd.scss */
-.edd-stripe-checkout #edd_payment_mode_submit, .edd-stripe-checkout
-#edd_checkout_user_info {
-  padding-top: 0;
-}
-
 /**
  * Payment icons
  */
-/* line 80, src/sass/components/_edd.scss */
+/* line 76, src/sass/components/_edd.scss */
 .svg .edd-payment-icons .icon {
   height: 1.75em;
 }
@@ -1752,13 +1746,13 @@ tfoot th {
 /**
  * "Complete Purchase" button
  */
-/* line 94, src/sass/components/_edd.scss */
+/* line 90, src/sass/components/_edd.scss */
 #edd-purchase-button {
   display: none;
   visibility: hidden;
 }
 
-/* line 99, src/sass/components/_edd.scss */
+/* line 95, src/sass/components/_edd.scss */
 .js-edd #edd-purchase-button {
   display: inline-block;
   visibility: visible;
@@ -1767,13 +1761,13 @@ tfoot th {
 /**
  * Cancel button
  */
-/* line 114, src/sass/components/_edd.scss */
+/* line 110, src/sass/components/_edd.scss */
 .edd-cancel {
   display: none;
   visibility: hidden;
 }
 
-/* line 119, src/sass/components/_edd.scss */
+/* line 115, src/sass/components/_edd.scss */
 .js-edd-cancel .edd-cancel {
   display: block;
   visibility: visible;
@@ -1785,7 +1779,7 @@ tfoot th {
 /**
  * Credit Card Fields
  */
-/* line 174, src/sass/components/_edd.scss */
+/* line 170, src/sass/components/_edd.scss */
 #edd_checkout_user_info .edd-label,
 #edd_cc_fields .edd-label,
 #edd_cc_address .edd-label,
@@ -1971,8 +1965,7 @@ tfoot th {
 }
 
 /* line 188, src/sass/components/_overrides.scss */
-.padding-top, #edd_payment_mode_submit,
-#edd_checkout_user_info {
+.padding-top {
   padding-top: 1.5625em;
 }
 

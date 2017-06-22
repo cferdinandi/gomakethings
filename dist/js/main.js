@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.90.2: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.91.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -41,7 +41,7 @@
 			email.setAttribute('aria-describedby', 'for_mailchimp_email');
 		}
 
-		email.classList.add('error');
+		email.classList.add('error-field');
 		message.innerHTML = 'Please use a valid email address.';
 		email.focus();
 		return message;
@@ -64,7 +64,7 @@
 			return;
 		}
 
-		email.classList.remove('error');
+		email.classList.remove('error-field');
 		if (message) {
 			message.style.display = 'none';
 			message.style.visibility = 'hidden';

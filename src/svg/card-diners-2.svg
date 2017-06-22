@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="61px" height="40px" viewBox="0 0 61 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>diners</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="credit_cards" transform="translate(-529.000000, -280.000000)" fill-rule="nonzero">
+            <g id="Group" transform="translate(129.000000, 279.000000)">
+                <g transform="translate(0.000000, 1.000000)" id="diners">
+                    <g transform="translate(400.000000, 0.000000)">
+                        <path d="M60.75,35 C60.75,37.75 58.5,40 55.75,40 L5.75,40 C3,40 0.75,37.75 0.75,35 L0.75,5 C0.75,2.25 3,0 5.75,0 L55.75,0 C58.5,0 60.75,2.25 60.75,5 L60.75,35 Z" id="Shape" fill="#F3F4F4"></path>
+                        <g id="Group">
+                            <g transform="translate(17.000000, 10.000000)">
+                                <circle id="Oval" fill="#009FDA" cx="10.584" cy="10" r="10"></circle>
+                                <path d="M9.75,0 C14.75,0 19.749,4.478 19.749,10 C19.749,15.521 14.75,20 9.75,20 L9.75,0 Z" id="Shape" fill="#009FDA"></path>
+                                <path d="M9.75,20 L9.75,0 L16.917,0 C21.917,0 26.916,4.478 26.916,10 C26.916,15.521 21.917,20 16.917,20 L9.75,20 Z" id="Shape" fill="#009FDA"></path>
+                                <circle id="Oval" fill="#F3F4F4" cx="10.584" cy="10" r="9.438"></circle>
+                                <path d="M15.188,10 C15.188,7.273 12.75,4.992 10.75,4.391 L10.75,15.609 C12.75,15.008 15.188,12.729 15.188,10 Z" id="Shape" fill="#009FDA"></path>
+                                <path d="M3.312,10 C3.312,12.727 5.75,15.008 7.75,15.609 L7.75,4.39 C5.75,4.992 3.312,7.272 3.312,10 Z" id="Shape" fill="#009FDA"></path>
+                            </g>
+                            <path d="M59.281,1.469 C60.187,2.375 60.75,3.625 60.75,5 L60.75,20 L60.75,35 C60.75,36.375 60.188,37.625 59.281,38.531 C58.374,39.437 57.125,40 55.75,40 L30.75,40 L5.75,40 C4.375,40 3.125,39.438 2.219,38.531 L59.281,1.469 Z" id="Shape" fill="#FFFFFF" opacity="0.08"></path>
+                            <path d="M55.75,1 C57.956,1 59.75,2.794 59.75,5 L59.75,35 C59.75,37.206 57.956,39 55.75,39 L5.75,39 C3.544,39 1.75,37.206 1.75,35 L1.75,5 C1.75,2.794 3.544,1 5.75,1 L55.75,1 L55.75,1 Z M55.75,0 L5.75,0 C3,0 0.75,2.25 0.75,5 L0.75,35 C0.75,37.75 3,40 5.75,40 L55.75,40 C58.5,40 60.75,37.75 60.75,35 L60.75,5 C60.75,2.25 58.5,0 55.75,0 L55.75,0 Z" id="Shape" fill="#F8F8F9"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

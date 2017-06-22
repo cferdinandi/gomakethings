@@ -33,7 +33,7 @@
 			email.setAttribute('aria-describedby', 'for_mailchimp_email');
 		}
 
-		email.classList.add('error');
+		email.classList.add('error-field');
 		message.innerHTML = 'Please use a valid email address.';
 		email.focus();
 		return message;
@@ -56,7 +56,7 @@
 			return;
 		}
 
-		email.classList.remove('error');
+		email.classList.remove('error-field');
 		if (message) {
 			message.style.display = 'none';
 			message.style.visibility = 'hidden';
