@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.91.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.92.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -12,6 +12,7 @@
 
 	// Variables
 	var buyNow = document.querySelectorAll('.edd-buy-now-button');
+	var completePurchase = document.querySelector('#edd-purchase-button');
 	var mailchimp = document.querySelectorAll('.mailchimp-form');
 
 	// Handle "buy now" clicks
@@ -19,6 +20,11 @@
 		if (!event.target.classList.contains('edd-buy-now-button')) return;
 		event.target.innerHTML = 'Adding to cart...';
 		event.target.classList.add('disabled');
+	};
+
+	// Handle EDD "complete purchase" submissions
+	var completePurchaseHandler = function (event) {
+		event.target.value = 'Processing...';
 	};
 
 	// Add novalidate to mailchimp forms
@@ -80,6 +86,11 @@
 		document.addEventListener('click', buyNowHandler, false);
 	}
 
+	// Listen for EDD "complete purchase" submission
+	if (completePurchase) {
+		completePurchase.addEventListener('click', completePurchaseHandler, false);
+	}
+
 	// Listen for MailChimp submits
 	if (mailchimp.length > 0) {
 		mailchimpNoValidate();
@@ -87,53 +98,8 @@
 	}
 
 })(window, document);
-;(function (window, document, undefined) {
-
-	'use strict';
-
-	// Feature Test
-	var supports = 'querySelector' in document && 'addEventListener' in window && 'localStorage' in window && 'classList' in document.createElement('_'); // Feature test
-	if ( !supports ) return;
-
-	// // Variables
-	// var link = document.querySelector( '.edd-cancel a' );
-	// var cancel = sessionStorage.getItem( 'eddCancelLocation' );
-
-	// /**
-	//  * Handle click events
-	//  */
-	// var clickHandler = function (event) {
-	// 	var toggle = event.target;
-	// 	if ( toggle.classList.contains( 'edd-add-to-cart' ) || toggle.classList.contains( 'edd_go_to_checkout' ) ) {
-	// 		sessionStorage.setItem( 'eddCancelLocation', window.location.href );
-	// 	}
-	// };
-
-	// // Add class to HTML element to activate conditional CSS
-	// document.documentElement.className += ' js-edd';
-
-	// // If location set, show cancel link
-	// if ( link && cancel ) {
-	// 	link.href = cancel;
-	// 	document.documentElement.className += ' js-edd-cancel';
-	// }
-
-	// // Listen for click events
-	// document.addEventListener('click', clickHandler, false);
-
-	// Variables
-	var link = document.querySelector( '.edd-cancel a' );
-
-	// JavaScript enabled
-	document.documentElement.className += ' js-edd';
-
-	// If location set, show cancel link
-	if ( link ) {
-		link.href = window.location.origin + window.location.pathname;
-		document.documentElement.className += ' js-edd-cancel';
-	}
-
-})(window, document);
+// JavaScript enabled
+document.documentElement.className += ' js-edd';
 /**
  * Prepopulate email fields based on a query string
  */

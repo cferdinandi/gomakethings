@@ -4,6 +4,7 @@
 
 	// Variables
 	var buyNow = document.querySelectorAll('.edd-buy-now-button');
+	var completePurchase = document.querySelector('#edd-purchase-button');
 	var mailchimp = document.querySelectorAll('.mailchimp-form');
 
 	// Handle "buy now" clicks
@@ -11,6 +12,11 @@
 		if (!event.target.classList.contains('edd-buy-now-button')) return;
 		event.target.innerHTML = 'Adding to cart...';
 		event.target.classList.add('disabled');
+	};
+
+	// Handle EDD "complete purchase" submissions
+	var completePurchaseHandler = function (event) {
+		event.target.value = 'Processing...';
 	};
 
 	// Add novalidate to mailchimp forms
@@ -70,6 +76,11 @@
 	// Listen for "buy now" clicks
 	if (buyNow.length > 0) {
 		document.addEventListener('click', buyNowHandler, false);
+	}
+
+	// Listen for EDD "complete purchase" submission
+	if (completePurchase) {
+		completePurchase.addEventListener('click', completePurchaseHandler, false);
 	}
 
 	// Listen for MailChimp submits
