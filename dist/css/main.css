@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.95.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.96.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1089,22 +1089,30 @@ textarea {
   }
 }
 
+/* line 72, src/sass/components/_forms.scss */
+.night-mode input, .night-mode
+select, .night-mode
+textarea {
+  background-color: #e5e5e5;
+  color: #272727;
+}
+
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 77, src/sass/components/_forms.scss */
+/* line 82, src/sass/components/_forms.scss */
 optgroup {
   font-weight: bold;
 }
 
-/* line 86, src/sass/components/_forms.scss */
+/* line 91, src/sass/components/_forms.scss */
 textarea {
   height: 12em;
   overflow: auto;
 }
 
-/* line 91, src/sass/components/_forms.scss */
+/* line 96, src/sass/components/_forms.scss */
 [type="image"],
 [type="checkbox"],
 [type="radio"] {
@@ -1119,7 +1127,7 @@ textarea {
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 105, src/sass/components/_forms.scss */
+/* line 110, src/sass/components/_forms.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -1131,7 +1139,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 116, src/sass/components/_forms.scss */
+/* line 121, src/sass/components/_forms.scss */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -1144,13 +1152,13 @@ button:-moz-focusring,
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 128, src/sass/components/_forms.scss */
+/* line 133, src/sass/components/_forms.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 133, src/sass/components/_forms.scss */
+/* line 138, src/sass/components/_forms.scss */
 input:focus,
 textarea:focus {
   border-color: rgba(82, 168, 236, 0.8);
@@ -1159,7 +1167,7 @@ textarea:focus {
   outline: thin dotted \9;
 }
 
-/* line 141, src/sass/components/_forms.scss */
+/* line 146, src/sass/components/_forms.scss */
 [type="file"]:focus,
 [type="checkbox"]:focus,
 select:focus {
@@ -1171,7 +1179,7 @@ select:focus {
 /**
  * Inline inputs
  */
-/* line 153, src/sass/components/_forms.scss */
+/* line 158, src/sass/components/_forms.scss */
 .input-inline, input[type="submit"], #card_exp_month,
 #card_exp_year {
   display: inline-block;
@@ -1186,7 +1194,7 @@ select:focus {
   * 1. Correct the odd appearance in Chrome and Safari.
   * 2. Correct the outline style in Safari.
   */
-/* line 177, src/sass/components/_forms.scss */
+/* line 182, src/sass/components/_forms.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -1199,13 +1207,13 @@ select:focus {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 187, src/sass/components/_forms.scss */
+/* line 192, src/sass/components/_forms.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 192, src/sass/components/_forms.scss */
+/* line 197, src/sass/components/_forms.scss */
 .input-search {
   width: 85%;
   padding-left: 0.9375em;
@@ -1216,13 +1224,13 @@ select:focus {
 }
 
 @media (min-width: 38em) {
-  /* line 192, src/sass/components/_forms.scss */
+  /* line 197, src/sass/components/_forms.scss */
   .input-search {
     width: 65%;
   }
 }
 
-/* line 204, src/sass/components/_forms.scss */
+/* line 209, src/sass/components/_forms.scss */
 .btn-search {
   display: inline;
   color: #808080;
@@ -1232,17 +1240,17 @@ select:focus {
   margin-bottom: 0;
 }
 
-/* line 213, src/sass/components/_forms.scss */
+/* line 218, src/sass/components/_forms.scss */
 .btn-search:hover {
   color: #5a5a5a;
 }
 
-/* line 217, src/sass/components/_forms.scss */
+/* line 222, src/sass/components/_forms.scss */
 .btn-search .icon {
   fill: #808080;
 }
 
-/* line 221, src/sass/components/_forms.scss */
+/* line 226, src/sass/components/_forms.scss */
 .btn-search:hover .icon {
   fill: #5a5a5a;
 }
@@ -1250,17 +1258,17 @@ select:focus {
 /**
  * Form errors
  */
-/* line 229, src/sass/components/_forms.scss */
+/* line 234, src/sass/components/_forms.scss */
 .error-field {
   border-color: #e30810;
 }
 
-/* line 233, src/sass/components/_forms.scss */
+/* line 238, src/sass/components/_forms.scss */
 .night-mode .error-field {
   border-color: #fcb1b4;
 }
 
-/* line 238, src/sass/components/_forms.scss */
+/* line 243, src/sass/components/_forms.scss */
 .error-message,
 .edd_errors {
   color: #e30810;
@@ -1268,7 +1276,7 @@ select:focus {
   margin-bottom: 1em;
 }
 
-/* line 244, src/sass/components/_forms.scss */
+/* line 249, src/sass/components/_forms.scss */
 .night-mode .error-message, .night-mode
 .edd_errors {
   color: #fcb1b4;

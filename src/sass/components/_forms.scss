@@ -68,6 +68,11 @@ textarea {
 	@media (min-width: $bp-medium) {
 		line-height: 1.5625;
 	}
+
+	.night-mode & {
+		background-color: $color-gray-light;
+		color: $color-black;
+	}
 }
 
 /**
