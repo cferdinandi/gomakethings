@@ -29,11 +29,17 @@
 		active = type;
 	};
 
-	new Cleave('#card_number', {
+	var cleave = new Cleave('#card_number', {
 		creditCard: true,
 		onCreditCardTypeChanged: function (type) {
 			updateCard( type );
 		}
 	});
+
+	if (cleave) {
+		var cardNumber = document.querySelector('#card_number');
+		if (!cardNumber) return;
+		cardNumber.setAttribute('pattern', cardNumber.getAttribute('pattern').replace('[0-9', '[0-9 ').replace('{13,16}', '{16,19}'));
+	}
 
 })(window, document);

@@ -18,7 +18,6 @@
 		}
 		if (requiredFields[i].id === 'card_number') {
 			requiredFields[i].setAttribute('title', 'Please use a valid credit card number.');
-			requiredFields[i].setAttribute('pattern', requiredFields[i].getAttribute('pattern').replace('[0-9', '[0-9 ').replace('{13,16}', '{13,19}'));
 		}
 		if (requiredFields[i].id === 'card_cvc') {
 			requiredFields[i].setAttribute('title', 'Please enter a valid security code.');
