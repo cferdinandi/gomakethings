@@ -14,7 +14,7 @@ body {
 	.night-mode & {
 		background: $color-black;
 		border-top-color: $color-gray-dark;
-		color: $color-white;
+		color: darken($color-white, 3%);
 	}
 
 	.fonts-loaded & {
@@ -70,7 +70,7 @@ a {
 		color: $color-accent;
 
 		.night-mode & {
-			color: mix( $color-accent, $color-white, 55% );
+			color: mix( $color-accent, $color-white, 45% );
 		}
 	}
 }

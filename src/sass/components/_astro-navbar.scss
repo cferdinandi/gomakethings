@@ -46,7 +46,7 @@
 		color: $color-black;
 
 		.night-mode & {
-			color: $color-white;
+			color: darken($color-white, 3%);
 		}
 	}
 
@@ -133,7 +133,7 @@
 		// text-decoration: none;
 
 		.night-mode & {
-			color: $color-white;
+			color: darken($color-white, 3%);
 		}
 	}
 }

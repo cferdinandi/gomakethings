@@ -16,8 +16,8 @@
 	padding: calc-em(8px) calc-em(11px);
 
 	.night-mode & {
-		background-color: darken( $color-secondary, 5% );
-		border-color: darken( $color-secondary, 5% )
+		background-color: mix( darken( $color-secondary, 20% ), $color-black, 65% );
+		border-color: mix( darken( $color-secondary, 20% ), $color-black, 65% );
 	}
 
 	&,
@@ -48,8 +48,8 @@ a.btn {
 	// text-decoration: none;
 
 	.night-mode & {
-		background-color: darken( $color-secondary, 12% );
-		border-color: darken( $color-secondary, 12% );
+		background-color: mix( darken( $color-secondary, 30% ), $color-black, 65% );
+		border-color: mix( darken( $color-secondary, 30% ), $color-black, 65% );
 		color: $color-white;
 	}
 }
