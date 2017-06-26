@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.93.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.94.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1255,20 +1255,22 @@ select:focus {
   border-color: #e30810;
 }
 
-/* line 232, src/sass/components/_forms.scss */
+/* line 233, src/sass/components/_forms.scss */
 .night-mode .error-field {
   border-color: #fcb1b4;
 }
 
-/* line 237, src/sass/components/_forms.scss */
-.error-message {
+/* line 238, src/sass/components/_forms.scss */
+.error-message,
+.edd_errors {
   color: #e30810;
   font-style: italic;
   margin-bottom: 1em;
 }
 
-/* line 242, src/sass/components/_forms.scss */
-.night-mode .error-message {
+/* line 244, src/sass/components/_forms.scss */
+.night-mode .error-message, .night-mode
+.edd_errors {
   color: #fcb1b4;
 }
 
@@ -1932,7 +1934,7 @@ tfoot th {
 }
 
 /* line 159, src/sass/components/_overrides.scss */
-.margin-bottom-small, #edd-payment-mode-wrap input[type="radio"] {
+.margin-bottom-small, .error-field, #edd-payment-mode-wrap input[type="radio"] {
   margin-bottom: 0.5em;
 }
 
