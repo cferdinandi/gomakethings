@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.92.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.93.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -334,7 +334,7 @@ body {
 .night-mode body {
   background: #272727;
   border-top-color: #808080;
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 /* line 20, src/sass/components/_typography.scss */
@@ -400,7 +400,7 @@ a:visited, .link-block-styled:visited {
 
 /* line 72, src/sass/components/_typography.scss */
 .night-mode a:visited, .night-mode .link-block-styled:visited {
-  color: #b973b9;
+  color: #c68cc6;
 }
 
 /* line 79, src/sass/components/_typography.scss */
@@ -860,8 +860,8 @@ pre code {
 
 /* line 18, src/sass/components/_buttons.scss */
 .night-mode .btn, .night-mode input[type="submit"], .night-mode .edd-self-service-button, .night-mode .mailchimp-form-button, .night-mode .gmt-edd-slack-form-button {
-  background-color: #f9585e;
-  border-color: #f9585e;
+  background-color: #ae171d;
+  border-color: #ae171d;
 }
 
 /* line 23, src/sass/components/_buttons.scss */
@@ -921,8 +921,8 @@ input.active[type="submit"],
 .night-mode .active.edd-self-service-button,
 .night-mode .active.mailchimp-form-button,
 .night-mode .active.gmt-edd-slack-form-button {
-  background-color: #f8363d;
-  border-color: #f8363d;
+  background-color: #921217;
+  border-color: #921217;
   color: #ffffff;
 }
 
@@ -1518,7 +1518,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 
 /* line 48, src/sass/components/_astro-navbar.scss */
 .night-mode .logo, .night-mode .logo:visited {
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 /* line 53, src/sass/components/_astro-navbar.scss */
@@ -1616,7 +1616,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 .nav .current-page-ancestor > .link-block-styled, .night-mode
 .single-gmt-articles .nav .menu-item-object-gmt-articles > a, .night-mode
 .single-gmt-articles .nav .menu-item-object-gmt-articles > .link-block-styled {
-  color: #ffffff;
+  color: #f7f7f7;
 }
 
 /**
