@@ -227,6 +227,7 @@ select:focus {
  * Form errors
  */
 .error-field {
+	@extend .margin-bottom-small;
 	border-color: darken( $color-secondary, 25% );
 
 	.night-mode & {
@@ -234,7 +235,8 @@ select:focus {
 	}
 }
 
-.error-message {
+.error-message,
+.edd_errors {
 	color: darken( $color-secondary, 25% );
 	font-style: italic;
 	margin-bottom: 1em;
