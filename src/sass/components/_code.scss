@@ -31,6 +31,11 @@ pre {
 	tab-size: 4;
 	white-space: pre-wrap;
 	word-break: break-all;
+
+	.night-mode & {
+		background-color: lighten($color-black, 3%);
+		color: darken($color-white, 3%);
+	}
 }
 
 pre code {
@@ -41,6 +46,6 @@ pre code {
 	padding: 0;
 
 	.night-mode & {
-		color: $color-black;
+		color: darken($color-white, 3%);
 	}
 }

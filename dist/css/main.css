@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.96.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.97.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -769,7 +769,13 @@ pre {
   word-break: break-all;
 }
 
-/* line 36, src/sass/components/_code.scss */
+/* line 35, src/sass/components/_code.scss */
+.night-mode pre {
+  background-color: #2f2f2f;
+  color: #f7f7f7;
+}
+
+/* line 41, src/sass/components/_code.scss */
 pre code {
   background-color: transparent;
   border: 0;
@@ -778,40 +784,41 @@ pre code {
   padding: 0;
 }
 
-/* line 43, src/sass/components/_code.scss */
+/* line 48, src/sass/components/_code.scss */
 .night-mode pre code {
-  color: #272727;
+  color: #f7f7f7;
 }
 
 /**
  * @section Prism syntax highlighting
+ * languages=markup+css+clike+javascript+php
  */
 @media screen {
-  /* line 7, src/sass/components/_prism.scss */
+  /* line 8, src/sass/components/_prism.scss */
   .token.comment,
   .token.prolog,
   .token.doctype,
   .token.cdata {
     color: slategray;
   }
-  /* line 14, src/sass/components/_prism.scss */
+  /* line 15, src/sass/components/_prism.scss */
   .token.punctuation {
     color: #999;
   }
-  /* line 18, src/sass/components/_prism.scss */
+  /* line 19, src/sass/components/_prism.scss */
   .token.property,
   .token.tag,
   .token.boolean,
   .token.number {
     color: #905;
   }
-  /* line 25, src/sass/components/_prism.scss */
+  /* line 26, src/sass/components/_prism.scss */
   .token.selector,
   .token.attr-name,
   .token.string {
     color: #690;
   }
-  /* line 31, src/sass/components/_prism.scss */
+  /* line 32, src/sass/components/_prism.scss */
   .token.operator,
   .token.entity,
   .token.url,
@@ -819,23 +826,97 @@ pre code {
   .style .token.string {
     color: #a67f59;
   }
-  /* line 39, src/sass/components/_prism.scss */
+  /* line 40, src/sass/components/_prism.scss */
   .token.atrule,
   .token.attr-value,
   .token.keyword {
     color: #07a;
   }
-  /* line 46, src/sass/components/_prism.scss */
+  /* line 47, src/sass/components/_prism.scss */
   .token.regex,
   .token.important {
     color: #e90;
   }
-  /* line 51, src/sass/components/_prism.scss */
+  /* line 52, src/sass/components/_prism.scss */
   .token.important {
     font-weight: bold;
   }
-  /* line 55, src/sass/components/_prism.scss */
+  /* line 56, src/sass/components/_prism.scss */
   .token.entity {
+    cursor: help;
+  }
+  /* line 61, src/sass/components/_prism.scss */
+  .night-mode .token.comment,
+  .night-mode .token.prolog,
+  .night-mode .token.doctype,
+  .night-mode .token.cdata {
+    color: #a6a6a6;
+  }
+  /* line 68, src/sass/components/_prism.scss */
+  .night-mode .token.punctuation {
+    color: #f8f8f2;
+  }
+  /* line 72, src/sass/components/_prism.scss */
+  .night-mode .namespace {
+    opacity: .7;
+  }
+  /* line 76, src/sass/components/_prism.scss */
+  .night-mode .token.property,
+  .night-mode .token.tag,
+  .night-mode .token.constant,
+  .night-mode .token.symbol,
+  .night-mode .token.deleted {
+    color: #f92672;
+  }
+  /* line 84, src/sass/components/_prism.scss */
+  .night-mode .token.boolean,
+  .night-mode .token.number {
+    color: #ae81ff;
+  }
+  /* line 89, src/sass/components/_prism.scss */
+  .night-mode .token.selector,
+  .night-mode .token.attr-name,
+  .night-mode .token.string,
+  .night-mode .token.char,
+  .night-mode .token.builtin,
+  .night-mode .token.inserted {
+    color: #a6e22e;
+  }
+  /* line 98, src/sass/components/_prism.scss */
+  .night-mode .token.operator,
+  .night-mode .token.entity,
+  .night-mode .token.url,
+  .night-mode .language-css .token.string,
+  .night-mode .style .token.string,
+  .night-mode .token.variable {
+    color: #f8f8f2;
+  }
+  /* line 107, src/sass/components/_prism.scss */
+  .night-mode .token.atrule,
+  .night-mode .token.attr-value,
+  .night-mode .token.function {
+    color: #e6db74;
+  }
+  /* line 113, src/sass/components/_prism.scss */
+  .night-mode .token.keyword {
+    color: #66d9ef;
+  }
+  /* line 117, src/sass/components/_prism.scss */
+  .night-mode .token.regex,
+  .night-mode .token.important {
+    color: #fd971f;
+  }
+  /* line 122, src/sass/components/_prism.scss */
+  .night-mode .token.important,
+  .night-mode .token.bold {
+    font-weight: bold;
+  }
+  /* line 126, src/sass/components/_prism.scss */
+  .night-mode .token.italic {
+    font-style: italic;
+  }
+  /* line 130, src/sass/components/_prism.scss */
+  .night-mode .token.entity {
     cursor: help;
   }
 }
