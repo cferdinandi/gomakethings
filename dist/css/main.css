@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.97.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.98.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -331,13 +331,6 @@ body {
 }
 
 /* line 14, src/sass/components/_typography.scss */
-.night-mode body {
-  background: #272727;
-  border-top-color: #808080;
-  color: #f7f7f7;
-}
-
-/* line 20, src/sass/components/_typography.scss */
 .fonts-loaded body {
   font-family: "PT Serif", serif;
 }
@@ -349,7 +342,7 @@ body {
   }
 }
 
-/* line 29, src/sass/components/_typography.scss */
+/* line 23, src/sass/components/_typography.scss */
 p {
   margin: 0 0 1.5625em;
 }
@@ -359,7 +352,7 @@ p {
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-/* line 39, src/sass/components/_typography.scss */
+/* line 33, src/sass/components/_typography.scss */
 a, .link-block-styled {
   background-color: transparent;
   /* 1 */
@@ -373,42 +366,27 @@ a, .link-block-styled {
 	 */
 }
 
-/* line 46, src/sass/components/_typography.scss */
-.night-mode a, .night-mode .link-block-styled {
-  color: #73bee3;
-}
-
-/* line 53, src/sass/components/_typography.scss */
+/* line 43, src/sass/components/_typography.scss */
 a:active, .link-block-styled:active, a:hover, .link-block-styled:hover, .link-block:hover .link-block-styled {
   outline: 0;
 }
 
-/* line 58, src/sass/components/_typography.scss */
+/* line 48, src/sass/components/_typography.scss */
 a:active, .link-block-styled:active, a:focus, .link-block-styled:focus, a:hover, .link-block-styled:hover, .link-block:hover .link-block-styled {
   color: #005580;
 }
 
-/* line 64, src/sass/components/_typography.scss */
-.night-mode a:active, .night-mode .link-block-styled:active, .night-mode a:focus, .night-mode .link-block-styled:focus, .night-mode a:hover, .night-mode .link-block-styled:hover, .night-mode .link-block:hover .link-block-styled, .link-block:hover .night-mode .link-block-styled {
-  color: #33a0d6;
-}
-
-/* line 69, src/sass/components/_typography.scss */
+/* line 55, src/sass/components/_typography.scss */
 a:visited, .link-block-styled:visited {
   color: #800080;
 }
 
-/* line 72, src/sass/components/_typography.scss */
-.night-mode a:visited, .night-mode .link-block-styled:visited {
-  color: #c68cc6;
-}
-
-/* line 79, src/sass/components/_typography.scss */
+/* line 61, src/sass/components/_typography.scss */
 .link-no-underline, .nav-secondary a, .nav-secondary .link-block-styled {
   text-decoration: none;
 }
 
-/* line 82, src/sass/components/_typography.scss */
+/* line 64, src/sass/components/_typography.scss */
 .link-no-underline:active, .nav-secondary a:active, .nav-secondary .link-block-styled:active, .link-no-underline:focus, .nav-secondary a:focus, .nav-secondary .link-block-styled:focus, .link-no-underline:hover, .nav-secondary a:hover, .nav-secondary .link-block-styled:hover, .nav-secondary .link-block:hover .link-block-styled, .link-block:hover .nav-secondary .link-block-styled {
   text-decoration: underline;
 }
@@ -416,13 +394,13 @@ a:visited, .link-block-styled:visited {
 /**
  * Remove default link styling
  */
-/* line 94, src/sass/components/_typography.scss */
+/* line 76, src/sass/components/_typography.scss */
 .link-plain, .link-plain:visited {
   color: #272727;
   text-decoration: none;
 }
 
-/* line 100, src/sass/components/_typography.scss */
+/* line 82, src/sass/components/_typography.scss */
 .link-plain:active, .link-plain:focus, .link-plain:hover {
   color: #0088cc;
 }
@@ -430,7 +408,7 @@ a:visited, .link-block-styled:visited {
 /**
  * Creates block-level links
  */
-/* line 113, src/sass/components/_typography.scss */
+/* line 95, src/sass/components/_typography.scss */
 a.link-block, .link-block.link-block-styled {
   color: #272727;
   display: block;
@@ -440,14 +418,14 @@ a.link-block, .link-block.link-block-styled {
 /**
  * List styling
  */
-/* line 132, src/sass/components/_typography.scss */
+/* line 114, src/sass/components/_typography.scss */
 ul,
 ol {
   margin: 0 0 1.5625em 2em;
   padding: 0;
 }
 
-/* line 138, src/sass/components/_typography.scss */
+/* line 120, src/sass/components/_typography.scss */
 ul ul,
 ul ol,
 ol ol,
@@ -455,31 +433,31 @@ ol ul {
   margin-bottom: 0;
 }
 
-/* line 145, src/sass/components/_typography.scss */
+/* line 127, src/sass/components/_typography.scss */
 li {
   margin-bottom: 0.5em;
 }
 
 @media (min-width: 38em) {
-  /* line 145, src/sass/components/_typography.scss */
+  /* line 127, src/sass/components/_typography.scss */
   li {
     margin-bottom: 0.25em;
   }
 }
 
-/* line 153, src/sass/components/_typography.scss */
+/* line 135, src/sass/components/_typography.scss */
 dl,
 dd {
   margin: 0;
   padding: 0;
 }
 
-/* line 159, src/sass/components/_typography.scss */
+/* line 141, src/sass/components/_typography.scss */
 dd {
   margin: 0 0 1.5625em;
 }
 
-/* line 163, src/sass/components/_typography.scss */
+/* line 145, src/sass/components/_typography.scss */
 dt {
   font-weight: bold;
 }
@@ -488,7 +466,7 @@ dt {
  * Removes list styling.
  * For semantic reasons, should only be used on unordered lists.
  */
-/* line 172, src/sass/components/_typography.scss */
+/* line 154, src/sass/components/_typography.scss */
 .list-unstyled {
   margin-left: 0;
   list-style: none;
@@ -497,7 +475,7 @@ dt {
 /**
  * Display lists inline
  */
-/* line 180, src/sass/components/_typography.scss */
+/* line 162, src/sass/components/_typography.scss */
 .list-inline {
   list-style: none;
   margin-left: -0.5em;
@@ -505,7 +483,7 @@ dt {
   padding: 0;
 }
 
-/* line 186, src/sass/components/_typography.scss */
+/* line 168, src/sass/components/_typography.scss */
 .list-inline li {
   display: inline-block;
   margin-left: 0.5em;
@@ -513,7 +491,7 @@ dt {
 }
 
 @media (max-width: 38em) {
-  /* line 193, src/sass/components/_typography.scss */
+  /* line 175, src/sass/components/_typography.scss */
   .list-inline.list-inline-responsive li {
     display: block;
   }
@@ -523,7 +501,7 @@ dt {
  * Heading styling for h1 through h6 elements.
  * Heading class lets you use one heading type for semantics, but style it as another heading type.
  */
-/* line 205, src/sass/components/_typography.scss */
+/* line 187, src/sass/components/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
   font-weight: bold;
@@ -532,7 +510,7 @@ h1, h2, h3, h4, h5, h6 {
   word-wrap: break-word;
 }
 
-/* line 224, src/sass/components/_typography.scss */
+/* line 206, src/sass/components/_typography.scss */
 h1,
 .h1 {
   font-size: 1.5em;
@@ -540,33 +518,33 @@ h1,
 }
 
 @media (min-width: 38em) {
-  /* line 224, src/sass/components/_typography.scss */
+  /* line 206, src/sass/components/_typography.scss */
   h1,
   .h1 {
     font-size: 1.75em;
   }
 }
 
-/* line 234, src/sass/components/_typography.scss */
+/* line 216, src/sass/components/_typography.scss */
 h2,
 .h2 {
   font-size: 1.3125em;
 }
 
-/* line 239, src/sass/components/_typography.scss */
+/* line 221, src/sass/components/_typography.scss */
 h3,
 .h3 {
   font-size: 1.1875em;
 }
 
-/* line 244, src/sass/components/_typography.scss */
+/* line 226, src/sass/components/_typography.scss */
 h4, h5, h6,
 .h4, .h5, .h6 {
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 250, src/sass/components/_typography.scss */
+/* line 232, src/sass/components/_typography.scss */
 h4,
 .h4 {
   text-transform: uppercase;
@@ -577,7 +555,7 @@ h4,
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 279, src/sass/components/_typography.scss */
+/* line 261, src/sass/components/_typography.scss */
 hr {
   border: 0;
   border-top: 0.0725em solid #e5e5e5;
@@ -591,26 +569,20 @@ hr {
   /* 2 */
 }
 
-/* line 288, src/sass/components/_typography.scss */
-.night-mode hr {
-  border-top-color: #808080;
-}
-
-/* line 293, src/sass/components/_typography.scss */
+/* line 271, src/sass/components/_typography.scss */
 .line-secondary {
   width: 50%;
 }
 
-/* line 297, src/sass/components/_typography.scss */
-.line-clear,
-.night-mode .line-clear {
+/* line 275, src/sass/components/_typography.scss */
+.line-clear {
   border-top-color: transparent;
 }
 
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 306, src/sass/components/_typography.scss */
+/* line 283, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: inherit;
@@ -619,7 +591,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 314, src/sass/components/_typography.scss */
+/* line 291, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: bolder;
@@ -629,7 +601,7 @@ strong {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 323, src/sass/components/_typography.scss */
+/* line 300, src/sass/components/_typography.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -642,7 +614,7 @@ abbr[title] {
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 332, src/sass/components/_typography.scss */
+/* line 309, src/sass/components/_typography.scss */
 dfn {
   font-style: italic;
 }
@@ -650,7 +622,7 @@ dfn {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 339, src/sass/components/_typography.scss */
+/* line 316, src/sass/components/_typography.scss */
 mark {
   background-color: #ff0;
   color: #000;
@@ -659,7 +631,7 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 347, src/sass/components/_typography.scss */
+/* line 324, src/sass/components/_typography.scss */
 small {
   font-size: 80%;
 }
@@ -667,7 +639,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 354, src/sass/components/_typography.scss */
+/* line 331, src/sass/components/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -676,12 +648,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 362, src/sass/components/_typography.scss */
+/* line 339, src/sass/components/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 366, src/sass/components/_typography.scss */
+/* line 343, src/sass/components/_typography.scss */
 sub {
   bottom: -0.25em;
 }
@@ -689,7 +661,7 @@ sub {
 /**
  * Blockquotes
  */
-/* line 381, src/sass/components/_typography.scss */
+/* line 358, src/sass/components/_typography.scss */
 blockquote {
   font-size: 1.1875em;
   font-style: italic;
@@ -698,20 +670,20 @@ blockquote {
   padding-right: 0.84211em;
 }
 
-/* line 388, src/sass/components/_typography.scss */
+/* line 365, src/sass/components/_typography.scss */
 blockquote cite {
   color: #808080;
   font-size: 0.84211em;
   padding-top: 1em;
 }
 
-/* line 395, src/sass/components/_typography.scss */
+/* line 372, src/sass/components/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 400, src/sass/components/_typography.scss */
+/* line 377, src/sass/components/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -749,12 +721,7 @@ code {
   word-wrap: break-word;
 }
 
-/* line 19, src/sass/components/_code.scss */
-.night-mode code {
-  color: #ec7c98;
-}
-
-/* line 24, src/sass/components/_code.scss */
+/* line 20, src/sass/components/_code.scss */
 pre {
   background-color: #f7f7f7;
   display: block;
@@ -769,24 +736,13 @@ pre {
   word-break: break-all;
 }
 
-/* line 35, src/sass/components/_code.scss */
-.night-mode pre {
-  background-color: #2f2f2f;
-  color: #f7f7f7;
-}
-
-/* line 41, src/sass/components/_code.scss */
+/* line 32, src/sass/components/_code.scss */
 pre code {
   background-color: transparent;
   border: 0;
   color: inherit;
   font-size: 1em;
   padding: 0;
-}
-
-/* line 48, src/sass/components/_code.scss */
-.night-mode pre code {
-  color: #f7f7f7;
 }
 
 /**
@@ -845,80 +801,6 @@ pre code {
   .token.entity {
     cursor: help;
   }
-  /* line 61, src/sass/components/_prism.scss */
-  .night-mode .token.comment,
-  .night-mode .token.prolog,
-  .night-mode .token.doctype,
-  .night-mode .token.cdata {
-    color: #a6a6a6;
-  }
-  /* line 68, src/sass/components/_prism.scss */
-  .night-mode .token.punctuation {
-    color: #f8f8f2;
-  }
-  /* line 72, src/sass/components/_prism.scss */
-  .night-mode .namespace {
-    opacity: .7;
-  }
-  /* line 76, src/sass/components/_prism.scss */
-  .night-mode .token.property,
-  .night-mode .token.tag,
-  .night-mode .token.constant,
-  .night-mode .token.symbol,
-  .night-mode .token.deleted {
-    color: #f92672;
-  }
-  /* line 84, src/sass/components/_prism.scss */
-  .night-mode .token.boolean,
-  .night-mode .token.number {
-    color: #ae81ff;
-  }
-  /* line 89, src/sass/components/_prism.scss */
-  .night-mode .token.selector,
-  .night-mode .token.attr-name,
-  .night-mode .token.string,
-  .night-mode .token.char,
-  .night-mode .token.builtin,
-  .night-mode .token.inserted {
-    color: #a6e22e;
-  }
-  /* line 98, src/sass/components/_prism.scss */
-  .night-mode .token.operator,
-  .night-mode .token.entity,
-  .night-mode .token.url,
-  .night-mode .language-css .token.string,
-  .night-mode .style .token.string,
-  .night-mode .token.variable {
-    color: #f8f8f2;
-  }
-  /* line 107, src/sass/components/_prism.scss */
-  .night-mode .token.atrule,
-  .night-mode .token.attr-value,
-  .night-mode .token.function {
-    color: #e6db74;
-  }
-  /* line 113, src/sass/components/_prism.scss */
-  .night-mode .token.keyword {
-    color: #66d9ef;
-  }
-  /* line 117, src/sass/components/_prism.scss */
-  .night-mode .token.regex,
-  .night-mode .token.important {
-    color: #fd971f;
-  }
-  /* line 122, src/sass/components/_prism.scss */
-  .night-mode .token.important,
-  .night-mode .token.bold {
-    font-weight: bold;
-  }
-  /* line 126, src/sass/components/_prism.scss */
-  .night-mode .token.italic {
-    font-style: italic;
-  }
-  /* line 130, src/sass/components/_prism.scss */
-  .night-mode .token.entity {
-    cursor: help;
-  }
 }
 
 /**
@@ -940,27 +822,16 @@ pre code {
 }
 
 /* line 18, src/sass/components/_buttons.scss */
-.night-mode .btn, .night-mode input[type="submit"], .night-mode .edd-self-service-button, .night-mode .mailchimp-form-button, .night-mode .gmt-edd-slack-form-button {
-  background-color: #ae171d;
-  border-color: #ae171d;
-}
-
-/* line 23, src/sass/components/_buttons.scss */
 .btn, input[type="submit"], .edd-self-service-button, .mailchimp-form-button, .gmt-edd-slack-form-button, .btn:visited, input[type="submit"]:visited, .edd-self-service-button:visited, .mailchimp-form-button:visited, .gmt-edd-slack-form-button:visited {
   color: #ffffff;
 }
 
-/* line 27, src/sass/components/_buttons.scss */
-.night-mode .btn, .night-mode input[type="submit"], .night-mode .edd-self-service-button, .night-mode .mailchimp-form-button, .night-mode .gmt-edd-slack-form-button, .night-mode .btn:visited, .night-mode input[type="submit"]:visited, .night-mode .edd-self-service-button:visited, .night-mode .mailchimp-form-button:visited, .night-mode .gmt-edd-slack-form-button:visited {
-  color: #ffffff;
-}
-
-/* line 37, src/sass/components/_buttons.scss */
+/* line 28, src/sass/components/_buttons.scss */
 a.btn, .btn.link-block-styled, input.link-block-styled[type="submit"], .link-block-styled.edd-self-service-button, .link-block-styled.mailchimp-form-button, .link-block-styled.gmt-edd-slack-form-button, a.edd-self-service-button, a.mailchimp-form-button, a.gmt-edd-slack-form-button {
   text-decoration: none;
 }
 
-/* line 41, src/sass/components/_buttons.scss */
+/* line 32, src/sass/components/_buttons.scss */
 .btn:hover, input[type="submit"]:hover, .edd-self-service-button:hover, .mailchimp-form-button:hover, .gmt-edd-slack-form-button:hover,
 .btn:focus,
 input[type="submit"]:focus,
@@ -982,32 +853,7 @@ input.active[type="submit"],
   color: #ffffff;
 }
 
-/* line 50, src/sass/components/_buttons.scss */
-.night-mode .btn:hover, .night-mode input[type="submit"]:hover, .night-mode .edd-self-service-button:hover, .night-mode .mailchimp-form-button:hover, .night-mode .gmt-edd-slack-form-button:hover,
-.night-mode
-.btn:focus,
-.night-mode input[type="submit"]:focus,
-.night-mode .edd-self-service-button:focus,
-.night-mode .mailchimp-form-button:focus,
-.night-mode .gmt-edd-slack-form-button:focus,
-.night-mode
-.btn:active,
-.night-mode input[type="submit"]:active,
-.night-mode .edd-self-service-button:active,
-.night-mode .mailchimp-form-button:active,
-.night-mode .gmt-edd-slack-form-button:active,
-.night-mode
-.btn.active,
-.night-mode input.active[type="submit"],
-.night-mode .active.edd-self-service-button,
-.night-mode .active.mailchimp-form-button,
-.night-mode .active.gmt-edd-slack-form-button {
-  background-color: #921217;
-  border-color: #921217;
-  color: #ffffff;
-}
-
-/* line 78, src/sass/components/_buttons.scss */
+/* line 63, src/sass/components/_buttons.scss */
 .btn:active, input[type="submit"]:active, .edd-self-service-button:active, .mailchimp-form-button:active, .gmt-edd-slack-form-button:active,
 .btn.active,
 input.active[type="submit"],
@@ -1018,7 +864,7 @@ input.active[type="submit"],
   outline: 0;
 }
 
-/* line 84, src/sass/components/_buttons.scss */
+/* line 69, src/sass/components/_buttons.scss */
 .btn.disabled, input.disabled[type="submit"], .disabled.edd-self-service-button, .disabled.mailchimp-form-button, .disabled.gmt-edd-slack-form-button,
 .btn[disabled],
 input[disabled][type="submit"],
@@ -1032,14 +878,14 @@ input[disabled][type="submit"],
   box-shadow: none;
 }
 
-/* line 93, src/sass/components/_buttons.scss */
+/* line 78, src/sass/components/_buttons.scss */
 .btn-large, #edd-purchase-button {
   padding: 0.6875em 0.9375em;
   font-size: 1em;
   line-height: normal;
 }
 
-/* line 99, src/sass/components/_buttons.scss */
+/* line 84, src/sass/components/_buttons.scss */
 .btn-block, .edd-self-service-button, .mailchimp-form-button,
 input[type="submit"].btn-block,
 input[type="submit"].edd-self-service-button,
@@ -1057,7 +903,7 @@ input[type="button"].mailchimp-form-button {
   padding-left: 0;
 }
 
-/* line 110, src/sass/components/_buttons.scss */
+/* line 95, src/sass/components/_buttons.scss */
 .btn, input[type="submit"], .edd-self-service-button, .mailchimp-form-button, .gmt-edd-slack-form-button,
 button,
 html input[type="button"],
@@ -1074,7 +920,7 @@ input[type="submit"] {
   -webkit-appearance: none;
 }
 
-/* line 127, src/sass/components/_buttons.scss */
+/* line 112, src/sass/components/_buttons.scss */
 .btn:last-child, input[type="submit"]:last-child, .edd-self-service-button:last-child, .mailchimp-form-button:last-child, .gmt-edd-slack-form-button:last-child,
 input.btn,
 input[type="submit"],
@@ -1170,30 +1016,22 @@ textarea {
   }
 }
 
-/* line 72, src/sass/components/_forms.scss */
-.night-mode input, .night-mode
-select, .night-mode
-textarea {
-  background-color: #e5e5e5;
-  color: #272727;
-}
-
 /**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
  */
-/* line 82, src/sass/components/_forms.scss */
+/* line 77, src/sass/components/_forms.scss */
 optgroup {
   font-weight: bold;
 }
 
-/* line 91, src/sass/components/_forms.scss */
+/* line 86, src/sass/components/_forms.scss */
 textarea {
   height: 12em;
   overflow: auto;
 }
 
-/* line 96, src/sass/components/_forms.scss */
+/* line 91, src/sass/components/_forms.scss */
 [type="image"],
 [type="checkbox"],
 [type="radio"] {
@@ -1208,7 +1046,7 @@ textarea {
 /**
  * Remove the inner border and padding in Firefox.
  */
-/* line 110, src/sass/components/_forms.scss */
+/* line 105, src/sass/components/_forms.scss */
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -1220,7 +1058,7 @@ button::-moz-focus-inner,
 /**
  * Restore the focus styles unset by the previous rule.
  */
-/* line 121, src/sass/components/_forms.scss */
+/* line 116, src/sass/components/_forms.scss */
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -1233,13 +1071,13 @@ button:-moz-focusring,
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-/* line 133, src/sass/components/_forms.scss */
+/* line 128, src/sass/components/_forms.scss */
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
-/* line 138, src/sass/components/_forms.scss */
+/* line 133, src/sass/components/_forms.scss */
 input:focus,
 textarea:focus {
   border-color: rgba(82, 168, 236, 0.8);
@@ -1248,7 +1086,7 @@ textarea:focus {
   outline: thin dotted \9;
 }
 
-/* line 146, src/sass/components/_forms.scss */
+/* line 141, src/sass/components/_forms.scss */
 [type="file"]:focus,
 [type="checkbox"]:focus,
 select:focus {
@@ -1260,7 +1098,7 @@ select:focus {
 /**
  * Inline inputs
  */
-/* line 158, src/sass/components/_forms.scss */
+/* line 153, src/sass/components/_forms.scss */
 .input-inline, input[type="submit"], #card_exp_month,
 #card_exp_year {
   display: inline-block;
@@ -1275,7 +1113,7 @@ select:focus {
   * 1. Correct the odd appearance in Chrome and Safari.
   * 2. Correct the outline style in Safari.
   */
-/* line 182, src/sass/components/_forms.scss */
+/* line 177, src/sass/components/_forms.scss */
 [type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
@@ -1288,13 +1126,13 @@ select:focus {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-/* line 192, src/sass/components/_forms.scss */
+/* line 187, src/sass/components/_forms.scss */
 [type="search"]::-webkit-search-cancel-button,
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-/* line 197, src/sass/components/_forms.scss */
+/* line 192, src/sass/components/_forms.scss */
 .input-search {
   width: 85%;
   padding-left: 0.9375em;
@@ -1305,13 +1143,13 @@ select:focus {
 }
 
 @media (min-width: 38em) {
-  /* line 197, src/sass/components/_forms.scss */
+  /* line 192, src/sass/components/_forms.scss */
   .input-search {
     width: 65%;
   }
 }
 
-/* line 209, src/sass/components/_forms.scss */
+/* line 204, src/sass/components/_forms.scss */
 .btn-search {
   display: inline;
   color: #808080;
@@ -1321,17 +1159,17 @@ select:focus {
   margin-bottom: 0;
 }
 
-/* line 218, src/sass/components/_forms.scss */
+/* line 213, src/sass/components/_forms.scss */
 .btn-search:hover {
   color: #5a5a5a;
 }
 
-/* line 222, src/sass/components/_forms.scss */
+/* line 217, src/sass/components/_forms.scss */
 .btn-search .icon {
   fill: #808080;
 }
 
-/* line 226, src/sass/components/_forms.scss */
+/* line 221, src/sass/components/_forms.scss */
 .btn-search:hover .icon {
   fill: #5a5a5a;
 }
@@ -1339,28 +1177,17 @@ select:focus {
 /**
  * Form errors
  */
-/* line 234, src/sass/components/_forms.scss */
+/* line 229, src/sass/components/_forms.scss */
 .error-field {
   border-color: #e30810;
 }
 
-/* line 238, src/sass/components/_forms.scss */
-.night-mode .error-field {
-  border-color: #fcb1b4;
-}
-
-/* line 243, src/sass/components/_forms.scss */
+/* line 234, src/sass/components/_forms.scss */
 .error-message,
 .edd_errors {
   color: #e30810;
   font-style: italic;
   margin-bottom: 1em;
-}
-
-/* line 249, src/sass/components/_forms.scss */
-.night-mode .error-message, .night-mode
-.edd_errors {
-  color: #fcb1b4;
 }
 
 /**
@@ -1476,27 +1303,6 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   padding: 1em 1.5em;
 }
 
-/* line 12, src/sass/components/_callouts.scss */
-.night-mode .callout {
-  background-color: #4a4a4a;
-  border-color: #808080;
-}
-
-/* line 1, src/sass/components/_labels.scss */
-.label {
-  background-color: #f7272f;
-  border-radius: 0.0725em;
-  color: #ffffff;
-  font-size: 0.8125em;
-  font-weight: bold;
-  padding: 0.25em 0.5em;
-}
-
-/* line 10, src/sass/components/_labels.scss */
-.label-small {
-  font-size: 0.6875em;
-}
-
 /**
  * @section WordPress Image Classes
  * Styling for the classes WordPress automatically applies to images.
@@ -1607,22 +1413,12 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   color: #272727;
 }
 
-/* line 48, src/sass/components/_astro-navbar.scss */
-.night-mode .logo, .night-mode .logo:visited {
-  color: #f7f7f7;
-}
-
-/* line 53, src/sass/components/_astro-navbar.scss */
+/* line 49, src/sass/components/_astro-navbar.scss */
 .logo:active, .logo:focus, .logo:hover {
   color: #0088cc;
 }
 
-/* line 59, src/sass/components/_astro-navbar.scss */
-.night-mode .logo:active, .night-mode .logo:focus, .night-mode .logo:hover {
-  color: #73bee3;
-}
-
-/* line 64, src/sass/components/_astro-navbar.scss */
+/* line 56, src/sass/components/_astro-navbar.scss */
 .logo .icon {
   height: 0.8em;
   width: 0.8em;
@@ -1631,7 +1427,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /**
  * The nav menu
  */
-/* line 74, src/sass/components/_astro-navbar.scss */
+/* line 66, src/sass/components/_astro-navbar.scss */
 .nav {
   list-style: none;
   margin: 0 -0.5em;
@@ -1642,13 +1438,13 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 
 @media (min-width: 60em) {
-  /* line 74, src/sass/components/_astro-navbar.scss */
+  /* line 66, src/sass/components/_astro-navbar.scss */
   .nav {
     text-align: right;
   }
 }
 
-/* line 94, src/sass/components/_astro-navbar.scss */
+/* line 86, src/sass/components/_astro-navbar.scss */
 .nav li {
   display: inline-block;
   float: none;
@@ -1656,18 +1452,13 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   margin-right: 0.5em;
 }
 
-/* line 110, src/sass/components/_astro-navbar.scss */
+/* line 102, src/sass/components/_astro-navbar.scss */
 .nav a, .nav .link-block-styled {
   color: #808080;
   text-decoration: none;
 }
 
-/* line 114, src/sass/components/_astro-navbar.scss */
-.night-mode .nav a, .night-mode .nav .link-block-styled {
-  color: #b6b6b6;
-}
-
-/* line 122, src/sass/components/_astro-navbar.scss */
+/* line 110, src/sass/components/_astro-navbar.scss */
 .nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled,
 .nav a:active,
 .nav .link-block-styled:active,
@@ -1687,27 +1478,6 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 .single-gmt-articles .nav .menu-item-object-gmt-articles > .link-block-styled {
   border-bottom: 0.125em solid #fa7176;
   color: #272727;
-}
-
-/* line 135, src/sass/components/_astro-navbar.scss */
-.night-mode .nav a:hover, .night-mode .nav .link-block-styled:hover, .night-mode .nav .link-block:hover .link-block-styled, .link-block:hover .night-mode .nav .link-block-styled, .night-mode
-.nav a:active, .night-mode
-.nav .link-block-styled:active, .night-mode
-.nav a:focus, .night-mode
-.nav .link-block-styled:focus, .night-mode
-.nav .active a, .night-mode
-.nav .active .link-block-styled, .night-mode
-.nav .current-menu-item > a, .night-mode
-.nav .current-menu-item > .link-block-styled, .night-mode
-.single-post .nav .current_page_parent > a, .night-mode
-.single-post .nav .current_page_parent > .link-block-styled, .night-mode
-.nav .current-menu-ancestor > a, .night-mode
-.nav .current-menu-ancestor > .link-block-styled, .night-mode
-.nav .current-page-ancestor > a, .night-mode
-.nav .current-page-ancestor > .link-block-styled, .night-mode
-.single-gmt-articles .nav .menu-item-object-gmt-articles > a, .night-mode
-.single-gmt-articles .nav .menu-item-object-gmt-articles > .link-block-styled {
-  color: #f7f7f7;
 }
 
 /**
@@ -1902,9 +1672,19 @@ tfoot th {
  * Nudge and tweak alignment, spacing, and visibility.
  */
 /**
+ * Highlight effect
+ */
+/* line 19, src/sass/components/_overrides.scss */
+.highlight {
+  background-color: #fff2ac;
+  background-image: -webkit-linear-gradient(left, #ffe359 0%, #fff2ac 100%);
+  background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+}
+
+/**
  * Font weights
  */
-/* line 20, src/sass/components/_overrides.scss */
+/* line 29, src/sass/components/_overrides.scss */
 .text-normal {
   font-weight: normal;
 }
@@ -1912,31 +1692,31 @@ tfoot th {
 /**
  * Text sizes
  */
-/* line 39, src/sass/components/_overrides.scss */
+/* line 48, src/sass/components/_overrides.scss */
 .text-small, .gmt-edd-link-to-product-in-cart {
   font-size: 0.9375em;
 }
 
-/* line 43, src/sass/components/_overrides.scss */
+/* line 52, src/sass/components/_overrides.scss */
 .text-large, .text-xlarge {
   font-size: 1.1875em;
   line-height: 1.4;
 }
 
 @media (min-width: 38em) {
-  /* line 43, src/sass/components/_overrides.scss */
+  /* line 52, src/sass/components/_overrides.scss */
   .text-large, .text-xlarge {
     font-size: 1.3125em;
   }
 }
 
-/* line 52, src/sass/components/_overrides.scss */
+/* line 61, src/sass/components/_overrides.scss */
 .text-xlarge {
   font-size: 1.7em;
 }
 
 @media (min-width: 38em) {
-  /* line 52, src/sass/components/_overrides.scss */
+  /* line 61, src/sass/components/_overrides.scss */
   .text-xlarge {
     font-size: 2em;
   }
@@ -1945,17 +1725,12 @@ tfoot th {
 /**
  * Text colors
  */
-/* line 66, src/sass/components/_overrides.scss */
+/* line 75, src/sass/components/_overrides.scss */
 .text-muted, del, .gmt-edd-link-to-product-in-cart {
   color: #808080;
 }
 
-/* line 69, src/sass/components/_overrides.scss */
-.night-mode .text-muted, .night-mode del, .night-mode .gmt-edd-link-to-product-in-cart {
-  color: #b6b6b6;
-}
-
-/* line 74, src/sass/components/_overrides.scss */
+/* line 79, src/sass/components/_overrides.scss */
 .text-muted-light, .btn del, input[type="submit"] del, .edd-self-service-button del, .mailchimp-form-button del, .gmt-edd-slack-form-button del {
   color: #b2b2b2;
 }
@@ -1963,7 +1738,7 @@ tfoot th {
 /**
  * Font weight
  */
-/* line 87, src/sass/components/_overrides.scss */
+/* line 92, src/sass/components/_overrides.scss */
 .text-normal {
   font-weight: normal;
   font-style: normal;
@@ -1972,19 +1747,19 @@ tfoot th {
 /**
  * Text alignment
  */
-/* line 97, src/sass/components/_overrides.scss */
+/* line 102, src/sass/components/_overrides.scss */
 .text-center {
   text-align: center;
 }
 
 @media (min-width: 38em) {
-  /* line 102, src/sass/components/_overrides.scss */
+  /* line 107, src/sass/components/_overrides.scss */
   .text-right-large {
     text-align: right;
   }
 }
 
-/* line 124, src/sass/components/_overrides.scss */
+/* line 129, src/sass/components/_overrides.scss */
 .float-center {
   float: none;
   margin-left: auto;
@@ -1994,17 +1769,17 @@ tfoot th {
 /**
  * Margins
  */
-/* line 139, src/sass/components/_overrides.scss */
+/* line 144, src/sass/components/_overrides.scss */
 .no-margin {
   margin: 0;
 }
 
-/* line 143, src/sass/components/_overrides.scss */
+/* line 148, src/sass/components/_overrides.scss */
 .no-margin-top {
   margin-top: 0;
 }
 
-/* line 147, src/sass/components/_overrides.scss */
+/* line 152, src/sass/components/_overrides.scss */
 .no-margin-bottom, #edd_checkout_wrap fieldset, #edd_checkout_user_info p,
 #edd_cc_fields p,
 #edd_cc_address p,
@@ -2012,27 +1787,27 @@ tfoot th {
   margin-bottom: 0;
 }
 
-/* line 151, src/sass/components/_overrides.scss */
+/* line 156, src/sass/components/_overrides.scss */
 .margin-top {
   margin-top: 1.5625em;
 }
 
-/* line 155, src/sass/components/_overrides.scss */
+/* line 160, src/sass/components/_overrides.scss */
 .margin-bottom {
   margin-bottom: 1.5625em;
 }
 
-/* line 159, src/sass/components/_overrides.scss */
+/* line 164, src/sass/components/_overrides.scss */
 .margin-bottom-small, .error-field, #edd-payment-mode-wrap input[type="radio"] {
   margin-bottom: 0.5em;
 }
 
-/* line 163, src/sass/components/_overrides.scss */
+/* line 168, src/sass/components/_overrides.scss */
 .margin-bottom-large {
   margin-bottom: 2em;
 }
 
-/* line 167, src/sass/components/_overrides.scss */
+/* line 172, src/sass/components/_overrides.scss */
 .margin-right {
   margin-right: 0.25em;
 }
@@ -2040,62 +1815,62 @@ tfoot th {
 /**
  * Padding
  */
-/* line 176, src/sass/components/_overrides.scss */
+/* line 181, src/sass/components/_overrides.scss */
 .no-padding {
   padding: 0;
 }
 
-/* line 180, src/sass/components/_overrides.scss */
+/* line 185, src/sass/components/_overrides.scss */
 .no-padding-top {
   padding-top: 0;
 }
 
-/* line 184, src/sass/components/_overrides.scss */
+/* line 189, src/sass/components/_overrides.scss */
 .no-padding-bottom {
   padding-bottom: 0;
 }
 
-/* line 188, src/sass/components/_overrides.scss */
+/* line 193, src/sass/components/_overrides.scss */
 .padding-top {
   padding-top: 1.5625em;
 }
 
-/* line 192, src/sass/components/_overrides.scss */
+/* line 197, src/sass/components/_overrides.scss */
 .padding-top-small, .edd-cancel {
   padding-top: 0.5em;
 }
 
-/* line 196, src/sass/components/_overrides.scss */
+/* line 201, src/sass/components/_overrides.scss */
 .padding-top-medium {
   padding-top: 1em;
 }
 
-/* line 200, src/sass/components/_overrides.scss */
+/* line 205, src/sass/components/_overrides.scss */
 .padding-top-large {
   padding-top: 2em;
 }
 
-/* line 204, src/sass/components/_overrides.scss */
+/* line 209, src/sass/components/_overrides.scss */
 .padding-top-xlarge {
   padding-top: 3em;
 }
 
-/* line 208, src/sass/components/_overrides.scss */
+/* line 213, src/sass/components/_overrides.scss */
 .padding-bottom {
   padding-bottom: 1.5625em;
 }
 
-/* line 212, src/sass/components/_overrides.scss */
+/* line 217, src/sass/components/_overrides.scss */
 .padding-bottom-small {
   padding-bottom: 0.5em;
 }
 
-/* line 216, src/sass/components/_overrides.scss */
+/* line 221, src/sass/components/_overrides.scss */
 .padding-bottom-large {
   padding-bottom: 2em;
 }
 
-/* line 220, src/sass/components/_overrides.scss */
+/* line 225, src/sass/components/_overrides.scss */
 .padding-bottom-xlarge {
   padding-bottom: 3em;
 }
@@ -2108,7 +1883,7 @@ tfoot th {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 234, src/sass/components/_overrides.scss */
+/* line 239, src/sass/components/_overrides.scss */
 .screen-reader, .svg .icon-fallback-text, .edd-self-service-label, .mailchimp-form-label {
   border: 0;
   clip: rect(0 0 0 0);
@@ -2126,7 +1901,7 @@ tfoot th {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link https://www.drupal.org/node/897638
  */
-/* line 251, src/sass/components/_overrides.scss */
+/* line 256, src/sass/components/_overrides.scss */
 .screen-reader-focusable:active,
 .screen-reader-focusable:focus {
   clip: auto;
@@ -2143,7 +1918,7 @@ tfoot th {
  * @affected IE 8/9/10
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
-/* line 267, src/sass/components/_overrides.scss */
+/* line 272, src/sass/components/_overrides.scss */
 [hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_secure_site_wrapper, #edd_checkout_user_info legend,
 #edd_cc_fields legend,
 #edd_cc_address legend,
@@ -2163,7 +1938,7 @@ tfoot th {
  * The space content is one way to avoid an Opera bug when the `contenteditable` attribute is included anywhere else in the document.
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  */
-/* line 279, src/sass/components/_overrides.scss */
+/* line 284, src/sass/components/_overrides.scss */
 .clearfix:before, .container:before,
 .row:before, #edd_cc_fields:before,
 #edd_cc_address:before, .edd-self-service-row:before, .mailchimp-form-row:before, .nav-wrap:before,
@@ -2179,7 +1954,7 @@ tfoot th {
   content: " ";
 }
 
-/* line 285, src/sass/components/_overrides.scss */
+/* line 290, src/sass/components/_overrides.scss */
 .clearfix:after, .container:after,
 .row:after, #edd_cc_fields:after,
 #edd_cc_address:after, .edd-self-service-row:after, .mailchimp-form-row:after, .nav-wrap:after {
