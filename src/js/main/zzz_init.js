@@ -10,6 +10,6 @@ fluidvids.init({
 if ( document.querySelector( 'a[href*="#"]' ) ) {
 	smoothScroll.init({
 		selector: 'a',
-		ignore: '#night-mode, .edd_discount_link'
+		ignore: '.edd_discount_link'
 	});
 }

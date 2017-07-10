@@ -15,18 +15,9 @@
 	margin-bottom: calc-em(5px);
 	padding: calc-em(8px) calc-em(11px);
 
-	.night-mode & {
-		background-color: mix( darken( $color-secondary, 20% ), $color-black, 65% );
-		border-color: mix( darken( $color-secondary, 20% ), $color-black, 65% );
-	}
-
 	&,
 	&:visited {
 		color: $color-white;
-
-		.night-mode & {
-			color: $color-white;
-		}
 	}
 
 	del {
@@ -46,12 +37,6 @@ a.btn {
 	border-color: darken( $color-secondary, 30% );
 	color: $color-white;
 	// text-decoration: none;
-
-	.night-mode & {
-		background-color: mix( darken( $color-secondary, 30% ), $color-black, 65% );
-		border-color: mix( darken( $color-secondary, 30% ), $color-black, 65% );
-		color: $color-white;
-	}
 }
 
 // .btn-secondary {

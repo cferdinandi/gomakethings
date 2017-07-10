@@ -68,11 +68,6 @@ textarea {
 	@media (min-width: $bp-medium) {
 		line-height: 1.5625;
 	}
-
-	.night-mode & {
-		background-color: $color-gray-light;
-		color: $color-black;
-	}
 }
 
 /**
@@ -234,10 +229,6 @@ select:focus {
 .error-field {
 	@extend .margin-bottom-small;
 	border-color: darken( $color-secondary, 25% );
-
-	.night-mode & {
-		border-color: mix( $color-secondary, $color-white, 55% );
-	}
 }
 
 .error-message,
@@ -245,8 +236,4 @@ select:focus {
 	color: darken( $color-secondary, 25% );
 	font-style: italic;
 	margin-bottom: 1em;
-
-	.night-mode & {
-		color: mix( $color-secondary, $color-white, 55% );
-	}
 }

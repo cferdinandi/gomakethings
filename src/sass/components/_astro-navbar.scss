@@ -44,10 +44,6 @@
 	&,
 	&:visited {
 		color: $color-black;
-
-		.night-mode & {
-			color: darken($color-white, 3%);
-		}
 	}
 
 	&:active,
@@ -55,10 +51,6 @@
 	&:hover {
 		color: $color-primary;
 		// text-decoration: none;
-
-		.night-mode & {
-			color: mix( $color-primary, $color-white, 55% );
-		}
 	}
 
 	.icon {
@@ -110,10 +102,6 @@
 	a {
 		color: $color-gray-dark;
 		text-decoration: none;
-
-		.night-mode & {
-			color: lighten( $color-gray-dark, 21% );
-		}
 	}
 
 	/**
@@ -131,10 +119,6 @@
 		border-bottom: calc-em(2px) solid $color-secondary;
 		color: $color-black;
 		// text-decoration: none;
-
-		.night-mode & {
-			color: darken($color-white, 3%);
-		}
 	}
 }
 
