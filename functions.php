@@ -30,7 +30,7 @@
 			<script>
 				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/detects.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
 				<?php if ( !isset($_COOKIE['fontsLoaded']) || $_COOKIE['fontsLoaded'] !== 'true' ) : ?>
-					loadCSS('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700');
+					loadCSS('https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i');
 					var font = new FontFaceObserver('PT Serif');
 					font.load().then(function () {
 						var expires = new Date(+new Date() + (7 * 24 * 60 * 60 * 1000)).toUTCString();
@@ -38,7 +38,6 @@
 						document.documentElement.className += ' fonts-loaded';
 					});
 				<?php endif; ?>
-				<?php echo file_get_contents( get_template_directory_uri() . '/dist/js/load-night-mode.min.' . $keel_theme->get( 'Version' ) . '.js' ); ?>
 			</script>
 		<?php
 	}
@@ -80,10 +79,6 @@
 		if ( isset($_COOKIE['fontsLoaded']) && $_COOKIE['fontsLoaded'] === 'true' ) {
 			$classes .= ' fonts-loaded';
 		}
-
-		// if ( isset($_COOKIE['nightMode']) && $_COOKIE['nightMode'] === 'true' ) {
-		// 	$classes .= ' night-mode';
-		// }
 
 		if ( !empty($classes) ) {
 			$classes = 'class="' . $classes . '"';
