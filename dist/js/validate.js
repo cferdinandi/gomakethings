@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.98.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.99.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -633,12 +633,24 @@
 })(window, document);
 
 validate.init({
-	selector: '#edd_purchase_form, .mailchimp-form',
+	selector: '#edd_purchase_form, .mailchimp-form, .edd-self-service-form',
 	fieldClass: 'error-field',
 	onSubmit: function (form) {
-		var submit = form.querySelector('.mailchimp-form-button');
-		if (!submit) return;
-		submit.innerHTML = 'Joining...';
-		submit.classList.add('disabled');
+
+		// MailChimp
+		var mcSubmit = form.querySelector('.mailchimp-form-button');
+		if (mcSubmit) {
+			mcSubmit.innerHTML = 'Joining...';
+			mcSubmit.classList.add('disabled');
+			return;
+		}
+
+		// Self-Service
+		var ssSubmit = form.querySelector('.edd-self-service-button');
+		if (ssSubmit) {
+			ssSubmit.innerHTML = 'Resending Receipts...';
+			ssSubmit.classList.add('disabled');
+		}
+
 	}
 });
