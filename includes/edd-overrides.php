@@ -84,6 +84,16 @@
 
 
 	/**
+	 * Remove default credit card validator
+	 */
+	function keel_edd_remove_credit_card_validator() {
+		wp_dequeue_script( 'creditCardValidator' );
+	}
+	add_action( 'wp_enqueue_scripts', 'keel_edd_remove_credit_card_validator' );
+
+
+
+	/**
 	 * Disable purchase button if no JS
 	 */
 	function keel_edd_no_js_disable_purchase() {
