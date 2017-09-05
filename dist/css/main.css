@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.101.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.102.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -762,42 +762,63 @@ pre code {
     color: #999;
   }
   /* line 19, src/sass/components/_prism.scss */
+  .namespace {
+    opacity: .7;
+  }
+  /* line 23, src/sass/components/_prism.scss */
   .token.property,
   .token.tag,
   .token.boolean,
-  .token.number {
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
     color: #905;
   }
-  /* line 26, src/sass/components/_prism.scss */
+  /* line 33, src/sass/components/_prism.scss */
   .token.selector,
   .token.attr-name,
-  .token.string {
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
     color: #690;
   }
-  /* line 32, src/sass/components/_prism.scss */
+  /* line 42, src/sass/components/_prism.scss */
   .token.operator,
   .token.entity,
   .token.url,
   .language-css .token.string,
   .style .token.string {
     color: #a67f59;
+    background: rgba(255, 255, 255, 0.5);
   }
-  /* line 40, src/sass/components/_prism.scss */
+  /* line 51, src/sass/components/_prism.scss */
   .token.atrule,
   .token.attr-value,
   .token.keyword {
     color: #07a;
   }
-  /* line 47, src/sass/components/_prism.scss */
+  /* line 57, src/sass/components/_prism.scss */
+  .token.function {
+    color: #DD4A68;
+  }
+  /* line 61, src/sass/components/_prism.scss */
   .token.regex,
-  .token.important {
+  .token.important,
+  .token.variable {
     color: #e90;
   }
-  /* line 52, src/sass/components/_prism.scss */
-  .token.important {
+  /* line 67, src/sass/components/_prism.scss */
+  .token.important,
+  .token.bold {
     font-weight: bold;
   }
-  /* line 56, src/sass/components/_prism.scss */
+  /* line 71, src/sass/components/_prism.scss */
+  .token.italic {
+    font-style: italic;
+  }
+  /* line 75, src/sass/components/_prism.scss */
   .token.entity {
     cursor: help;
   }
