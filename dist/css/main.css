@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.102.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.103.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -663,27 +663,27 @@ sub {
  */
 /* line 358, src/sass/components/_typography.scss */
 blockquote {
-  font-size: 1.1875em;
+  border-left: 0.25em solid #e5e5e5;
   font-style: italic;
   margin: 0 0 1.5625em;
   padding-left: 0.84211em;
   padding-right: 0.84211em;
 }
 
-/* line 365, src/sass/components/_typography.scss */
+/* line 366, src/sass/components/_typography.scss */
 blockquote cite {
   color: #808080;
   font-size: 0.84211em;
   padding-top: 1em;
 }
 
-/* line 372, src/sass/components/_typography.scss */
+/* line 373, src/sass/components/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 377, src/sass/components/_typography.scss */
+/* line 378, src/sass/components/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,
