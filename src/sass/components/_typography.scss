@@ -356,7 +356,8 @@ del {
  */
 
 blockquote {
-	font-size: calc-em(19px);
+	// font-size: calc-em(19px);
+	border-left: calc-em(4px) solid $color-gray-light;
 	font-style: italic;
 	margin: 0 0 $spacing;
 	padding-left: calc-em(16px, 19px);
