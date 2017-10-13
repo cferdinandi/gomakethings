@@ -125,11 +125,7 @@ ol ul {
 }
 
 li {
-	margin-bottom: calc-em(8px);
-
-	@media (min-width: $bp-medium) {
-		margin-bottom: calc-em(4px);
-	}
+	margin-bottom: calc-em(11px);
 }
 
 dl,
