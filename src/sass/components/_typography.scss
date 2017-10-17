@@ -360,12 +360,12 @@ blockquote {
 	border-left: calc-em(4px) solid $color-gray-light;
 	font-style: italic;
 	margin: 0 0 $spacing;
-	padding-left: calc-em(16px, 19px);
-	padding-right: calc-em(16px, 19px);
+	padding-left: calc-em(16px);
+	padding-right: calc-em(16px);
 
 	cite {
 		color: $color-gray-dark;
-		// font-size: calc-em(16px, 19px);
+		font-size: calc-em(15px);
 		padding-top: calc-em(16px);
 	}
 }
