@@ -12,7 +12,7 @@ body {
 	border-top: calc-em(8px) solid $color-gray-light;
 
 	.fonts-loaded & {
-		font-family: $font-enhanced;
+		font-family: $font-primary-enhanced;
 	}
 
 	@media (min-width: $bp-medium) {
@@ -186,11 +186,16 @@ dt {
 
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.4;
+	font-family: $font-secondary;
 	font-weight: bold;
 	// font-weight: normal;
 	margin: 0 0 1em;
 	padding: 1em 0 0;
 	word-wrap: break-word;
+
+	.fonts-loaded & {
+		font-family: $font-secondary-enhanced;
+	}
 }
 
 // h1,
@@ -358,14 +363,20 @@ del {
 blockquote {
 	// font-size: calc-em(19px);
 	border-left: calc-em(4px) solid $color-gray-light;
-	font-style: italic;
+	font-family: $font-secondary;
+	font-style: normal;
 	margin: 0 0 $spacing;
 	padding-left: calc-em(16px);
 	padding-right: calc-em(16px);
 
+	.fonts-loaded & {
+		font-family: $font-secondary-enhanced;
+	}
+
 	cite {
 		color: $color-gray-dark;
 		font-size: calc-em(15px);
+		font-style: normal;
 		padding-top: calc-em(16px);
 	}
 }

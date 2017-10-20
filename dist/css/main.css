@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.109.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.110.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -76,7 +76,7 @@ summary {
  */
 /* line 51, src/sass/components/_normalize.scss */
 html {
-  font-family: Georgia, serif;
+  font-family: Helvetica, Arial, sans-serif;
   /* 1 */
   overflow-y: scroll;
   /* 2 */
@@ -322,7 +322,7 @@ figure {
  */
 /* line 6, src/sass/components/_typography.scss */
 body {
-  font-family: Georgia, serif;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 112.5%;
   line-height: 1.5;
   color: #272727;
@@ -332,7 +332,7 @@ body {
 
 /* line 14, src/sass/components/_typography.scss */
 .fonts-loaded body {
-  font-family: "PT Serif", serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 @media (min-width: 38em) {
@@ -504,13 +504,19 @@ dt {
 /* line 187, src/sass/components/_typography.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.4;
+  font-family: Georgia, serif;
   font-weight: bold;
   margin: 0 0 1em;
   padding: 1em 0 0;
   word-wrap: break-word;
 }
 
-/* line 206, src/sass/components/_typography.scss */
+/* line 196, src/sass/components/_typography.scss */
+.fonts-loaded h1, .fonts-loaded h2, .fonts-loaded h3, .fonts-loaded h4, .fonts-loaded h5, .fonts-loaded h6 {
+  font-family: "PT Serif", serif;
+}
+
+/* line 211, src/sass/components/_typography.scss */
 h1,
 .h1 {
   font-size: 1.5em;
@@ -518,33 +524,33 @@ h1,
 }
 
 @media (min-width: 38em) {
-  /* line 206, src/sass/components/_typography.scss */
+  /* line 211, src/sass/components/_typography.scss */
   h1,
   .h1 {
     font-size: 1.75em;
   }
 }
 
-/* line 216, src/sass/components/_typography.scss */
+/* line 221, src/sass/components/_typography.scss */
 h2,
 .h2 {
   font-size: 1.3125em;
 }
 
-/* line 221, src/sass/components/_typography.scss */
+/* line 226, src/sass/components/_typography.scss */
 h3,
 .h3 {
   font-size: 1.1875em;
 }
 
-/* line 226, src/sass/components/_typography.scss */
+/* line 231, src/sass/components/_typography.scss */
 h4, h5, h6,
 .h4, .h5, .h6 {
   font-size: 1em;
   font-weight: bold;
 }
 
-/* line 232, src/sass/components/_typography.scss */
+/* line 237, src/sass/components/_typography.scss */
 h4,
 .h4 {
   text-transform: uppercase;
@@ -555,7 +561,7 @@ h4,
  * 1. Add the correct box sizing in Firefox.
  * 2. Show the overflow in Edge and IE.
  */
-/* line 261, src/sass/components/_typography.scss */
+/* line 266, src/sass/components/_typography.scss */
 hr {
   border: 0;
   border-top: 0.0725em solid #e5e5e5;
@@ -569,12 +575,12 @@ hr {
   /* 2 */
 }
 
-/* line 271, src/sass/components/_typography.scss */
+/* line 276, src/sass/components/_typography.scss */
 .line-secondary {
   width: 50%;
 }
 
-/* line 275, src/sass/components/_typography.scss */
+/* line 280, src/sass/components/_typography.scss */
 .line-clear {
   border-top-color: transparent;
 }
@@ -582,7 +588,7 @@ hr {
 /**
  * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
  */
-/* line 283, src/sass/components/_typography.scss */
+/* line 288, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: inherit;
@@ -591,7 +597,7 @@ strong {
 /**
  * Add the correct font weight in Chrome, Edge, and Safari.
  */
-/* line 291, src/sass/components/_typography.scss */
+/* line 296, src/sass/components/_typography.scss */
 b,
 strong {
   font-weight: bolder;
@@ -601,7 +607,7 @@ strong {
  * 1. Remove the bottom border in Firefox 39-.
  * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
  */
-/* line 300, src/sass/components/_typography.scss */
+/* line 305, src/sass/components/_typography.scss */
 abbr[title] {
   border-bottom: none;
   /* 1 */
@@ -614,7 +620,7 @@ abbr[title] {
 /**
  * Address styling not present in Safari and Chrome.
  */
-/* line 309, src/sass/components/_typography.scss */
+/* line 314, src/sass/components/_typography.scss */
 dfn {
   font-style: italic;
 }
@@ -622,7 +628,7 @@ dfn {
 /**
  * Address styling not present in IE 8/9.
  */
-/* line 316, src/sass/components/_typography.scss */
+/* line 321, src/sass/components/_typography.scss */
 mark {
   background-color: #ff0;
   color: #000;
@@ -631,7 +637,7 @@ mark {
 /**
  * Address inconsistent and variable font size in all browsers.
  */
-/* line 324, src/sass/components/_typography.scss */
+/* line 329, src/sass/components/_typography.scss */
 small {
   font-size: 80%;
 }
@@ -639,7 +645,7 @@ small {
 /**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers.
  */
-/* line 331, src/sass/components/_typography.scss */
+/* line 336, src/sass/components/_typography.scss */
 sub,
 sup {
   font-size: 75%;
@@ -648,12 +654,12 @@ sup {
   vertical-align: baseline;
 }
 
-/* line 339, src/sass/components/_typography.scss */
+/* line 344, src/sass/components/_typography.scss */
 sup {
   top: -0.5em;
 }
 
-/* line 343, src/sass/components/_typography.scss */
+/* line 348, src/sass/components/_typography.scss */
 sub {
   bottom: -0.25em;
 }
@@ -661,29 +667,36 @@ sub {
 /**
  * Blockquotes
  */
-/* line 358, src/sass/components/_typography.scss */
+/* line 363, src/sass/components/_typography.scss */
 blockquote {
   border-left: 0.25em solid #e5e5e5;
-  font-style: italic;
+  font-family: Georgia, serif;
+  font-style: normal;
   margin: 0 0 1.5625em;
   padding-left: 1em;
   padding-right: 1em;
 }
 
-/* line 366, src/sass/components/_typography.scss */
+/* line 372, src/sass/components/_typography.scss */
+.fonts-loaded blockquote {
+  font-family: "PT Serif", serif;
+}
+
+/* line 376, src/sass/components/_typography.scss */
 blockquote cite {
   color: #808080;
   font-size: 0.9375em;
+  font-style: normal;
   padding-top: 1em;
 }
 
-/* line 373, src/sass/components/_typography.scss */
+/* line 384, src/sass/components/_typography.scss */
 blockquote,
 q {
   quotes: none;
 }
 
-/* line 378, src/sass/components/_typography.scss */
+/* line 389, src/sass/components/_typography.scss */
 blockquote:before,
 blockquote:after,
 q:before,
@@ -1414,6 +1427,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /* line 25, src/sass/components/_astro-navbar.scss */
 .logo {
   display: inline-block;
+  font-family: Georgia, serif;
   font-size: 1.2em;
   font-weight: bold;
   line-height: 1.2;
@@ -1429,17 +1443,22 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   }
 }
 
-/* line 44, src/sass/components/_astro-navbar.scss */
+/* line 39, src/sass/components/_astro-navbar.scss */
+.fonts-loaded .logo {
+  font-family: "PT Serif", serif;
+}
+
+/* line 49, src/sass/components/_astro-navbar.scss */
 .logo, .logo:visited {
   color: #272727;
 }
 
-/* line 49, src/sass/components/_astro-navbar.scss */
+/* line 54, src/sass/components/_astro-navbar.scss */
 .logo:active, .logo:focus, .logo:hover {
   color: #0088cc;
 }
 
-/* line 56, src/sass/components/_astro-navbar.scss */
+/* line 61, src/sass/components/_astro-navbar.scss */
 .logo .icon {
   height: 0.8em;
   width: 0.8em;
@@ -1448,7 +1467,7 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 /**
  * The nav menu
  */
-/* line 66, src/sass/components/_astro-navbar.scss */
+/* line 71, src/sass/components/_astro-navbar.scss */
 .nav {
   list-style: none;
   margin: 0 -0.5em;
@@ -1459,13 +1478,13 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
 }
 
 @media (min-width: 60em) {
-  /* line 66, src/sass/components/_astro-navbar.scss */
+  /* line 71, src/sass/components/_astro-navbar.scss */
   .nav {
     text-align: right;
   }
 }
 
-/* line 86, src/sass/components/_astro-navbar.scss */
+/* line 91, src/sass/components/_astro-navbar.scss */
 .nav li {
   display: inline-block;
   float: none;
@@ -1473,13 +1492,13 @@ a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link
   margin-right: 0.5em;
 }
 
-/* line 102, src/sass/components/_astro-navbar.scss */
+/* line 107, src/sass/components/_astro-navbar.scss */
 .nav a, .nav .link-block-styled {
   color: #808080;
   text-decoration: none;
 }
 
-/* line 110, src/sass/components/_astro-navbar.scss */
+/* line 115, src/sass/components/_astro-navbar.scss */
 .nav a:hover, .nav .link-block-styled:hover, .nav .link-block:hover .link-block-styled, .link-block:hover .nav .link-block-styled,
 .nav a:active,
 .nav .link-block-styled:active,
@@ -1712,33 +1731,56 @@ tfoot th {
 }
 
 /**
+ * Font Families
+ */
+/* line 39, src/sass/components/_overrides.scss */
+.text-serif {
+  font-family: Georgia, serif;
+}
+
+/* line 42, src/sass/components/_overrides.scss */
+.fonts-loaded .text-serif {
+  font-family: "PT Serif", serif;
+}
+
+/* line 47, src/sass/components/_overrides.scss */
+.text-sans-serif {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+/* line 50, src/sass/components/_overrides.scss */
+.fonts-loaded .text-sans-serif {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+/**
  * Text sizes
  */
-/* line 49, src/sass/components/_overrides.scss */
+/* line 68, src/sass/components/_overrides.scss */
 .text-small, .gmt-edd-link-to-product-in-cart {
   font-size: 0.9375em;
 }
 
-/* line 53, src/sass/components/_overrides.scss */
+/* line 72, src/sass/components/_overrides.scss */
 .text-large, .text-xlarge {
   font-size: 1.1875em;
   line-height: 1.4;
 }
 
 @media (min-width: 38em) {
-  /* line 53, src/sass/components/_overrides.scss */
+  /* line 72, src/sass/components/_overrides.scss */
   .text-large, .text-xlarge {
     font-size: 1.3125em;
   }
 }
 
-/* line 62, src/sass/components/_overrides.scss */
+/* line 81, src/sass/components/_overrides.scss */
 .text-xlarge {
   font-size: 1.7em;
 }
 
 @media (min-width: 38em) {
-  /* line 62, src/sass/components/_overrides.scss */
+  /* line 81, src/sass/components/_overrides.scss */
   .text-xlarge {
     font-size: 2em;
   }
@@ -1747,12 +1789,12 @@ tfoot th {
 /**
  * Text colors
  */
-/* line 76, src/sass/components/_overrides.scss */
+/* line 95, src/sass/components/_overrides.scss */
 .text-muted, del, .gmt-edd-link-to-product-in-cart {
   color: #808080;
 }
 
-/* line 80, src/sass/components/_overrides.scss */
+/* line 99, src/sass/components/_overrides.scss */
 .text-muted-light, .btn del, input[type="submit"] del, .edd-self-service-button del, .mailchimp-form-button del, .gmt-edd-slack-form-button del {
   color: #b2b2b2;
 }
@@ -1760,7 +1802,7 @@ tfoot th {
 /**
  * Font weight
  */
-/* line 93, src/sass/components/_overrides.scss */
+/* line 112, src/sass/components/_overrides.scss */
 .text-normal {
   font-weight: normal;
   font-style: normal;
@@ -1769,19 +1811,19 @@ tfoot th {
 /**
  * Text alignment
  */
-/* line 103, src/sass/components/_overrides.scss */
+/* line 122, src/sass/components/_overrides.scss */
 .text-center {
   text-align: center;
 }
 
 @media (min-width: 38em) {
-  /* line 108, src/sass/components/_overrides.scss */
+  /* line 127, src/sass/components/_overrides.scss */
   .text-right-large {
     text-align: right;
   }
 }
 
-/* line 130, src/sass/components/_overrides.scss */
+/* line 149, src/sass/components/_overrides.scss */
 .float-center {
   float: none;
   margin-left: auto;
@@ -1791,17 +1833,17 @@ tfoot th {
 /**
  * Margins
  */
-/* line 145, src/sass/components/_overrides.scss */
+/* line 164, src/sass/components/_overrides.scss */
 .no-margin {
   margin: 0;
 }
 
-/* line 149, src/sass/components/_overrides.scss */
+/* line 168, src/sass/components/_overrides.scss */
 .no-margin-top {
   margin-top: 0;
 }
 
-/* line 153, src/sass/components/_overrides.scss */
+/* line 172, src/sass/components/_overrides.scss */
 .no-margin-bottom, #edd_checkout_wrap fieldset, #edd_checkout_user_info p,
 #edd_cc_fields p,
 #edd_cc_address p,
@@ -1809,27 +1851,27 @@ tfoot th {
   margin-bottom: 0;
 }
 
-/* line 157, src/sass/components/_overrides.scss */
+/* line 176, src/sass/components/_overrides.scss */
 .margin-top {
   margin-top: 1.5625em;
 }
 
-/* line 161, src/sass/components/_overrides.scss */
+/* line 180, src/sass/components/_overrides.scss */
 .margin-bottom {
   margin-bottom: 1.5625em;
 }
 
-/* line 165, src/sass/components/_overrides.scss */
+/* line 184, src/sass/components/_overrides.scss */
 .margin-bottom-small, .error-field, #edd-payment-mode-wrap input[type="radio"] {
   margin-bottom: 0.5em;
 }
 
-/* line 169, src/sass/components/_overrides.scss */
+/* line 188, src/sass/components/_overrides.scss */
 .margin-bottom-large {
   margin-bottom: 2em;
 }
 
-/* line 173, src/sass/components/_overrides.scss */
+/* line 192, src/sass/components/_overrides.scss */
 .margin-right {
   margin-right: 0.25em;
 }
@@ -1837,62 +1879,62 @@ tfoot th {
 /**
  * Padding
  */
-/* line 182, src/sass/components/_overrides.scss */
+/* line 201, src/sass/components/_overrides.scss */
 .no-padding {
   padding: 0;
 }
 
-/* line 186, src/sass/components/_overrides.scss */
+/* line 205, src/sass/components/_overrides.scss */
 .no-padding-top {
   padding-top: 0;
 }
 
-/* line 190, src/sass/components/_overrides.scss */
+/* line 209, src/sass/components/_overrides.scss */
 .no-padding-bottom {
   padding-bottom: 0;
 }
 
-/* line 194, src/sass/components/_overrides.scss */
+/* line 213, src/sass/components/_overrides.scss */
 .padding-top {
   padding-top: 1.5625em;
 }
 
-/* line 198, src/sass/components/_overrides.scss */
+/* line 217, src/sass/components/_overrides.scss */
 .padding-top-small, .edd-cancel {
   padding-top: 0.5em;
 }
 
-/* line 202, src/sass/components/_overrides.scss */
+/* line 221, src/sass/components/_overrides.scss */
 .padding-top-medium {
   padding-top: 1em;
 }
 
-/* line 206, src/sass/components/_overrides.scss */
+/* line 225, src/sass/components/_overrides.scss */
 .padding-top-large {
   padding-top: 2em;
 }
 
-/* line 210, src/sass/components/_overrides.scss */
+/* line 229, src/sass/components/_overrides.scss */
 .padding-top-xlarge {
   padding-top: 3em;
 }
 
-/* line 214, src/sass/components/_overrides.scss */
+/* line 233, src/sass/components/_overrides.scss */
 .padding-bottom {
   padding-bottom: 1.5625em;
 }
 
-/* line 218, src/sass/components/_overrides.scss */
+/* line 237, src/sass/components/_overrides.scss */
 .padding-bottom-small {
   padding-bottom: 0.5em;
 }
 
-/* line 222, src/sass/components/_overrides.scss */
+/* line 241, src/sass/components/_overrides.scss */
 .padding-bottom-large {
   padding-bottom: 2em;
 }
 
-/* line 226, src/sass/components/_overrides.scss */
+/* line 245, src/sass/components/_overrides.scss */
 .padding-bottom-xlarge {
   padding-bottom: 3em;
 }
@@ -1905,7 +1947,7 @@ tfoot th {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
-/* line 240, src/sass/components/_overrides.scss */
+/* line 259, src/sass/components/_overrides.scss */
 .screen-reader, .svg .icon-fallback-text, .edd-self-service-label, .mailchimp-form-label {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1923,7 +1965,7 @@ tfoot th {
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  * @link https://www.drupal.org/node/897638
  */
-/* line 257, src/sass/components/_overrides.scss */
+/* line 276, src/sass/components/_overrides.scss */
 .screen-reader-focusable:active,
 .screen-reader-focusable:focus {
   clip: auto;
@@ -1940,7 +1982,7 @@ tfoot th {
  * @affected IE 8/9/10
  * @link http://juicystudio.com/article/screen-readers-display-none.php
  */
-/* line 273, src/sass/components/_overrides.scss */
+/* line 292, src/sass/components/_overrides.scss */
 [hidden], template, .tarpit, label[for="edd-discount"], .js-edd #keel-edd-no-js-purchase-message, #edd_secure_site_wrapper, #edd_checkout_user_info legend,
 #edd_cc_fields legend,
 #edd_cc_address legend,
@@ -1960,7 +2002,7 @@ tfoot th {
  * The space content is one way to avoid an Opera bug when the `contenteditable` attribute is included anywhere else in the document.
  * @link https://github.com/h5bp/html5-boilerplate/blob/master/dist/css/main.css
  */
-/* line 285, src/sass/components/_overrides.scss */
+/* line 304, src/sass/components/_overrides.scss */
 .clearfix:before, .container:before,
 .row:before, #edd_cc_fields:before,
 #edd_cc_address:before, .edd-self-service-row:before, .mailchimp-form-row:before, .nav-wrap:before,
@@ -1976,7 +2018,7 @@ tfoot th {
   content: " ";
 }
 
-/* line 291, src/sass/components/_overrides.scss */
+/* line 310, src/sass/components/_overrides.scss */
 .clearfix:after, .container:after,
 .row:after, #edd_cc_fields:after,
 #edd_cc_address:after, .edd-self-service-row:after, .mailchimp-form-row:after, .nav-wrap:after {
