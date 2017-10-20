@@ -24,6 +24,7 @@
  */
 .logo {
 	display: inline-block;
+	font-family: $font-secondary;
 	font-size: 1.2em;
 	font-weight: bold;
 	line-height: 1.2;
@@ -33,6 +34,10 @@
 	@media (min-width: $bp-large) {
 		float: left;
 		margin-bottom: 0;
+	}
+
+	.fonts-loaded & {
+		font-family: $font-secondary-enhanced;
 	}
 
 	// @media (max-width: $bp-large) {
