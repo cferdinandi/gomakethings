@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.109.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.109.1: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1697,9 +1697,9 @@ tfoot th {
  */
 /* line 19, src/sass/components/_overrides.scss */
 .highlight {
-  background-color: #fff2ac;
-  background-image: -webkit-linear-gradient(left, #ffe359 0%, #fff2ac 100%);
-  background-image: linear-gradient(to right, #ffe359 0%, #fff2ac 100%);
+  background-color: #fbf89a;
+  background-image: -webkit-linear-gradient(left, #fbf89a 0%, #fbf9c9 100%);
+  background-image: linear-gradient(to right, #fbf89a 0%, #fbf9c9 100%);
 }
 
 /**
