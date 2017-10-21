@@ -33,25 +33,6 @@
 }
 
 
-/**
- * Font Families
- */
-.text-serif {
-	font-family: $font-secondary;
-
-	.fonts-loaded & {
-		font-family: $font-secondary-enhanced;
-	}
-}
-
-.text-sans-serif {
-	font-family: $font-primary;
-
-	.fonts-loaded & {
-		font-family: $font-primary-enhanced;
-	}
-}
-
 // /**
 //  * Text transforms
 //  */
