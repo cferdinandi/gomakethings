@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.120.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.121.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -872,6 +872,24 @@ input.active[type="submit"],
   background-color: #cb070e;
   border-color: #cb070e;
   color: #ffffff;
+}
+
+/* line 42, src/sass/components/_buttons.scss */
+.btn-secondary {
+  background-color: #808080;
+  border-color: #808080;
+}
+
+/* line 52, src/sass/components/_buttons.scss */
+.btn-secondary:hover,
+a .btn-secondary:hover, .link-block-styled .btn-secondary:hover,
+.btn-secondary:focus,
+a .btn-secondary:focus, .link-block-styled .btn-secondary:focus,
+.btn-secondary:active,
+a .btn-secondary:active, .link-block-styled .btn-secondary:active,
+.btn-secondary.active {
+  background-color: #343434;
+  border-color: #343434;
 }
 
 /* line 63, src/sass/components/_buttons.scss */
