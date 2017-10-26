@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.122.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.123.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -14,8 +14,10 @@
 	var buyNow = document.querySelectorAll('.edd-buy-now-button');
 
 	// Handle "buy now" clicks
+	// Don't run if right-click or command/control + click
 	var buyNowHandler = function (event) {
 		if (!event.target.classList.contains('edd-buy-now-button')) return;
+		if (event.button !== 0 || event.metaKey || event.ctrlKey) return;
 		event.target.innerHTML = 'Adding to cart...';
 		event.target.classList.add('disabled');
 	};
@@ -134,6 +136,79 @@ document.documentElement.className += ' js-edd';
   return fluidvids;
 
 }));
+/**
+ * Load pricing parity message
+ */
+;(function (window, document, undefined) {
+
+	'use strict';
+
+	// Render the pricing parity message
+	var renderPricingParity = function (data) {
+
+		// Make sure we have data to render
+		if (!data) return;
+
+		// Get the nav
+		var nav = document.querySelector('header');
+		if (!nav) return;
+
+		// Create container
+		var pricing = document.createElement('div');
+		pricing.id = 'pricing-parity';
+		pricing.className = 'bg-muted padding-top-small padding-bottom-small';
+		pricing.innerHTML = data;
+
+		// Insert into the DOM
+		nav.parentNode.insertBefore(pricing, nav);
+
+	};
+
+	// Get the pricing parity message via Ajax
+	var getPricingParity = function () {
+
+		// Set up our HTTP request
+		var xhr = new XMLHttpRequest();
+		if (!('responseType' in xhr)) return;
+
+		// Setup our listener to process compeleted requests
+		xhr.onreadystatechange = function () {
+			// Only run if the request is complete
+			if ( xhr.readyState !== 4 ) return;
+
+			// Process our return data
+			if ( xhr.status === 200 ) {
+
+				// Get the content and render it
+				var pricing = xhr.response.querySelector('#pricing-parity-content');
+				if (!pricing) return;
+				renderPricingParity(pricing.innerHTML);
+
+				// Save the content to sessionStorage
+				sessionStorage.setItem('gmt-pricing-parity', pricing.innerHTML);
+
+			}
+		};
+
+		// Create and send a GET request
+		xhr.open('GET', '/pricing-parity');
+		xhr.responseType = 'document';
+		xhr.send();
+
+	};
+
+	// Don't run on the pricing parity page itself
+	if (document.querySelector('#pricing-parity-content')) return;
+
+	// Get and render pricing parity info
+	var pricing = sessionStorage.getItem('gmt-pricing-parity');
+	if (pricing) {
+		renderPricingParity(pricing);
+	} else {
+		getPricingParity();
+	}
+
+})(window, document);
 /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+css-extras+php+php-extras+scss */
 /* jshint ignore:start */
 var _self = (typeof window !== 'undefined')
