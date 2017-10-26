@@ -11,6 +11,9 @@
 		// Make sure we have data to render
 		if (!data) return;
 
+		// Only render on sales pages
+		if (['/guides/', '/checkout/'].indexOf(window.location.pathname) < 0) return;
+
 		// Get the nav
 		var nav = document.querySelector('header');
 		if (!nav) return;
