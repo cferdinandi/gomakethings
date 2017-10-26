@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.124.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.125.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -184,6 +184,7 @@ document.documentElement.className += ' js-edd';
 
 				// Get the content and render it
 				var pricing = xhr.response.querySelector('#pricing-parity-content');
+				console.log(pricing);
 				if (!pricing) return;
 				renderPricingParity(pricing.innerHTML);
 
@@ -205,7 +206,7 @@ document.documentElement.className += ' js-edd';
 
 	// Get and render pricing parity info
 	var pricing = sessionStorage.getItem('gmt-pricing-parity');
-	if (pricing) {
+	if (typeof pricing === 'string') {
 		renderPricingParity(pricing);
 	} else {
 		getPricingParity();

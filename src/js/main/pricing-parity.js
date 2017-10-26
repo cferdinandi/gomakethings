@@ -46,6 +46,7 @@
 
 				// Get the content and render it
 				var pricing = xhr.response.querySelector('#pricing-parity-content');
+				console.log(pricing);
 				if (!pricing) return;
 				renderPricingParity(pricing.innerHTML);
 
@@ -67,7 +68,7 @@
 
 	// Get and render pricing parity info
 	var pricing = sessionStorage.getItem('gmt-pricing-parity');
-	if (pricing) {
+	if (typeof pricing === 'string') {
 		renderPricingParity(pricing);
 	} else {
 		getPricingParity();
