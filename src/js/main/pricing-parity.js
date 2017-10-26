@@ -12,7 +12,7 @@
 		if (!data) return;
 
 		// Only render on sales pages
-		if (['/guides/', '/checkout/'].indexOf(window.location.pathname) < 0) return;
+		if (!/\/guides\//.test(window.location.pathname) && !/\/checkout\//.test(window.location.pathname)) return;
 
 		// Get the nav
 		var nav = document.querySelector('header');

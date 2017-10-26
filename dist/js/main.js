@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.125.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.125.1: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -150,7 +150,7 @@ document.documentElement.className += ' js-edd';
 		if (!data) return;
 
 		// Only render on sales pages
-		if (['/guides/', '/checkout/'].indexOf(window.location.pathname) < 0) return;
+		if (!/\/guides\//.test(window.location.pathname) && !/\/checkout\//.test(window.location.pathname)) return;
 
 		// Get the nav
 		var nav = document.querySelector('header');
