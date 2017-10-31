@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.125.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.126.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -1253,82 +1253,6 @@ select:focus {
   display: inline;
 }
 
-/**
- * @section SVGs
- * SVG icon sprite styling.
- * @link http://css-tricks.com/svg-sprites-use-better-icon-fonts/
- * @link http://css-tricks.com/svg-use-external-source/
- */
-/**
- * Hide icons by default to prevent blank spaces in unsupported browsers
- */
-/* line 11, src/sass/components/_svgs.scss */
-.icon {
-  display: inline-block;
-  fill: currentColor;
-  height: 0;
-  width: 0;
-}
-
-/**
- * Display icons when browser supports SVG.
- * Inherit height, width, and color.
- */
-/* line 22, src/sass/components/_svgs.scss */
-.svg .icon {
-  height: 1em;
-  width: auto;
-}
-
-/**
- * Icon sizes
- */
-/* line 32, src/sass/components/_svgs.scss */
-.svg .icon-large {
-  height: 2em;
-}
-
-/* line 36, src/sass/components/_svgs.scss */
-.svg .icon-xlarge {
-  height: 3em;
-}
-
-/**
- * Icon colors
- */
-/* line 45, src/sass/components/_svgs.scss */
-.icon-black {
-  fill: #272727;
-}
-
-/* line 46, src/sass/components/_svgs.scss */
-.icon-gray, .edd-payment-icons .icon {
-  fill: #808080;
-}
-
-/* line 47, src/sass/components/_svgs.scss */
-.icon-primary, .edd-payment-icons .icon.active {
-  fill: #0088cc;
-}
-
-/* line 48, src/sass/components/_svgs.scss */
-.icon-secondary {
-  fill: #f94f55;
-}
-
-/* line 49, src/sass/components/_svgs.scss */
-.icon-accent {
-  fill: #800080;
-}
-
-/* line 53, src/sass/components/_svgs.scss */
-a:hover .icon-link, .link-block-styled:hover .icon-link, .link-block:hover .link-block-styled .icon-link {
-  fill: #005580;
-}
-
-/**
- * Hide fallback text if browser supports SVG
- */
 /*  Adds a border */
 /* line 2, src/sass/components/_snapshot.scss */
 .img-border {
@@ -1650,21 +1574,31 @@ tfoot th {
 /**
  * Payment icons
  */
+/* line 68, src/sass/components/_edd.scss */
+.edd-payment-icons .icon {
+  fill: #808080;
+}
+
+/* line 71, src/sass/components/_edd.scss */
+.edd-payment-icons .icon.active {
+  fill: #0088cc;
+}
+
 /* line 76, src/sass/components/_edd.scss */
-.svg .edd-payment-icons .icon {
+.edd-payment-icons .icon {
   height: 1.75em;
 }
 
 /**
  * "Complete Purchase" button
  */
-/* line 90, src/sass/components/_edd.scss */
+/* line 85, src/sass/components/_edd.scss */
 #edd-purchase-button {
   display: none;
   visibility: hidden;
 }
 
-/* line 95, src/sass/components/_edd.scss */
+/* line 90, src/sass/components/_edd.scss */
 .js-edd #edd-purchase-button {
   display: inline-block;
   visibility: visible;
@@ -1673,13 +1607,13 @@ tfoot th {
 /**
  * Cancel button
  */
-/* line 110, src/sass/components/_edd.scss */
+/* line 105, src/sass/components/_edd.scss */
 .edd-cancel {
   display: none;
   visibility: hidden;
 }
 
-/* line 115, src/sass/components/_edd.scss */
+/* line 110, src/sass/components/_edd.scss */
 .js-edd-cancel .edd-cancel {
   display: block;
   visibility: visible;
@@ -1691,7 +1625,7 @@ tfoot th {
 /**
  * Credit Card Fields
  */
-/* line 170, src/sass/components/_edd.scss */
+/* line 165, src/sass/components/_edd.scss */
 #edd_checkout_user_info .edd-label,
 #edd_cc_fields .edd-label,
 #edd_cc_address .edd-label,
@@ -1944,7 +1878,7 @@ tfoot th {
  * @link http://snook.ca/archives/html_and_css/hiding-content-for-accessibility
  */
 /* line 240, src/sass/components/_overrides.scss */
-.screen-reader, .svg .icon-fallback-text, .edd-self-service-label, .mailchimp-form-label {
+.screen-reader, .edd-self-service-label, .mailchimp-form-label {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;

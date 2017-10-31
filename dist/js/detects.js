@@ -1,5 +1,5 @@
 /*!
- * gomakethings v10.125.1: The WordPress theme for GoMakeThings.com
+ * gomakethings v10.126.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
@@ -60,15 +60,3 @@ function loadCSS( href, before, media ){
 	toggleMedia();
 	return ss;
 }
-;(function (window, document, undefined) {
-
-	'use strict';
-
-	// SVG feature detection
-	var supports = !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect;
-
-	// If SVG is supported, add `.svg` class to <html> element
-	if ( !supports ) return;
-	document.documentElement.className += (document.documentElement.className ? ' ' : '') + 'svg';
-
-})(window, document);
