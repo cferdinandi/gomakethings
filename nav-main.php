@@ -17,7 +17,7 @@
 				$logo = get_theme_mod( 'keel_logo' );
 				if ( empty( $logo ) ) :
 			?>
-				<svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 32 32"><path d="M28 18v4.13c-2.516 2.57-6.032 5.053-10 5.704V16h6v-2l-6-2.343c2.33-.824 4-3.046 4-5.658 0-3.315-2.686-6-6-6s-6 2.685-6 6c0 2.61 1.67 4.833 4 5.657L8 14v2h6v11.833C10.032 27.18 6.516 24.7 4 22.13V18H0v2c0 4 8 12 16 12s16-8 16-12v-2h-4zM18 6c0 1.105-.895 2-2 2s-2-.895-2-2 .895-2 2-2 2 .895 2 2z"/></svg>
+				<svg xmlns="http://www.w3.org/2000/svg" style="height:.8em;width:.8em" viewBox="0 0 16 16"><title/><path fill="currentColor" d="M14 9v2.066c-1.258 1.285-3.016 2.526-5 2.852V8.001h3v-1L9 5.83A3.001 3.001 0 0 0 8 .001 3 3 0 0 0 7 5.83L4 7.001v1h3v5.917c-1.984-.326-3.742-1.567-5-2.852V9H0v1c0 2 4 6 8 6s8-4 8-6V9h-2zM9 3a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
 			<?php else : ?>
 				<?php if ( substr( $logo, -4 ) === '.svg' ) : ?>
 					<?php echo file_get_contents( $logo ); ?>

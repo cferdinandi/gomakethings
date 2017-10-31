@@ -66,21 +66,16 @@ label[for="edd-discount"] {
  */
 .edd-payment-icons {
 	.icon {
-		@extend .icon-gray;
+		fill: $color-gray-dark;
 
 		&.active {
-			@extend .icon-primary;
+			fill: $color-primary;
 		}
 	}
 
-	.svg & .icon {
+	.icon {
 		height: 1.75em;
 	}
-
-	// img {
-	// 	height: 32px;
-	// 	width: 43px;
-	// }
 }
 
 
