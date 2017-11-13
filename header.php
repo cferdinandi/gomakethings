@@ -42,7 +42,7 @@
 	<body <?php body_class(); ?>>
 
 		<!-- Old Browser Warning -->
-		<!--[if lt IE 9]>
+		<!--[if lt IE 11]>
 			<aside class="container">
 				<p>Did you know that your web browser is a bit old? Some of the content on this site might not work right as a result. <a href="http://whatbrowser.org">Upgrade your browser</a> for a faster, safer, and better web experience.</p>
 			</aside>
@@ -50,24 +50,14 @@
 
 		<?php
 			// a11y enhancements
-			if ( empty( $page_navs ) || $page_navs === 'off' ) {
-				get_template_part( 'nav', 'accessibility' );
-			}
+			get_template_part( 'nav', 'accessibility' );
 		?>
 
 		<?php
 			// Get site navigation
-			if ( empty( $page_navs ) || $page_navs === 'off' ) {
-				get_template_part( 'nav', 'main' );
-			}
+			get_template_part( 'nav', 'main' );
 		?>
 
 		<main class="tabindex" id="main" tabindex="-1">
-
-			<?php
-				if ( keel_has_hero() ) {
-					echo do_shortcode( wpautop( stripslashes( keel_get_hero() ), false ) );
-				}
-			?>
 
 			<div class="container">
