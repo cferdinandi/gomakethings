@@ -10,7 +10,7 @@
 ?>
 
 
-<header class="container container-large <?php if ( !keel_has_hero() ) { echo 'margin-bottom-large'; } ?>">
+<header class="container container-large margin-bottom-large">
 	<nav class="nav-wrap">
 		<a class="logo" href="<?php echo site_url(); ?>/">
 			<?php

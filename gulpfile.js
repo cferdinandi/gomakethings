@@ -1,4 +1,19 @@
 /**
+ * Settings
+ */
+
+var settings = {
+	scripts: true,		// Turn on/off script tasks
+	styles: true,		// Turn on/off style tasks
+	svgs: true,			// Turn on/off SVG tasks
+	images: true,		// Turn on/off image tasks
+	theme: true,		// Turn on/off theme header tasks
+	docs: false,		// Turn on/off documentation generation
+	cacheBust: true		// Turn on/off cache busting (adds a version number to minified files)
+};
+
+
+/**
  * Gulp Packages
  */
 
@@ -18,23 +33,23 @@ var livereload = require('gulp-livereload');
 var package = require('./package.json');
 
 // Scripts and tests
-var jshint = require('gulp-jshint');
-var stylish = require('jshint-stylish');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var optimizejs = require('gulp-optimize-js');
+var jshint = settings.scripts ? require('gulp-jshint') : null;
+var stylish = settings.scripts ? require('jshint-stylish') : null;
+var concat = settings.scripts ? require('gulp-concat') : null;
+var uglify = settings.scripts ? require('gulp-uglify') : null;
+var optimizejs = settings.scripts ? require('gulp-optimize-js') : null;
 
 // Styles
-var sass = require('gulp-sass');
-var prefix = require('gulp-autoprefixer');
-var minify = require('gulp-cssnano');
+var sass = settings.styles ? require('gulp-sass') : null;
+var prefix = settings.styles ? require('gulp-autoprefixer') : null;
+var minify = settings.styles ? require('gulp-cssnano') : null;
 
 // SVGs
-var svgmin = require('gulp-svgmin');
+var svgmin = settings.svgs ? require('gulp-svgmin') : null;
 
 // Docs
-var markdown = require('gulp-markdown');
-var fileinclude = require('gulp-file-include');
+var markdown = settings.docs ? require('gulp-markdown') : null;
+var fileinclude = settings.docs ? require('gulp-file-include') : null;
 
 
 /**
@@ -90,7 +105,7 @@ var banner = {
 		'/*!' +
 		' <%= package.name %> v<%= package.version %>' +
 		' | (c) ' + new Date().getFullYear() + ' <%= package.author.name %>' +
-		' | MIT License' +
+		' | <%= package.license %> License' +
 		' | <%= package.repository.url %>' +
 		' | Open Source Credits: <%= package.openSource.credits %>' +
 		' */\n',
@@ -110,16 +125,21 @@ var banner = {
 
 
 /**
- * Gulp Taks
+ * Gulp Tasks
  */
 
 // Lint, minify, and concatenate scripts
 gulp.task('build:scripts', ['clean:dist'], function() {
+
+	if ( !settings.scripts ) return;
+
+	var fileVersion = settings.cacheBust ? '.' + package.version : '';
+
 	var jsTasks = lazypipe()
 		.pipe(header, banner.full, { package : package })
 		.pipe(optimizejs)
 		.pipe(gulp.dest, paths.scripts.output)
-		.pipe(rename, { suffix: '.min.' + package.version })
+		.pipe(rename, { suffix: '.min.' + fileVersion})
 		.pipe(uglify)
 		.pipe(optimizejs)
 		.pipe(header, banner.min, { package : package })
@@ -140,6 +160,10 @@ gulp.task('build:scripts', ['clean:dist'], function() {
 
 // Process, lint, and minify Sass files
 gulp.task('build:styles', ['clean:dist'], function() {
+	if ( !settings.styles ) return;
+
+	var fileVersion = settings.cacheBust ? '.' + package.version : '';
+
 	return gulp.src(paths.styles.input)
 		.pipe(plumber())
 		.pipe(sass({
@@ -154,7 +178,7 @@ gulp.task('build:styles', ['clean:dist'], function() {
 		}))
 		.pipe(header(banner.full, { package : package }))
 		.pipe(gulp.dest(paths.styles.output))
-		.pipe(rename({ suffix: '.min.' + package.version }))
+		.pipe(rename({ suffix: '.min.' + fileVersion }))
 		.pipe(minify({
 			discardComments: {
 				removeAll: true
@@ -164,8 +188,10 @@ gulp.task('build:styles', ['clean:dist'], function() {
 		.pipe(gulp.dest(paths.styles.output));
 });
 
-// Generate SVG sprites
+// Optimize SVGs
 gulp.task('build:svgs', ['clean:dist'], function () {
+	if ( !settings.svgs ) return;
+
 	return gulp.src(paths.svgs.input)
 		.pipe(plumber())
 		.pipe(svgmin())
@@ -174,6 +200,8 @@ gulp.task('build:svgs', ['clean:dist'], function () {
 
 // Copy image files into output folder
 gulp.task('build:images', ['clean:dist'], function() {
+	if ( !settings.images ) return;
+
 	return gulp.src(paths.images.input)
 		.pipe(plumber())
 		.pipe(gulp.dest(paths.images.output));
@@ -181,6 +209,8 @@ gulp.task('build:images', ['clean:dist'], function() {
 
 // Create style.css with theme header
 gulp.task('build:theme', function () {
+	if ( !settings.theme ) return;
+
 	return gulp.src(paths.theme.input)
 		.pipe(plumber())
 		.pipe(header(banner.theme, { package : package }))
@@ -189,6 +219,8 @@ gulp.task('build:theme', function () {
 
 // Lint scripts
 gulp.task('lint:scripts', function () {
+	if ( !settings.scripts ) return;
+
 	return gulp.src(paths.scripts.input)
 		.pipe(plumber())
 		.pipe(jshint())
@@ -204,6 +236,8 @@ gulp.task('clean:dist', function () {
 
 // Generate documentation
 gulp.task('build:docs', ['compile', 'clean:docs'], function() {
+	if ( !settings.docs ) return;
+
 	return gulp.src(paths.docs.input)
 		.pipe(plumber())
 		.pipe(fileinclude({
@@ -222,6 +256,8 @@ gulp.task('build:docs', ['compile', 'clean:docs'], function() {
 
 // Copy distribution files to docs
 gulp.task('copy:dist', ['compile', 'clean:docs'], function() {
+	if ( !settings.docs ) return;
+
 	return gulp.src(paths.output + '/**')
 		.pipe(plumber())
 		.pipe(gulp.dest(paths.docs.output + '/dist'));
@@ -229,6 +265,8 @@ gulp.task('copy:dist', ['compile', 'clean:docs'], function() {
 
 // Copy documentation assets to docs
 gulp.task('copy:assets', ['clean:docs'], function() {
+	if ( !settings.docs ) return;
+
 	return gulp.src(paths.docs.assets)
 		.pipe(plumber())
 		.pipe(gulp.dest(paths.docs.output + '/assets'));
@@ -236,6 +274,7 @@ gulp.task('copy:assets', ['clean:docs'], function() {
 
 // Remove prexisting content from docs folder
 gulp.task('clean:docs', function () {
+	if ( !settings.docs ) return;
 	return del.sync(paths.docs.output);
 });
 
@@ -269,18 +308,18 @@ gulp.task('compile', [
 	'build:theme'
 ]);
 
-// // Generate documentation
-// gulp.task('docs', [
-// 	'clean:docs',
-// 	'build:docs',
-// 	'copy:dist',
-// 	'copy:assets'
-// ]);
+// Generate documentation
+gulp.task('docs', [
+	'clean:docs',
+	'build:docs',
+	'copy:dist',
+	'copy:assets'
+]);
 
 // Compile files and generate docs (default)
 gulp.task('default', [
 	'compile',
-	// 'docs'
+	'docs'
 ]);
 
 // Compile files and generate docs when something changes

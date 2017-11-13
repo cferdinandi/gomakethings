@@ -1,9 +1,9 @@
 /*!
- * gomakethings v10.127.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v11.0.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
- * Open Source Credits: https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/
+ * Open Source Credits: https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/filamentgroup/loadJS/, https://github.com/filamentgroup/loadCSS, https://github.com/bramstein/fontfaceobserver, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/
  */
 
 /**
@@ -1189,7 +1189,6 @@ select:focus {
   padding-left: 0.9375em;
   padding-right: 2.5em;
   border-radius: 1.3125em;
-  -webkit-transition: width 300ms ease-in;
   transition: width 300ms ease-in;
 }
 
@@ -1670,7 +1669,6 @@ tfoot th {
 /* line 19, src/sass/components/_overrides.scss */
 .highlight {
   background-color: #fbf89a;
-  background-image: -webkit-linear-gradient(left, #fbf89a 0%, #fbf9c9 100%);
   background-image: linear-gradient(to right, #fbf89a 0%, #fbf9c9 100%);
 }
 

@@ -1,9 +1,9 @@
 /*!
- * gomakethings v10.127.0: The WordPress theme for GoMakeThings.com
+ * gomakethings v11.0.0: The WordPress theme for GoMakeThings.com
  * (c) 2017 Chris Ferdinandi
  * MIT License
  * https://github.com/cferdinandi/gomakethings
- * Open Source Credits: https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/
+ * Open Source Credits: https://github.com/toddmotto/fluidvids, http://prismjs.com, https://github.com/filamentgroup/loadJS/, https://github.com/filamentgroup/loadCSS, https://github.com/bramstein/fontfaceobserver, https://github.com/muffinresearch/payment-icons, https://nosir.github.io/cleave.js/
  */
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -1007,35 +1007,3 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 })(window, document);
-// ;(function (window, document, undefined) {
-
-// 	'use strict';
-
-// 	// Feature test
-// 	var supports = 'querySelector' in document;
-// 	if ( !supports ) return;
-
-// 	// Variables
-// 	var cards = document.querySelectorAll( '.edd-payment-icons .icon' );
-// 	var active = 'unknown';
-
-// 	var updateCard = function (type) {
-// 		if ( active === type ) return;
-// 		for (var i = 0; i < cards.length; i++) {
-// 			if ( cards[i].id === 'icon-' + type ) {
-// 				cards[i].classList.add( 'active' );
-// 				continue;
-// 			}
-// 			cards[i].classList.remove( 'active' );
-// 		}
-// 		active = type;
-// 	};
-
-// 	new Cleave('#card_number', {
-// 		creditCard: true,
-// 		onCreditCardTypeChanged: function (type) {
-// 			updateCard( type );
-// 		}
-// 	});
-
-// })(window, document);
