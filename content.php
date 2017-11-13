@@ -74,14 +74,14 @@ $options = keel_get_theme_options();
 	else :
 ?>
 
-	<?php if ( $wp_query->current_post === 0 && !is_archive() ) : ?>
+	<?php if ( $wp_query->current_post === 0 && (!is_archive() || !is_search()) ) : ?>
 		<header <?php if ( $options['blog_hide_all_posts_heading'] === 'on' ) { echo 'class="screen-reader"'; } ?>>
 			<h1><?php echo $options['blog_all_posts_heading']; ?></h1>
 		</header>
 	<?php endif; ?>
 
 	<?php
-		if ( $wp_query->current_post === 0 && array_key_exists( 'blog_all_posts_message', $options ) && !empty( $options['blog_all_posts_message'] ) ) :
+		if ( $wp_query->current_post === 0 && array_key_exists( 'blog_all_posts_message', $options ) && !empty( $options['blog_all_posts_message'] ) && !is_search() ) :
 	?>
 		<aside>
 			<?php echo do_shortcode( stripslashes( wpautop( $options['blog_all_posts_message'], false ) ) ); ?>
