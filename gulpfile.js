@@ -139,7 +139,7 @@ gulp.task('build:scripts', ['clean:dist'], function() {
 		.pipe(header, banner.full, { package : package })
 		.pipe(optimizejs)
 		.pipe(gulp.dest, paths.scripts.output)
-		.pipe(rename, { suffix: '.min.' + fileVersion})
+		.pipe(rename, { suffix: '.min' + fileVersion})
 		.pipe(uglify)
 		.pipe(optimizejs)
 		.pipe(header, banner.min, { package : package })
@@ -178,7 +178,7 @@ gulp.task('build:styles', ['clean:dist'], function() {
 		}))
 		.pipe(header(banner.full, { package : package }))
 		.pipe(gulp.dest(paths.styles.output))
-		.pipe(rename({ suffix: '.min.' + fileVersion }))
+		.pipe(rename({ suffix: '.min' + fileVersion }))
 		.pipe(minify({
 			discardComments: {
 				removeAll: true
